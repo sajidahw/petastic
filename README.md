@@ -19,7 +19,7 @@ Clone the repository and install the dependencies.
 Open up a terminal for the backend to run the following commands:
 
     ```
-    npm start dev
+    npm run dev
     ```
 
 Open up another terminal for the frontend to run the following commands:
