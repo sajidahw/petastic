@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import Naked_Petastic_logo from "./assets/Naked_Petastic_logo.png";
 import "./App.css";
 import axios from "axios";
+import Header from "./components/Header";
+import Home from "./pages/Home";
 
 function App() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   // fetching data from the server
   const fetchLandingPage = async () => {
@@ -32,18 +34,13 @@ function App() {
 
   // displaying data below
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>PETASTIC: Animal adoption</h1>
-      <p></p>
-    </>
+    <main>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+        </Routes>
+      </Router>
+    </main>
   );
 }
 
