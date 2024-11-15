@@ -1,10 +1,21 @@
 import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
-import Naked_Petastic_logo from "./assets/Naked_Petastic_logo.png";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  BrowserRouter,
+  useLocation,
+} from "react-router-dom";
+import AFont_Naked_Petastic_logo from "./assets/AFont_Naked_Petastic_logo.png";
 import "./App.css";
 import axios from "axios";
-import Header from "./components/Header";
+// import { createTheme } from "@mui/material/styles";
+
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import LogIn from "./pages/LogIn";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -34,13 +45,21 @@ function App() {
 
   // displaying data below
   return (
-    <main>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </Router>
-    </main>
+    <div>
+      <section>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<LogIn />} />
+
+            {/* <Route path="/pet" element={<AddPet />} />
+                <Route path="/pets" element={<PetListings />} />
+                <Route path="/pet/:id" element={<ViewPet />} /> */}
+            {/* <Route path="/faq" element={<FAQ />} /> */}
+          </Routes>
+        </Router>
+      </section>
+    </div>
   );
 }
 
