@@ -1,7 +1,9 @@
-// Login page for users to login to their account
 import React from "react";
 import { useState } from "react";
+import { TiHomeOutline } from "react-icons/ti";
+import NavBar from "../components/NavBar";
 import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
+import Footer from "../components/Footer";
 import {
   Avatar,
   Box,
@@ -14,34 +16,34 @@ import {
   Paper,
   TextField,
   Typography,
-} from "@mui/material"; // Paper provides indentation shadowing
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
-import { Link as RouterLink } from "react-router-dom";
+} from "@mui/material";
+import { IoPersonCircleOutline } from "react-icons/io5";
 import "../App.css";
 import "../index.css";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import Header from "../components/Header";
+import { Link as RouterLink } from "react-router-dom";
 
-const LogIn = () => {
-  const [username, setUsername] = useState("");
+const Register = () => {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [remember, setRemember] = useState(false);
+  const [terms, setTerms] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const credentials = {
-      username: username,
+    const registrationData = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
       password: password,
-      remember: remember,
+      terms: terms,
     };
-    console.log("Login data: ", credentials);
+    console.log("Registration data: ", registrationData);
   };
 
   return (
     <div>
       <NavBar />
-
       <div>
         <img
           className="login-header"
@@ -49,18 +51,20 @@ const LogIn = () => {
         />
       </div>
 
-      <Container className="login-background" maxWidth="sm" sx={{ pt: 29 }}>
+      <Container className="" maxWidth="sm" sx={{ pt: 29 }}>
         <Paper elevation={10} sx={{ marginTop: 8, padding: 2 }}>
-          <Avatar className="avatar"
+          <Avatar
+            className="avatar"
             sx={{
               mx: "auto",
               bgcolor: "#ad9f7a",
               textAlign: "center",
               mb: 1,
+              fontSize: 70,
               fontWeight: 700,
             }}
           >
-            <LockOutlinedIcon />
+            <IoPersonCircleOutline />
           </Avatar>
 
           <Typography
@@ -73,7 +77,7 @@ const LogIn = () => {
               fontFamily: "espiritu",
             }}
           >
-            Sign In
+            Register an Account
           </Typography>
 
           <Box
@@ -83,24 +87,48 @@ const LogIn = () => {
             sx={{ mt: 1 }}
           >
             <TextField
-              placeholder="Enter Username"
-              name="username"
-              id="username"
-              value={username}
+              placeholder="Enter First Name"
+              name="firstName"
+              value={firstName}
+              id="firstName"
               type="text"
               fullWidth
               required
               autoFocus
               sx={{ bgcolor: "#fbf1d7", mb: 2 }}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
+            ></TextField>
+
+            <TextField
+              placeholder="Enter Last Name"
+              name="lastName"
+              id="lastName"
+              value={lastName}
+              type="text"
+              fullWidth
+              required
+              sx={{ bgcolor: "#fbf1d7", mb: 2 }}
+              onChange={(e) => setLastName(e.target.value)}
+            ></TextField>
+
+            <TextField
+              placeholder="Enter Email Address"
+              name="email"
+              id="email"
+              value={email}
+              type="email"
+              fullWidth
+              required
+              sx={{ bgcolor: "#fbf1d7", mb: 2 }}
+              onChange={(e) => setEmail(e.target.value)}
             ></TextField>
 
             <TextField
               placeholder="Enter Password"
               name="password"
               id="password"
-              type="password"
               value={password}
+              type="password"
               fullWidth
               required
               sx={{ bgcolor: "#fbf1d7", mb: 2 }}
@@ -108,13 +136,14 @@ const LogIn = () => {
             ></TextField>
 
             <FormControlLabel
-              control={<Checkbox value={remember} color="primary" />}
-              id="remember"
-              label="Remember me"
-              onChange={(e) => setRemember(e.target.checked)}
-            />
+              control={<Checkbox value={terms} color="primary" />}
+              id="terms"
+              onChange={(e) => setTerms(e.target.checked)}
+              label="I agree to the terms and conditions. I will be a good human."
+            ></FormControlLabel>
+
             <Button
-              className="login-button"
+              className="register-button"
               type="submit"
               fullWidth
               variant="contained"
@@ -129,19 +158,21 @@ const LogIn = () => {
               // }}
               onClick={handleSubmit}
             >
-              Sign In
+              Create Account
             </Button>
           </Box>
 
           <Grid2 container justifyContent="space-between" sx={{ mt: 2 }}>
             <Grid2 item>
-              <Link component={RouterLink} to="/forgot">
-                Forgot password?
+              <Link component={RouterLink} to="/">
+                <TiHomeOutline className="homeIcon" />
               </Link>
             </Grid2>
 
-            <Link component={RouterLink} to="/register">
-              Register
+            <Grid2 sx={{ ml: 35 }}>Already registered?</Grid2>
+
+            <Link component={RouterLink} to="/login">
+              Login
             </Link>
           </Grid2>
         </Paper>
@@ -154,4 +185,4 @@ const LogIn = () => {
   );
 };
 
-export default LogIn;
+export default Register;

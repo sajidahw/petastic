@@ -7,15 +7,13 @@ import {
   BrowserRouter,
   useLocation,
 } from "react-router-dom";
-import AFont_Naked_Petastic_logo from "./assets/AFont_Naked_Petastic_logo.png";
+
 import "./App.css";
 import axios from "axios";
-// import { createTheme } from "@mui/material/styles";
 
-import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
+import Register from "./pages/Register";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -46,19 +44,20 @@ function App() {
   // displaying data below
   return (
     <div>
-      <section>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<LogIn />} />
+      {/* <section> */}
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<LogIn />} />
+          <Route path="/register" element={<Register />} />
 
-            {/* <Route path="/pet" element={<AddPet />} />
+          {/* <Route path="/pet" element={<AddPet />} />
                 <Route path="/pets" element={<PetListings />} />
                 <Route path="/pet/:id" element={<ViewPet />} /> */}
-            {/* <Route path="/faq" element={<FAQ />} /> */}
-          </Routes>
-        </Router>
-      </section>
+          {/* <Route path="/faq" element={<FAQ />} /> */}
+        </Routes>
+      </Router>
+      {/* </section> */}
     </div>
   );
 }
