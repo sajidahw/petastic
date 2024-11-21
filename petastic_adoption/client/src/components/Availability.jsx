@@ -11,8 +11,8 @@ import {
 import "../App.css";
 import "../index.css";
 
+// Plugs in the ViewPet page to see the rendering of radio button responses for "Availability"
 const Availability = ({ petAvailability, setPetAvailability }) => {
-
   return (
     <FormControl>
       <FormLabel
@@ -36,7 +36,6 @@ const Availability = ({ petAvailability, setPetAvailability }) => {
           value="now"
           control={<Radio />}
           label="Now"
-          onChange={(e) => setPetAvailability(e.target.value)}
           sx={{ color: "#635b46" }}
         />
 
@@ -44,7 +43,6 @@ const Availability = ({ petAvailability, setPetAvailability }) => {
           value="soon"
           control={<Radio />}
           label="Soon"
-          onChange={(e) => setPetAvailability(e.target.value)}
           sx={{ color: "#635b46" }}
         />
 
