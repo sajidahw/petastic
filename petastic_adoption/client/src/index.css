@@ -1,3 +1,4 @@
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -73,7 +74,7 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 18em;
+  margin-bottom: 0.5em; /*18em*/
   padding: 13em;
   color: #f7e3af;
 }
@@ -88,8 +89,8 @@ img.heart {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 18em;
-  padding: 8em;
+  margin-bottom: 4em;
+  padding: 0.5em;
   color: #f7e3af;
 }
 
@@ -111,6 +112,32 @@ button.register-button {
   font-weight: bold;
   border-radius: 20px;
   font-size: 16px;
+}
+
+button.submitPet-button {
+  margin-top: 20px;
+  margin-bottom: 1px;
+  background-color: #ad9f7a;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  font-size: 16px;
+  width: 35%;
+  margin-left: 4%;
+  /* margin-right: 40px; */
+}
+
+button.resetPet-button {
+  margin-top: 20px;
+  margin-bottom: 1px;
+  background-color: #ad9f7a;
+  color: white;
+  font-weight: bold;
+  border-radius: 20px;
+  font-size: 16px;
+  width: 35%;
+  margin-left: 25%;
+  /* margin-right: 40px; */
 }
 
 /* p footer */
@@ -159,9 +186,12 @@ img {
 /* login header on LogIn page*/
 .login-header {
   /* background-position-y: bottom; */
-  position: fixed;
-  top: -30px;
-  right: 50px;
+  position: sticky;
+  /* top: -30px;
+  right: 50px; */
+  left: 100%;
+  padding-right: 5px;
+  padding-top: 2px;
 }
 img.login-header {
   margin-top: -6px;
@@ -174,6 +204,10 @@ img.login-header {
   font-size: 1.6em;
   /* color: #948869; */
   font-weight: 800;
+}
+
+.space {
+  margin-top: 10px;
 }
 
 /* experimenting to get img as transparent circle */

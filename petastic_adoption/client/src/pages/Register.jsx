@@ -4,6 +4,7 @@ import { TiHomeOutline } from "react-icons/ti";
 import NavBar from "../components/NavBar";
 import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
 import Footer from "../components/Footer";
+
 import {
   Avatar,
   Box,
@@ -11,9 +12,11 @@ import {
   Checkbox,
   Container,
   FormControlLabel,
+  //   FormGroup,
   Grid2,
   Link,
   Paper,
+  //   Switch,
   TextField,
   Typography,
 } from "@mui/material";
@@ -21,6 +24,7 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import "../App.css";
 import "../index.css";
 import { Link as RouterLink } from "react-router-dom";
+import LogIn from "../pages/LogIn";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -45,10 +49,12 @@ const Register = () => {
     <div>
       <NavBar />
       <div>
-        <img
-          className="login-header"
-          src={Small_Circular_Logo_Petastic180title}
-        />
+        <RouterLink to="/">
+          <img
+            className="login-header"
+            src={Small_Circular_Logo_Petastic180title}
+          />
+        </RouterLink>
       </div>
 
       <Container className="" maxWidth="sm" sx={{ pt: 29 }}>
@@ -170,10 +176,31 @@ const Register = () => {
             </Grid2>
 
             <Grid2 sx={{ ml: 35 }}>Already registered?</Grid2>
-
+            {/* <FormGroup>
+              <FormControlLabel
+                control={
+                  <Switch
+                    checked="LogIn"
+                    defaultChecked
+                    size="small"
+                    color="#f8e6b7"
+                   
+                  />
+                }
+                label="Log In"
+              /> */}
+            {/* <Switch
+                defaultChecked
+                size="small"
+                color="#f8e6b7"
+                onChange={(e) => setChecked(e.target.checked)}
+                checked={checked}
+                inputProps={{ "aria-label": "controlled" }}
+              /> */}
             <Link component={RouterLink} to="/login">
-              Login
+              Log In
             </Link>
+            {/* </FormGroup> */}
           </Grid2>
         </Paper>
       </Container>

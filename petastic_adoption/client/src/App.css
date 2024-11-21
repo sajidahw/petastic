@@ -68,6 +68,8 @@
   font-family: "Faculty Glyphic", sans-serif;
   opacity: 95%;
   overflow: visible;
+  width: 150vh; /* added */
+  position: relative; /* added */
 }
 
 /* NavBar MUI Tab Button Font */
@@ -80,3 +82,19 @@
   font-family: "Faculty Glyphic", sans-serif;
   font-weight: 700;
 }
+
+/* PetView Card Header Font */
+.MuiCardHeader-title {
+  font-family: "Crimson Text", sans-serif;
+  font-weight: 700;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px black;
+}
+
+/* .css-1fzlhpv-MuiGrid2-root {
+  margin-bottom: 0%;
+  margin-top: 0%;
+  /* inline-size: 60%; */
+
+/* } */

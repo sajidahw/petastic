@@ -43,15 +43,18 @@ const LogIn = () => {
       <NavBar />
 
       <div>
-        <img
-          className="login-header"
-          src={Small_Circular_Logo_Petastic180title}
-        />
+        <RouterLink to="/">
+          <img
+            className="login-header"
+            src={Small_Circular_Logo_Petastic180title}
+          />
+        </RouterLink>
       </div>
 
       <Container className="login-background" maxWidth="sm" sx={{ pt: 29 }}>
         <Paper elevation={10} sx={{ marginTop: 8, padding: 2 }}>
-          <Avatar className="avatar"
+          <Avatar
+            className="avatar"
             sx={{
               mx: "auto",
               bgcolor: "#ad9f7a",

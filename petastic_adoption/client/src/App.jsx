@@ -4,19 +4,24 @@ import {
   Route,
   Routes,
   Link,
-  BrowserRouter,
   useLocation,
 } from "react-router-dom";
+// import { FormControlLabel, Switch } from "@mui/material";
 
+import "./index.css";
 import "./App.css";
 import axios from "axios";
 
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
+import AddPet from "./pages/AddPet";
+import ViewPet from "./pages/ViewPet";
+import PetListings from "./pages/PetListings";
+import FAQ from "./pages/FAQ";
 
 function App() {
-  // const [count, setCount] = useState(0);
+  // const [showPage, setShowPage] = useState(false);
 
   // fetching data from the server
   const fetchLandingPage = async () => {
@@ -46,15 +51,27 @@ function App() {
     <div>
       {/* <section> */}
       <Router>
+        {/* <FormControlLabel
+          control={
+            <Switch
+              checked={showPage}
+              inputProps={{ "aria-label": "controlled" }}
+              defaultChecked
+              size="small"
+              color="#f8e6b7"
+              onChange={(e) => setShowPage(!showPage)}
+            />
+          }
+          label={showPage ? "Register" : "Login"}
+        /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/register" element={<Register />} />
-
-          {/* <Route path="/pet" element={<AddPet />} />
-                <Route path="/pets" element={<PetListings />} />
-                <Route path="/pet/:id" element={<ViewPet />} /> */}
-          {/* <Route path="/faq" element={<FAQ />} /> */}
+          <Route path="/pet" element={<AddPet />} />
+          <Route path="/pet/:id" element={<ViewPet />} />
+          <Route path="/pets" element={<PetListings />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
       </Router>
       {/* </section> */}
