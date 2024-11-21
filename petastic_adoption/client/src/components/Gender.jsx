@@ -15,8 +15,6 @@ import "../index.css";
 
 // transmitting data over via props from Parent component where it was defined
 const Gender = ({ petGender, setPetGender }) => {
-  // const [petGender, setPetGender] = useState("male");
-
   return (
     <FormControl>
       <FormLabel id="gender" for="gender" sx={{ fontWeight: "bold", pt: 1 }}>

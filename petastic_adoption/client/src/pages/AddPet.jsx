@@ -420,7 +420,6 @@ const AddPet = () => {
               </div>
 
               <div className="space">
-                {/* <Availability /> */}
                 {/* Pass the state and setter functions as props */}
                 <Availability
                   petAvailability={petAvailability}
@@ -429,7 +428,6 @@ const AddPet = () => {
               </div>
 
               <div className="space">
-                {/* <Vaccination /> */}
                 {/* Pass the state and setter functions as props */}
                 <Vaccination
                   petVaccination={petVaccination}
@@ -438,7 +436,6 @@ const AddPet = () => {
               </div>
 
               <div className="space">
-                {/* <Spay /> */}
                 {/* Pass the state and setter functions as props */}
                 <Spay
                   petSpayNeuter={petSpayNeuter}
@@ -447,7 +444,6 @@ const AddPet = () => {
               </div>
 
               <div className="space">
-                {/* <OkKids /> */}
                 {/* Pass the state and setter functions as props */}
                 <OkKids
                   petOkWithKids={petOkWithKids}
@@ -456,7 +452,6 @@ const AddPet = () => {
               </div>
 
               <div className="space">
-                {/* <OkCats /> */}
                 {/* Pass the state and setter functions as props */}
                 <OkCats
                   petOkWithCats={petOkWithCats}
@@ -465,7 +460,6 @@ const AddPet = () => {
               </div>
 
               <div className="space">
-                {/* <OkDogs /> */}
                 {/* Pass the state and setter functions as props */}
                 <OkDogs
                   petOkWithDogs={petOkWithDogs}
@@ -474,13 +468,11 @@ const AddPet = () => {
               </div>
 
               <div className="space">
-                {/* <Availability /> */}
                 {/* Pass the state and setter functions as props */}
                 <ImageUpload petImage={petImage} setPetImage={setPetImage} />
               </div>
 
               <div className="space">
-                {/* <Human /> */}
                 {/* Pass the state and setter functions as props */}
                 <Human
                   humanName={humanName}

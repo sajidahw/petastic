@@ -11,9 +11,8 @@ import {
 import "../App.css";
 import "../index.css";
 
-const Spay = () => {
-  const [petSpayNeuter, setPetSpayNeuter] = useState("yes");
-
+// Plugs in the ViewPet page to see the rendering of radio button responses for "Spay/Neutered"
+const Spay = ({ petSpayNeuter, setPetSpayNeuter }) => {
   return (
     <FormControl>
       <FormLabel
@@ -37,7 +36,6 @@ const Spay = () => {
           value="yes"
           control={<Radio />}
           label="Yes"
-          onChange={(e) => setPetSpayNeuter(e.target.value)}
           sx={{ color: "#635b46" }}
         />
 
@@ -45,7 +43,6 @@ const Spay = () => {
           value="no"
           control={<Radio />}
           label="No"
-          onChange={(e) => setPetSpayNeuter(e.target.value)}
           sx={{ color: "#635b46" }}
         />
 

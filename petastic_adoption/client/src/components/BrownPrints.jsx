@@ -4,10 +4,11 @@ import brown_prints from "../assets/brown_prints.png";
 const BrownPrints = () => {
   return (
     <div style={{ position: "relative", top: -5 }}>
-      <img src={brown_prints} alt="Brown Prints" width="25%" />
+      <img src={brown_prints} alt="Brown Prints" width="30%" />
     </div>
   );
 };
 
 export default BrownPrints;
 // width = "2.4%";
+//img width="25%"

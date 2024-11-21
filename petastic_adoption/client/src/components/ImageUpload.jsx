@@ -52,9 +52,14 @@ const ImageUpload = ({ petImage, setPetImage, petName }) => {
         )}
       </Box>
 
-      <FormLabel id="petImage" sx={{ fontWeight: "bold", pt: 3 }}>
-        Avatar Preview:
-      </FormLabel>
+      {/* Preview Label Hidden unless an image is uploaded*/}
+      {petImage && (
+        <>
+          <FormLabel id="petImage" sx={{ fontWeight: "bold", pt: 3 }}>
+            Avatar Preview:
+          </FormLabel>
+        </>
+      )}
       {/* Avatar Preview */}
       {preview && (
         <Box

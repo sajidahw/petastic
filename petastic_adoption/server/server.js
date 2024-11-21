@@ -9,6 +9,7 @@ const corsOptions = {
   origin: "http://localhost:5173", // vite
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE",
+  
 };
 
 app.use(cors(corsOptions));

@@ -10,13 +10,16 @@ import {
 } from "@mui/material";
 import "../App.css";
 import "../index.css";
+import AddPet from "../pages/AddPet";
 
-const Vaccination = () => {
-  const [petVaccination, setPetVaccination] = useState("current");
-
+const Vaccination = ({ petVaccination, setPetVaccination }) => {
   return (
     <FormControl>
-      <FormLabel id="vaccination" for="vaccination" sx={{ fontWeight: "bold", mt: 1 }}>
+      <FormLabel
+        id="vaccination"
+        for="vaccination"
+        sx={{ fontWeight: "bold", mt: 1 }}
+      >
         Vaccination:
       </FormLabel>
 

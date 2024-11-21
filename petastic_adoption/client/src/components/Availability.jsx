@@ -11,8 +11,7 @@ import {
 import "../App.css";
 import "../index.css";
 
-const Availability = () => {
-  const [petAvailability, setPetAvailability] = useState("now");
+const Availability = ({ petAvailability, setPetAvailability }) => {
 
   return (
     <FormControl>

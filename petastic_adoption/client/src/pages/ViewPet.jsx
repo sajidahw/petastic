@@ -14,7 +14,7 @@ import {
   Avatar,
   IconButton,
 } from "@mui/material";
-
+import { RiCheckboxIndeterminateFill } from "react-icons/ri";
 import puppy from "../assets/images/puppy.jpg";
 import "../App.css";
 import "../index.css";
@@ -25,6 +25,7 @@ import { useParams, Link as RouterLink } from "react-router-dom";
 import FavoritesIcon from "../components/FavoritesIcon";
 import BrownPrints from "../components/BrownPrints";
 import HumanContact from "../components/HumanContact";
+import OkKids from "../components/OkKids";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
@@ -150,6 +151,7 @@ const ViewPet = () => {
                 color="#8a3324"
                 fontWeight="bold"
                 paddingBottom={1.5}
+                fontFamily={"espiritu"}
               >
                 About Me
               </Typography>
@@ -160,6 +162,8 @@ const ViewPet = () => {
               variant="body2"
               color="#624a2c"
               sx={{ textTransform: "capitalize" }}
+              fontFamily={"Montserrat"}
+              fontSize={16}
             >
               <Grid2
                 container
@@ -172,120 +176,177 @@ const ViewPet = () => {
                   </Grid2>
                   <strong>Breed:</strong> {petData.breed}
                 </Grid2>
-
                 <Grid2 size={4}>
                   <Grid2 Item>
                     <strong>Age:</strong> {petData.age}
                   </Grid2>
                   <strong>Color:</strong> {petData.color}
                 </Grid2>
-
                 <Grid2 size={4}>
                   <Grid2 Item>
                     <strong>Gender:</strong> {petData.gender}
                   </Grid2>
                   <strong>Size:</strong> {petData.size}
                 </Grid2>
-
                 <Grid2 size={4}>
                   {/* <Grid2 Item> */}
                   <strong>Location:</strong> {petData.location}
                   {/* </Grid2> */}
                 </Grid2>
-
                 <Grid2 size={4}>
                   <strong>Temperament:</strong> {petData.temperament}
                 </Grid2>
-
                 <Grid2 size={4}>
                   {/* <Grid2 Item> */}
-                  <strong>Medical History:</strong>
+                  <strong>Medical History:</strong> {""}
                   {petData.medicalHistory.join(", ")}
                 </Grid2>
-
                 <Grid2 size={4}>
                   <Grid2 Item>
                     <strong>Vaccination:</strong> {petData.vaccination}
                   </Grid2>
                   <strong>Spay/Neuter:</strong>{" "}
-                  {petData.spayNeuter ? (
+                  {petData.spayNeuter === "yes" ? (
                     <Checkbox
                       checked={true}
                       color="#ad9f7a"
                       sx={{
                         color: "#ad9f7a",
-                        fontSize: 13,
+                        fontSize: 16,
                         marginBottom: 0,
                         marginTop: 0,
                       }}
                       size="xs"
                     />
                   ) : (
-                    "No"
+                    <RiCheckboxIndeterminateFill
+                      color="#880808"
+                      sx={{
+                        color: "#880808",
+                        fontSize: 5,
+                        paddingLeft: "3px",
+                      }}
+                      // paddingLeft={1}
+                      // paddingRight={1}
+                      // size="xs"
+                    />
                   )}
                 </Grid2>
-
                 <Grid2 size={4}>
-                  <strong>Availability:</strong> {petData.availability}
+                  <strong>Availability:</strong>
+                  {petData.availability == "now" ? (
+                    <span
+                      style={{
+                        color: "green",
+                        fontWeight: "bolder",
+                        fontStyle: "italic",
+                        borderRadius: "3px",
+                        backgroundColor: "#fbf1d7",
+                        paddingRight: "5px",
+                        paddingLeft: "5px",
+                      }}
+                    >
+                      {"  "}
+                      Now
+                    </span>
+                  ) : (
+                    <span
+                      style={{
+                        color: "red",
+                        fontWeight: "bold",
+                        fontStyle: "italic",
+                        borderRadius: "3px",
+                        backgroundColor: "#fbf1d7",
+                        paddingRight: "5px",
+                        paddingLeft: "5px",
+                      }}
+                    >
+                      {"  "}
+                      Soon
+                    </span>
+                  )}
                 </Grid2>
 
                 <Grid2 size={4} marginBottom={0}>
                   <Grid2 Item>
-                    <strong>Ok with Kids:</strong>
-                    {petData.okKids ? (
+                    <strong>OK with Kids:</strong>
+                    {petData.okKids === "yes" ? (
                       <Checkbox
                         checked={true}
                         color="#ad9f7a"
                         sx={{
                           color: "#ad9f7a",
-                          fontSize: 13,
+                          fontSize: 16,
                           marginBottom: 0,
                           marginTop: 0,
                         }}
                         size="xs"
                       />
                     ) : (
-                      "No"
+                      <RiCheckboxIndeterminateFill
+                        color="#880808"
+                        sx={{
+                          color: "#880808",
+                          fontSize: 5,
+                          paddingLeft: "3px",
+                        }}
+                        // paddingLeft={1}
+                        // paddingRight={1}
+                        // size="xs"
+                      />
                     )}
                   </Grid2>
                   <Grid2 Item>
-                    <strong>Ok with Cats:</strong>
-                    {petData.okCats ? (
+                    <strong>OK with Cats:</strong>
+                    {petData.okCats === "yes" ? (
                       <Checkbox
                         checked={true}
                         color="#ad9f7a"
                         sx={{
                           color: "#ad9f7a",
-                          fontSize: 13,
+                          fontSize: 16,
                           marginBottom: 0,
                           marginTop: 0,
                         }}
                         size="xs"
                       />
                     ) : (
-                      "No"
+                      <RiCheckboxIndeterminateFill
+                        color="#880808"
+                        sx={{
+                          color: "#880808",
+                          fontSize: 5,
+                          paddingLeft: "3px",
+                        }}
+                      />
                     )}
                   </Grid2>
                   <Grid2 Item>
-                    <strong>Ok with Dogs:</strong>
-                    {petData.okDogs ? (
+                    <strong>OK with Dogs:</strong>
+                    {petData.okDogs === "yes" ? (
                       <Checkbox
                         checked={true}
                         color="#ad9f7a"
                         sx={{
                           color: "#ad9f7a",
-                          fontSize: 13,
+                          fontSize: 15,
                           marginBottom: 0,
                           marginTop: 0,
                         }}
                         size="xs"
                       />
                     ) : (
-                      "No"
+                      <RiCheckboxIndeterminateFill
+                        color="#880808"
+                        sx={{
+                          color: "#880808",
+                          fontSize: 5,
+                          paddingLeft: "3px",
+                        }}
+                      />
                     )}
                   </Grid2>
                 </Grid2>
-
                 <Grid2 size={12} textTransform="none">
                   <strong>Description:</strong> {petData.description}
                 </Grid2>
@@ -303,6 +364,7 @@ const ViewPet = () => {
                   fontWeight="bold"
                   sx={{ fontSize: 16, color: "#8a3324" }}
                   paddingBottom={1.5}
+                  fontFamily={"espiritu"}
                 >
                   Human Contact
                 </Typography>
@@ -354,7 +416,7 @@ const ViewPet = () => {
               <Stack
                 sx={{ flexGrow: 1 }}
                 direction="row"
-                spacing={32} //8, 23
+                spacing={18} //8, 23, 32
                 justifyContent="center"
                 alignContent={"center"}
               >
@@ -376,6 +438,16 @@ const ViewPet = () => {
                   sx={{ fontFamily: "espiritu", fontWeight: "boldest" }}
                 >
                   Home
+                </Button>
+
+                <Button
+                  size="small"
+                  color="primary"
+                  component={RouterLink}
+                  to="/"
+                  sx={{ fontFamily: "espiritu", fontWeight: "boldest" }}
+                >
+                  Adopt Me
                 </Button>
 
                 <IconButton label="add to favorites">
@@ -404,3 +476,4 @@ const ViewPet = () => {
 export default ViewPet;
 
 // replaced "Yes" with Checkbox component
+// replaced "No" with RiCheckboxIndeterminateFill component

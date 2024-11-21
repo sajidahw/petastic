@@ -11,9 +11,8 @@ import {
 import "../App.css";
 import "../index.css";
 
-const OkCats = () => {
-  const [petOkWithCats, setPetOkWithCats] = useState("yes");
-
+// Plugs in the ViewPet page to see the rendering of radio button responses for "OK with Cats"
+const OkCats = ({ petOkWithCats, setPetOkWithCats }) => {
   return (
     <FormControl>
       <FormLabel id="okCats" for="okCats" sx={{ fontWeight: "bold", pt: 1 }}>
@@ -33,7 +32,6 @@ const OkCats = () => {
           value="yes"
           control={<Radio />}
           label="Yes"
-          onChange={(e) => setPetOkWithCats(e.target.value)}
           sx={{ color: "#635b46" }}
         />
 
@@ -41,7 +39,6 @@ const OkCats = () => {
           value="no"
           control={<Radio />}
           label="No"
-          onChange={(e) => setPetOkWithCats(e.target.value)}
           sx={{ color: "#635b46" }}
         />
 
