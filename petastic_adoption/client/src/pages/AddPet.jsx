@@ -69,7 +69,7 @@ const AddPet = () => {
   const [humanEmail, setHumanEmail] = useState("");
   const [humanPhone, setHumanPhone] = useState("");
 
-  const [petData, setPetData] = useState([]); // added 777
+  const [petData, setPetData] = useState([]); // still keep here?
 
   const navigate = useNavigate();
   const api_url = import.meta.env.VITE_API_URL; // instead of process.env.REACT_APP_API_URL
@@ -388,7 +388,6 @@ const AddPet = () => {
               </TextField>
 
               <div className="space">
-                {/* <MedicalHistory /> */}
                 {/* Pass the state and setter functions as props */}
                 <MedicalHistory
                   petMedicalHistory={petMedicalHistory}
