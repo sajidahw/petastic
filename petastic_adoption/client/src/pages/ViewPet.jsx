@@ -103,8 +103,8 @@ const ViewPet = () => {
         >
           <CardMedia
             component="img"
-            // image={petData.image}
-            image={puppy}
+            image={petData.image || puppy}
+            // image={puppy}
             alt={petData.name}
             sx={{ height: "auto" }}
             // sx={{ height: 360 }}
@@ -125,7 +125,7 @@ const ViewPet = () => {
                 right: -10,
               }}
             >
-              <img src={puppy}></img>
+              <img src={petData.image || puppy}></img>
             </Avatar>
 
             <Typography
@@ -346,7 +346,9 @@ const ViewPet = () => {
                   </Grid2>
                 </Grid2>
                 <Grid2 size={12} textTransform="none">
-                  <strong>Description:</strong> {petData.description}
+                  <strong>Description:</strong>{" "}
+                  {petData.description ||
+                    "Adopting me is the best way to get to know me."}
                 </Grid2>
               </Grid2>
 
@@ -412,11 +414,16 @@ const ViewPet = () => {
           <CardActionArea>
             <CardActions>
               <Stack
-                sx={{ flexGrow: 1 }}
+                sx={{
+                  position: "relative",
+                  left: "5%",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
                 direction="row"
-                spacing={18} //8, 23, 32
-                justifyContent="center"
-                alignContent={"center"}
+                spacing={10} //8, 23, 32, 18
+                // justifyContent="center"
+                alignContent="center"
               >
                 <Button
                   size="small"

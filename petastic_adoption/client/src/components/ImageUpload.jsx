@@ -6,22 +6,31 @@ const ImageUpload = ({ petImage, setPetImage, petName }) => {
 
   const handleFileChange = (event) => {
     const file = event.target.files[0];
+
     // Validate file size (e.g., max 2MB)
     if (file.size > 2 * 1024 * 1024) {
       alert("File size exceeds 2MB");
       return;
     }
 
+    // Loading image from file or blob
+    // https://developer.mozilla.org/en-US/docs/Web/API/FileReader
     if (file) {
-      setPetImage(file);
-      setPreview(URL.createObjectURL(file));
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setPetImage(reader.result); // Set Base64 string
+        setPreview(reader.result);
+      };
+      reader.readAsDataURL(file);
+      // setPetImage(file);
+      // setPreview(URL.createObjectURL(file));
     }
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Implement your upload logic here, e.g., send the file to the server
-    console.log("File submitted:", petImage);
+    // Implement future upload logic here, e.g., send the file to the server
+    console.log("File submitted:", petImage); //petImage
   };
 
   return (

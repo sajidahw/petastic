@@ -28,7 +28,7 @@ const NavBar = () => {
         <Tabs value={value} onChange={handleChange} centered>
           <Tab label="Log In" component={RouterLink} to="/login" />
           <Tab label="Add a Pet" component={RouterLink} to="/pet" />
-          <Tab label="Pets Listings" component={RouterLink} to="/pets" />
+          <Tab label="Pets" component={RouterLink} to="/pets" />
           <Tab label="FAQ" component={RouterLink} to="/faq" />
         </Tabs>
       </Box>

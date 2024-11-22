@@ -17,7 +17,7 @@ import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import AddPet from "./pages/AddPet";
 import ViewPet from "./pages/ViewPet";
-import PetListings from "./pages/PetListings";
+import Pets from "./pages/Pets";
 import FAQ from "./pages/FAQ";
 
 function App() {
@@ -70,7 +70,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/pet" element={<AddPet />} />
           <Route path="/pet/:id" element={<ViewPet />} />
-          <Route path="/pets" element={<PetListings />} />
+          <Route path="/pets" element={<Pets />} />
           <Route path="/faq" element={<FAQ />} />
         </Routes>
       </Router>
