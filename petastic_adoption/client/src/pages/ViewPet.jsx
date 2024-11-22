@@ -57,7 +57,7 @@ const ViewPet = () => {
   if (!petData) {
     return (
       <div>
-        <h2 style={{ color: "white" }}>Processing...</h2>;
+        <h2 style={{ color: "white" }}>That pet doesn't exist...</h2>;
         <div>
           <RouterLink to="/">
             <img
@@ -106,9 +106,10 @@ const ViewPet = () => {
             image={petData.image || puppy}
             // image={puppy}
             alt={petData.name}
-            sx={{ height: "auto" }}
-            // sx={{ height: 360 }}
+            sx={{ height: "auto", objectFit: "contain" }}
+            // sx={{ height: 360 }} // "auto"; added contain
           />
+
           <Stack
             direction="row"
             alignItems="center"
@@ -123,6 +124,8 @@ const ViewPet = () => {
                 width: "48px",
                 height: "48px",
                 right: -10,
+                objectFit: "contain",
+                boxShadow: 3,
               }}
             >
               <img src={petData.image || puppy}></img>
@@ -210,10 +213,10 @@ const ViewPet = () => {
                       color="#ad9f7a"
                       sx={{
                         color: "#ad9f7a",
-                        fontSize: 16,
+                        fontSize: 18,
                         marginBottom: 0,
                         marginTop: 0,
-                      }}
+                      }} // fontSize: 16,
                       size="xs"
                     />
                   ) : (
@@ -274,7 +277,7 @@ const ViewPet = () => {
                         color="#ad9f7a"
                         sx={{
                           color: "#ad9f7a",
-                          fontSize: 16,
+                          fontSize: 18,
                           marginBottom: 0,
                           marginTop: 0,
                         }}
@@ -286,7 +289,8 @@ const ViewPet = () => {
                         sx={{
                           color: "#880808",
                           fontSize: 5,
-                          paddingLeft: "3px",
+                          paddingLeft: 3,
+                          paddingRight: 1,
                         }}
                         // paddingLeft={1}
                         // paddingRight={1}
@@ -302,7 +306,7 @@ const ViewPet = () => {
                         color="#ad9f7a"
                         sx={{
                           color: "#ad9f7a",
-                          fontSize: 16,
+                          fontSize: 18,
                           marginBottom: 0,
                           marginTop: 0,
                         }}
@@ -314,7 +318,8 @@ const ViewPet = () => {
                         sx={{
                           color: "#880808",
                           fontSize: 5,
-                          paddingLeft: "3px",
+                          paddingLeft: 3,
+                          paddingRight: 1,
                         }}
                       />
                     )}
@@ -327,7 +332,7 @@ const ViewPet = () => {
                         color="#ad9f7a"
                         sx={{
                           color: "#ad9f7a",
-                          fontSize: 16,
+                          fontSize: 19,
                           marginBottom: 0,
                           marginTop: 0,
                         }}
@@ -339,7 +344,8 @@ const ViewPet = () => {
                         sx={{
                           color: "#880808",
                           fontSize: 5,
-                          paddingLeft: "3px",
+                          paddingLeft: 3,
+                          paddingRight: 1,
                         }}
                       />
                     )}
