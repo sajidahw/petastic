@@ -84,11 +84,13 @@ const Pets = () => {
       <Box
         backgroundColor="#624a2c"
         borderRadius={20}
-        mt={28}
+        mt={"15%"}
         height={"auto"}
-        width={"78%"}
+        width={"75%"}
         justifyContent={"center"}
-        p={1}
+        alignItems={"center"}
+        p={2}
+        ml={"12%"}
       >
         <Stack direction={"row"} justifyContent={"center"}>
           <Typography
@@ -98,6 +100,7 @@ const Pets = () => {
               fontWeight: "boldest",
               color: "white",
               textShadow: "2px 2px 2px #f6b96e",
+              justifyContent: "center",
               // backgroundColor: "#624a2c",
             }}
           >
@@ -110,7 +113,7 @@ const Pets = () => {
       </Box>
 
       {/* Container Grid: responsive/adjust layout based on screen size */}
-      <Grid2 container spacing={2} padding={2}>
+      <Grid2 container spacing={2} padding={2} justifyContent={"center"}>
         {pets.length > 0 ? (
           pets.map((pet) => (
             <Grid2 item xs={12} sm={6} md={4} key={pet.id}>
@@ -279,10 +282,14 @@ const Pets = () => {
               color="#624a2c"
               sx={{ textTransform: "capitalize" }}
               fontFamily={"Montserrat"}
-              fontSize={24}
+              fontSize={22}
               fontWeight={"bold"}
+              borderRadius={6}
+              justifyContent={"center"}
+              paddingBottom={2}
+              padding={3}
             >
-              <IconButton />
+              <IconButton size="md" />
               <BrownPrints />
               <IconButton />
               Yelp, all our pets are in happy homes right now. Come back later!
