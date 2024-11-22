@@ -11,7 +11,6 @@ import {
 import React from "react";
 
 const MedicalHistory = ({ petMedicalHistory, setPetMedicalHistory }) => {
-  // const [petMedicalHistory, setPetMedicalHistory] = useState([]);
   const medicalConditions = [
     "Allergies",
     "Arthritis",
@@ -27,18 +26,36 @@ const MedicalHistory = ({ petMedicalHistory, setPetMedicalHistory }) => {
     "None",
   ];
 
+  // const handleChange = (e) => {
+  //   if (e.target.checked) {
+  //     setPetMedicalHistory([...petMedicalHistory, e.target.value]); // checked? new array created with values
+  //   } else {
+  //     setPetMedicalHistory(
+  //       petMedicalHistory.filter((item) => item !== e.target.value)
+  //     ); // unchecked: only adds new values by exluding the unchecked values
+  //   }
+  // };
+
   const handleChange = (e) => {
     if (e.target.checked) {
-      setPetMedicalHistory([...petMedicalHistory, e.target.value]);
+      // checked? new array created with values
+      if (e.target.value === "None") {
+        setPetMedicalHistory(["None"]); // If 'None' is selected, clear other selections by overwriting as 'None'
+      } else {
+        setPetMedicalHistory([
+          ...petMedicalHistory.filter((item) => item !== "None"),
+          e.target.value,
+        ]); // Add the selected value and remove 'None' if it was selected
+      }
     } else {
       setPetMedicalHistory(
         petMedicalHistory.filter((item) => item !== e.target.value)
-      );
+      ); // unchecked: only adds new values by excluding the unchecked values
     }
   };
 
   const handleReset = () => {
-    setPetMedicalHistory([]); // Reset all checkboxes to unchecked
+    setPetMedicalHistory(["None"]); // Reset all checkboxes to unchecked
   };
 
   return (

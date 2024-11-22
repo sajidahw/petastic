@@ -329,7 +329,7 @@ const ViewPet = () => {
                         color="#ad9f7a"
                         sx={{
                           color: "#ad9f7a",
-                          fontSize: 15,
+                          fontSize: 16,
                           marginBottom: 0,
                           marginTop: 0,
                         }}

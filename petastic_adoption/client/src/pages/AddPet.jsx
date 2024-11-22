@@ -49,7 +49,7 @@ const AddPet = () => {
 
   const [petGender, setPetGender] = useState("male");
   const [petSize, setPetSize] = useState("");
-  const [petTemperament, setPetTemperament] = useState("");
+  const [petTemperament, setPetTemperament] = useState("Neutral");
 
   const [petLocation, setPetLocation] = useState("");
 
@@ -198,7 +198,7 @@ const AddPet = () => {
     setPetColor("");
     setPetGender("male");
     setPetSize("");
-    setPetTemperament("");
+    setPetTemperament("Neutral");
     setPetLocation("");
     setPetMedicalHistory(["None"]);
     setPetDescription("");
