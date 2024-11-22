@@ -70,6 +70,8 @@
   overflow: visible;
   width: 150vh; /* added */
   position: relative; /* added */
+  display: flex;
+  /* position: fixed; */
 }
 
 /* NavBar MUI Tab Button Font */

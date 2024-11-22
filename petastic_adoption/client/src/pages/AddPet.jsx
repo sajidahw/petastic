@@ -38,6 +38,7 @@ import OkCats from "../components/OkCats";
 import OkDogs from "../components/OkDogs";
 import ImageUpload from "../components/ImageUpload";
 import Human from "../components/Human";
+import Header from "../components/Header";
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {
