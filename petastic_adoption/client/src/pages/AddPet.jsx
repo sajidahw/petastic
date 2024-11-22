@@ -343,18 +343,15 @@ const AddPet = () => {
               ></TextField>
 
               <div>
-                {/* <Gender /> */}
                 <Gender petGender={petGender} setPetGender={setPetGender} />
               </div>
 
               <div className="space">
-                {/* <Size /> */}
                 {/* Pass the state and setter functions as props */}
                 <Size petSize={petSize} setPetSize={setPetSize} />
               </div>
 
               <div className="space">
-                {/* <Temperament /> */}
                 <Temperament
                   petTemperament={petTemperament}
                   setPetTemperament={setPetTemperament}
