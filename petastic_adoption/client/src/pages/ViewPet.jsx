@@ -5,7 +5,6 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  CardHeader,
   Checkbox,
   Grid2,
   Stack,
@@ -25,7 +24,6 @@ import { useParams, Link as RouterLink } from "react-router-dom";
 import FavoritesIcon from "../components/FavoritesIcon";
 import BrownPrints from "../components/BrownPrints";
 import HumanContact from "../components/HumanContact";
-import OkKids from "../components/OkKids";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
