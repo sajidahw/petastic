@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import {
   Accordion,
@@ -7,15 +7,13 @@ import {
   AccordionSummary,
   Button,
   Typography,
-  Stack,
 } from "@mui/material";
-import puppy from "../assets/images/puppy.jpg";
 import "../App.css";
 import "../index.css";
 import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import { useParams, Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 // FAQ page
