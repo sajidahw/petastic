@@ -455,7 +455,7 @@ const ViewPet = () => {
                   size="small"
                   color="primary"
                   component={RouterLink}
-                  to="/"
+                  to="/pets"
                   sx={{ fontFamily: "espiritu", fontWeight: "boldest" }}
                 >
                   Adopt Me

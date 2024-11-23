@@ -275,26 +275,29 @@ const Pets = () => {
             </Grid2>
           ))
         ) : (
-          <Grid2 item xs={12}>
-            <Typography
-              variant="h2"
-              bgcolor="#f6b96e"
-              color="#624a2c"
-              sx={{ textTransform: "capitalize" }}
-              fontFamily={"Montserrat"}
-              fontSize={22}
-              fontWeight={"bold"}
-              borderRadius={6}
-              justifyContent={"center"}
-              paddingBottom={2}
-              padding={3}
-            >
-              <IconButton size="md" />
-              <BrownPrints />
-              <IconButton />
-              Yelp, all our pets are in happy homes right now. Come back later!
-            </Typography>
-          </Grid2>
+          <div>
+            <Grid2 item xs={12}>
+              <Typography
+                variant="h2"
+                bgcolor="#f6b96e"
+                color="#624a2c"
+                sx={{ textTransform: "capitalize" }}
+                fontFamily={"Montserrat"}
+                fontSize={22}
+                fontWeight={"bold"}
+                borderRadius={6}
+                justifyContent={"center"}
+                paddingBottom={2}
+                padding={3}
+              >
+                <Stack direction={"row"} justifyContent={"center"} p={1}>
+                  <BrownPrints size={"large"} />
+                  Yelp, all our pets are in happy homes right now. Come back
+                  later!
+                </Stack>
+              </Typography>
+            </Grid2>
+          </div>
         )}
       </Grid2>
 

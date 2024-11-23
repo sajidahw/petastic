@@ -16,7 +16,7 @@
   font-weight: bold;
 }
 
-/* Header */
+/* Large Header in Landing Page, "/" */
 .header {
   margin-top: 10em;
   margin-right: 30em;
@@ -31,6 +31,7 @@
   font-weight: 600;
   font-style: bold;
   display: flex;
+  padding-bottom: 5%;
 }
 
 .crimson-text-semibold {
