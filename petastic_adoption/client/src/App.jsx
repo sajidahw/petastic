@@ -19,6 +19,7 @@ import AddPet from "./pages/AddPet";
 import ViewPet from "./pages/ViewPet";
 import Pets from "./pages/Pets";
 import FAQ from "./pages/FAQ";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   // const [showPage, setShowPage] = useState(false);
@@ -72,6 +73,7 @@ function App() {
           <Route path="/pet/:id" element={<ViewPet />} />
           <Route path="/pets" element={<Pets />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/forgot" element={<ForgotPassword />} />
         </Routes>
       </Router>
       {/* </section> */}

@@ -7,6 +7,7 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Link from "@mui/material/Link";
 import { Link as RouterLink } from "react-router-dom";
+import { TiHomeOutline } from "react-icons/ti";
 
 const NavBar = () => {
   const [value, setValue] = React.useState(0);
@@ -26,6 +27,12 @@ const NavBar = () => {
         }}
       >
         <Tabs value={value} onChange={handleChange} centered>
+          <Tab
+            icon={<TiHomeOutline className="homeIcon" />}
+            component={RouterLink}
+            to="/"
+          />
+
           <Tab label="Log In" component={RouterLink} to="/login" />
 
           <Tab label="Add a Pet" component={RouterLink} to="/pet" />
