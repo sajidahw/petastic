@@ -23,6 +23,7 @@ import {
   Typography,
 } from "@mui/material";
 
+// To receive a link for password reset
 const ForgotPassword = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -40,7 +41,7 @@ const ForgotPassword = () => {
     <div>
       <NavBar />
 
-      <div style={{ position: "absolute", left: "90%" }}>
+      <div style={{ position: "absolute", left: "85%" }}>
         <RouterLink to="/">
           <img
             className="login-header"
@@ -61,7 +62,6 @@ const ForgotPassword = () => {
               mb: 1,
               fontWeight: 700,
               fontSize: 31,
-              fontWeight: "bold",
             }}
           >
             <CgPassword />
@@ -85,7 +85,6 @@ const ForgotPassword = () => {
               component="h5"
               variant="body1"
               sx={{
-                // textAlign: "center",
                 color: "#736b59",
                 fontWeight: "bold",
                 fontFamily: "espiritu",
@@ -133,15 +132,6 @@ const ForgotPassword = () => {
               type="submit"
               fullWidth
               variant="contained"
-              // sx={{
-              //   mt: 2,
-              //   mb: 1,
-              //   bgcolor: "#ad9f7a",
-              //   color: "#white",
-              //   fontWeight: "bold",
-              //   borderRadius: 20,
-              //   fontSize: 16,
-              // }}
               onClick={handleSubmit}
             >
               Retrieve Password
