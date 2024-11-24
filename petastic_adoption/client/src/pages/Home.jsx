@@ -1,4 +1,3 @@
-// Home page which is the landing page for the website
 import React from "react";
 import Header from "../components/Header";
 import NavBar from "../components/NavBar";
@@ -6,6 +5,7 @@ import Footer from "../components/Footer";
 import "../App.css";
 import "../index.css";
 
+// Home page which is the landing page for the website
 const Home = () => {
   return (
     <div>
@@ -13,7 +13,7 @@ const Home = () => {
       <div className="header">
         <Header />
       </div>
-    
+
       <footer className="footer">
         <Footer />
       </footer>
