@@ -22,6 +22,7 @@ import "../index.css";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
 import { useNavigate } from "react-router-dom";
+import InternalHeaderLogo from "../components/InternalHeaderLogo";
 
 // Login page for users to login to their account
 const LogIn = () => {
@@ -46,14 +47,7 @@ const LogIn = () => {
     <div>
       <NavBar />
 
-      <div style={{ position: "absolute", left: "85%" }}>
-        <RouterLink to="/">
-          <img
-            className="login-header"
-            src={Small_Circular_Logo_Petastic180title}
-          />
-        </RouterLink>
-      </div>
+      <InternalHeaderLogo />
 
       <Container className="login-background" maxWidth="sm" sx={{ pt: 29 }}>
         <Paper elevation={10} sx={{ marginTop: 8, padding: 2 }}>

@@ -22,6 +22,7 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
+import InternalHeaderLogo from "../components/InternalHeaderLogo";
 
 // To receive a link for password reset
 const ForgotPassword = () => {
@@ -41,15 +42,7 @@ const ForgotPassword = () => {
     <div>
       <NavBar />
 
-      <div style={{ position: "absolute", left: "85%" }}>
-        <RouterLink to="/">
-          <img
-            className="login-header"
-            src={Small_Circular_Logo_Petastic180title}
-            alt="Petastic Logo"
-          />
-        </RouterLink>
-      </div>
+      <InternalHeaderLogo />
 
       <Container className="login-background" maxWidth="sm" sx={{ pt: 29 }}>
         <Paper elevation={10} sx={{ marginTop: 8, padding: 2 }}>

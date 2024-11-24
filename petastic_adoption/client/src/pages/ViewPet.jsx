@@ -32,6 +32,7 @@ import FavoritesIcon from "../components/FavoritesIcon";
 import BrownPrints from "../components/BrownPrints";
 import HumanContact from "../components/HumanContact";
 import { FaPaw, FaRegHeart } from "react-icons/fa";
+import InternalHeaderLogo from "../components/InternalHeaderLogo";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
@@ -152,15 +153,7 @@ const ViewPet = () => {
     <div>
       <NavBar />
 
-      <div style={{ position: "absolute", left: "85%" }}>
-        <RouterLink to="/">
-          <img
-            className="login-header"
-            src={Small_Circular_Logo_Petastic180title}
-            alt="Petastic Logo"
-          />
-        </RouterLink>
-      </div>
+      <InternalHeaderLogo />
 
       <div style={{ margin: "18%" }}>
         <Card

@@ -4,7 +4,7 @@ import { TiHomeOutline } from "react-icons/ti";
 import NavBar from "../components/NavBar";
 import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
 import Footer from "../components/Footer";
-
+import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import {
   Avatar,
   Box,
@@ -48,14 +48,8 @@ const Register = () => {
   return (
     <div>
       <NavBar />
-      <div style={{ position: "absolute", left: "85%" }}>
-        <RouterLink to="/">
-          <img
-            className="login-header"
-            src={Small_Circular_Logo_Petastic180title}
-          />
-        </RouterLink>
-      </div>
+
+      <InternalHeaderLogo />
 
       <Container className="" maxWidth="sm" sx={{ pt: 29 }}>
         <Paper elevation={10} sx={{ marginTop: 8, padding: 2 }}>

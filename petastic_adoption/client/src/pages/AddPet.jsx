@@ -32,7 +32,7 @@ import OkCats from "../components/OkCats";
 import OkDogs from "../components/OkDogs";
 import ImageUpload from "../components/ImageUpload";
 import Human from "../components/Human";
-import Header from "../components/Header";
+import InternalHeaderLogo from "../components/InternalHeaderLogo";
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {
@@ -213,14 +213,7 @@ const AddPet = () => {
     <div>
       <NavBar />
 
-      <div style={{ position: "absolute", left: "85%" }}>
-        <RouterLink to="/">
-          <img
-            className="login-header"
-            src={Small_Circular_Logo_Petastic180title}
-          />
-        </RouterLink>
-      </div>
+      <InternalHeaderLogo />
 
       <Container className="" maxWidth="md" sx={{ pt: 29 }}>
         <Paper elevation={10} sx={{ marginTop: 8, padding: 2 }}>

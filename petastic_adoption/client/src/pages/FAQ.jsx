@@ -15,6 +15,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link as RouterLink } from "react-router-dom";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import InternalHeaderLogo from "../components/InternalHeaderLogo";
 
 // FAQ page
 const FAQ = () => {
@@ -22,15 +23,7 @@ const FAQ = () => {
     <div>
       <NavBar />
 
-      <div style={{ position: "absolute", left: "85%" }}>
-        <RouterLink to="/">
-          <img
-            className="login-header"
-            src={Small_Circular_Logo_Petastic180title}
-            alt="Petastic Logo"
-          />
-        </RouterLink>
-      </div>
+      <InternalHeaderLogo />
 
       <div style={{ margin: "20%" }}>
         <Typography
