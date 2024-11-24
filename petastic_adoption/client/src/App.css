@@ -95,7 +95,8 @@
   text-shadow: 1px 1px 1px black;
 }
 
+/*Breaking Drop down selector so commented out for now*/
 /* Prevent MUI bug that brought browser warnings */
-div[aria-hidden="true"] {
+/* div[aria-hidden="true"] {
   display: none;
-}
+} */
