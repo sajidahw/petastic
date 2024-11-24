@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from "react";
 import {
   Alert,
+  Avatar,
+  Box,
   Button,
   Card,
   CardActions,
   CardContent,
   CardMedia,
   Checkbox,
-  Grid2,
-  Snackbar,
-  Stack,
-  Typography,
+  Container,
   CardActionArea,
   Dialog,
   DialogActions,
   DialogTitle,
   DialogContent,
   DialogContentText,
-  Avatar,
+  Grid2,
   IconButton,
+  Paper,
+  Snackbar,
+  Stack,
+  Typography,
 } from "@mui/material";
 import { RiCheckboxIndeterminateFill } from "react-icons/ri";
 import puppy from "../assets/images/puppy.jpg";
@@ -33,6 +36,7 @@ import BrownPrints from "../components/BrownPrints";
 import HumanContact from "../components/HumanContact";
 import { FaPaw, FaRegHeart } from "react-icons/fa";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
+import { BiSolidError } from "react-icons/bi";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
@@ -129,22 +133,61 @@ const ViewPet = () => {
             />
           </RouterLink>
         </div>
-        <Stack
-          margin={"20%"}
-          alignContent={"center"}
-          width={"40%"}
-          p={4}
-          style={{
-            color: "white",
-            backgroundColor: "#9c8f6e",
-            fontFamily: "espiritu",
-            fontSize: 24,
-            borderRadius: 20,
-            alignItems: "center",
-          }}
-        >
-          That pet doesn't exist...it may just have been adopted!!
-        </Stack>
+
+        <Container className="login-background" maxWidth="sm" sx={{ pt: 29 }}>
+          <Paper elevation={10} sx={{ marginTop: 8, padding: 2 }}>
+            <Avatar
+              className="avatar"
+              sx={{
+                mx: "auto",
+                bgcolor: "#ad9f7a",
+                textAlign: "center",
+                mb: 1,
+                fontWeight: 700,
+                fontSize: 30,
+                padding: 0.2,
+              }}
+            >
+              <BiSolidError />
+            </Avatar>
+
+            <Typography
+              component="h1"
+              variant="h5"
+              sx={{
+                textAlign: "center",
+                color: "#635b46",
+                fontWeight: "bold",
+                fontFamily: "espiritu",
+                justifyContent: "center",
+                mb: 2,
+              }}
+              alignContent={"center"}
+            >
+              Oops..
+            </Typography>
+
+            {/* <Box sx={{ mt: 1, p: 2, alignContent: "center" }}> */}
+            <Stack spacing={1} direction="row" justifyContent="center" mt={3}>
+              <Typography
+                component="h1"
+                variant="h5"
+                sx={{
+                  textAlign: "center",
+                  // color: "#635b46",
+                  color: "#736b59",
+                  fontWeight: "bold",
+                  fontFamily: "espiritu",
+                  padding: 2,
+                  fontSize: 18,
+                }}
+              >
+                That pet doesn't exist...it may just have been adopted!!
+              </Typography>
+            </Stack>
+            {/* </Box> */}
+          </Paper>
+        </Container>
       </div>
     );
   }
