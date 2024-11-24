@@ -15,7 +15,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Gender from "../components/Gender";

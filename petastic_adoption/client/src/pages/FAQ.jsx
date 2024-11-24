@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Accordion,
   AccordionActions,
@@ -10,7 +9,6 @@ import {
 } from "@mui/material";
 import "../App.css";
 import "../index.css";
-import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { Link as RouterLink } from "react-router-dom";

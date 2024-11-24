@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { TiHomeOutline } from "react-icons/ti";
 import NavBar from "../components/NavBar";
-import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
 import Footer from "../components/Footer";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import {
