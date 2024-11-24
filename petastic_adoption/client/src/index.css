@@ -63,8 +63,6 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    /* color: #747bff; */
-    /* color: #827c6b; */
     color: #736b59;
     font-weight: bolder;
   }
@@ -78,7 +76,6 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 0.5em; 18em */
   padding: 13em;
   color: #f7e3af;
 }
@@ -93,8 +90,6 @@ img.heart {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 4em; */
-  /* padding: 0.5em; */
   color: #f7e3af;
 }
 
@@ -128,7 +123,6 @@ button.submitPet-button {
   font-size: 16px;
   width: 35%;
   margin-left: 4%;
-  /* margin-right: 40px; */
 }
 
 button.resetPet-button {
@@ -141,7 +135,6 @@ button.resetPet-button {
   font-size: 16px;
   width: 35%;
   margin-left: 25%;
-  /* margin-right: 40px; */
 }
 
 /* p footer */
@@ -161,16 +154,13 @@ button.resetPet-button {
   flex: 1;
 }
 
+/* used in the Container*/
 .login-background {
   /* background: url("./assets/sand_prints.png"); */
   background-size: cover;
   background-position: center;
-  /* border-radius: 20px; */
-  /* min-height: 100vh; */
-  /* width: 100%; */
   margin: 0;
   padding: 0;
-  /* height: 100%; */
 }
 
 body {
@@ -185,18 +175,10 @@ body {
 img {
   max-width: 100%;
   height: auto;
-  /* display: block; */
-  /* background-color: rgba(64,159,219,0.2); */
-  /* border-radius: 125%; */
 }
 
 /* small circular login header on all pages except "/" Landing*/
 .login-header {
-  /* background-position-y: bottom; */
-  /* position: sticky; */
-  /* top: -30px;
-  right: 50px; */
-  /* left: 100%; */
   margin-left: 80%;
   padding-right: 5px;
   padding-top: 2px;
@@ -205,12 +187,10 @@ img.login-header {
   margin-top: -6px;
   transform: scale(-40);
   width: 20px;
-  /* transform: rotateX(180deg); */
 }
 
 .homeIcon {
   font-size: 1.6em;
-  /* color: #948869; */
   font-weight: 800;
 }
 
@@ -224,7 +204,6 @@ img.login-header {
   width: 80%;
   justify-content: center;
   height: auto;
-  /* overflow: hidden; */
   display: inline-block;
   border-radius: 50%;
   background-color: rgba(64, 159, 219, 0.2);
@@ -232,7 +211,6 @@ img.login-header {
 }
 .transparent img {
   display: block;
-  /* width: 100%; */
   height: auto;
   border-radius: 50%;
   padding: 0px;

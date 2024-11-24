@@ -22,7 +22,7 @@ const ImageUpload = ({ petImage, setPetImage, petName }) => {
         setPreview(reader.result);
       };
       reader.readAsDataURL(file);
-      // setPetImage(file);
+      setPetImage(file);
       // setPreview(URL.createObjectURL(file));
     }
   };
@@ -30,7 +30,7 @@ const ImageUpload = ({ petImage, setPetImage, petName }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     // Implement future upload logic here, e.g., send the file to the server
-    console.log("File submitted:", petImage); //petImage
+    console.log("File submitted:", petImage);
   };
 
   return (

@@ -21,6 +21,8 @@ import {
   IconButton,
   Stack,
   Typography,
+  Paper,
+  Container,
 } from "@mui/material";
 import { FaPaw } from "react-icons/fa";
 
@@ -28,15 +30,6 @@ import { FaPaw } from "react-icons/fa";
 const Pets = () => {
   // no props since displaying ALL pets
   const [pets, setPets] = useState([]);
-
-  // Fetch all pets from the database or local storage
-  // useEffect(() => {
-  //   fetch("/api/pets")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       setPets(data);
-  //     });
-  // }, []);
 
   // Fetch all pets from the local storage
   useEffect(() => {
@@ -51,7 +44,6 @@ const Pets = () => {
           if (pet) {
             petsList.push(pet);
           }
-          // petsList.push(pet);
         }
       }
 
@@ -94,7 +86,6 @@ const Pets = () => {
               color: "white",
               textShadow: "2px 2px 2px #f6b96e",
               justifyContent: "center",
-              // backgroundColor: "#624a2c",
             }}
           >
             <Stack direction={"row"} justifyContent={"center"}>
@@ -155,7 +146,6 @@ const Pets = () => {
                         width: "48px",
                         height: "48px",
                         right: -10,
-                        // objectFit: "contain",
                         boxShadow: 3,
                       }}
                     >
@@ -168,7 +158,6 @@ const Pets = () => {
                       sx={{
                         fontFamily: "espiritu",
                         fontWeight: "boldest",
-                        // backgroundColor: "#f6b96e",
                         fontSize: "1.4em",
                       }}
                     >
@@ -186,7 +175,7 @@ const Pets = () => {
                     >
                       <Grid2
                         container
-                        columnSpacing={{ xs: 1, sm: 2, md: 3 }} //1, 2, 3
+                        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
                         rowSpacing={1.5}
                       >
                         <Grid2 size={6}>
@@ -270,26 +259,31 @@ const Pets = () => {
           ))
         ) : (
           <div>
-            <Grid2 item xs={12}>
-              <Typography
-                variant="h2"
-                bgcolor="#f6b96e"
-                color="#624a2c"
-                sx={{ textTransform: "capitalize" }}
-                fontFamily={"Montserrat"}
-                fontSize={22}
-                fontWeight={"bold"}
-                borderRadius={6}
-                justifyContent={"center"}
-                paddingBottom={2}
-                padding={3}
+            <Grid2 item xs={12} bgcolor="#f6b96e" borderRadius={6} mt={3}>
+              <Container
+                className="login-background"
+                maxWidth="sm"
+                sx={{ pt: 2 }}
               >
                 <Stack direction={"row"} justifyContent={"center"} p={1}>
-                  <BrownPrints size={"large"} />
-                  Yelp, all our pets are in happy homes right now. Come back
-                  later!
+                  {/* <BrownPrints /> */}
+                  <FaPaw color="#990000" fontSize={62} />
+                  <Typography
+                    variant="h2"
+                    color="#624a2c"
+                    sx={{ textTransform: "capitalize" }}
+                    fontFamily={"Montserrat"}
+                    fontSize={22}
+                    fontWeight={"bold"}
+                    justifyContent={"center"}
+                    paddingBottom={2}
+                    padding={3}
+                  >
+                    Yelp, all our pets are in happy homes right now. Come back
+                    later!
+                  </Typography>
                 </Stack>
-              </Typography>
+              </Container>
             </Grid2>
           </div>
         )}
