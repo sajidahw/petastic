@@ -9,7 +9,6 @@ const corsOptions = {
   origin: "http://localhost:5173", // vite
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE",
-  
 };
 
 app.use(cors(corsOptions));
@@ -17,8 +16,7 @@ app.use(cors(corsOptions));
 // routes
 // index route for server to send info response to client
 app.get("/", (req, res) => {
-  res.send(`'Welcome! This will be the landing Petastic Adoption page. 🐕'`);
-
+  res.send(`'Welcome to Petastic, an Animal Adoption site. 🐕'`);
 });
 
 // URL Endpoints to access the rest of the website
