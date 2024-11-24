@@ -8,22 +8,28 @@ A CS 467 Capstone Project: Providing a website to connect humans to available pe
 
 Clone the repository and install the dependencies.
 
-    ```
-    git clone https://github.com/sajidahw/petastic.git
-    cd petastic
-    npm install
-    ```
+```bash
+
+git clone https://github.com/sajidahw/petastic.git
+cd petastic
+npm install
+
+```
 
 ## Run
 
 Open up a terminal for the backend to run the following commands:
 
-    ```
-    npm run dev
-    ```
+```bash
+
+npm run dev
+
+```
 
 Open up another terminal for the frontend to run the following commands:
 
-    ```
-    npm run dev
-    ```
+```bash
+
+npm run dev
+
+```
