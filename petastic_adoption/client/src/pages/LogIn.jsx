@@ -21,12 +21,14 @@ import "../App.css";
 import "../index.css";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
-import Header from "../components/Header";
+import { useNavigate } from "react-router-dom";
 
+// Login page for users to login to their account
 const LogIn = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,13 +38,15 @@ const LogIn = () => {
       remember: remember,
     };
     console.log("Login data: ", credentials);
+    // auth?
+    navigate("/pets");
   };
 
   return (
     <div>
       <NavBar />
 
-      <div>
+      <div style={{ position: "absolute", left: "85%" }}>
         <RouterLink to="/">
           <img
             className="login-header"
@@ -86,7 +90,7 @@ const LogIn = () => {
             sx={{ mt: 1 }}
           >
             <TextField
-              placeholder="Enter Username"
+              placeholder="Enter Email Address"
               name="username"
               id="username"
               value={username}
@@ -121,15 +125,6 @@ const LogIn = () => {
               type="submit"
               fullWidth
               variant="contained"
-              // sx={{
-              //   mt: 2,
-              //   mb: 1,
-              //   bgcolor: "#ad9f7a",
-              //   color: "#white",
-              //   fontWeight: "bold",
-              //   borderRadius: 20,
-              //   fontSize: 16,
-              // }}
               onClick={handleSubmit}
             >
               Sign In
