@@ -1,4 +1,8 @@
 # Petastic
+<p align="center">
+<img src="https://github.com/user-attachments/assets/cb8e612a-d005-4fba-a8ba-b6dead7fd14b" width="90%" height="60%">
+</p>
+
 
 ### Description
 
