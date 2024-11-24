@@ -7,16 +7,10 @@ import {
   Avatar,
   Box,
   Button,
-  Checkbox,
   Container,
   FormControl,
-  FormControlLabel,
   FormLabel,
-  Grid2,
-  Link,
   MenuItem,
-  Radio,
-  RadioGroup,
   Paper,
   TextField,
   Typography,
@@ -65,12 +59,12 @@ const AddPet = () => {
   const [petOkWithDogs, setPetOkWithDogs] = useState("yes");
   const [petImage, setPetImage] = useState(null);
 
-  // const [human, setHuman] = useState("");
+  // human contact info
   const [humanName, setHumanName] = useState("");
   const [humanEmail, setHumanEmail] = useState("");
   const [humanPhone, setHumanPhone] = useState("");
 
-  const [petData, setPetData] = useState([]); // still keep here?
+  const [petData, setPetData] = useState([]); // not used as a prop bc it's not passed to another component
 
   const navigate = useNavigate();
   const api_url = import.meta.env.VITE_API_URL; // instead of process.env.REACT_APP_API_URL
@@ -219,7 +213,7 @@ const AddPet = () => {
     <div>
       <NavBar />
 
-      <div>
+      <div style={{ position: "absolute", left: "85%" }}>
         <RouterLink to="/">
           <img
             className="login-header"
