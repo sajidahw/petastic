@@ -48,7 +48,7 @@ const Register = () => {
   return (
     <div>
       <NavBar />
-      <div>
+      <div style={{ position: "absolute", left: "85%" }}>
         <RouterLink to="/">
           <img
             className="login-header"
@@ -153,15 +153,6 @@ const Register = () => {
               type="submit"
               fullWidth
               variant="contained"
-              // sx={{
-              //   mt: 2,
-              //   mb: 1,
-              //   bgcolor: "#ad9f7a",
-              //   color: "#white",
-              //   fontWeight: "bold",
-              //   borderRadius: 20,
-              //   fontSize: 16,
-              // }}
               onClick={handleSubmit}
             >
               Create Account
