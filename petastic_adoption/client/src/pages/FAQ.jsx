@@ -22,7 +22,7 @@ const FAQ = () => {
     <div>
       <NavBar />
 
-      <div style={{ position: "absolute", left: "90%" }}>
+      <div style={{ position: "absolute", left: "85%" }}>
         <RouterLink to="/">
           <img
             className="login-header"
@@ -163,6 +163,42 @@ const FAQ = () => {
               The "Adopt Me" button inside a pet's profile will remove the pet
               from being shown. Only available pets are listed in the "Pets"
               gallery.
+            </AccordionDetails>
+          </Accordion>
+
+          <Accordion
+            sx={{
+              border: 2,
+              borderRadius: 10,
+              boxShadow: 10,
+              borderColor: "#c59458",
+              backgroundColor: "#f6b96e",
+            }}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2-content"
+              id="panel2-header"
+              sx={{
+                backgroundColor: "#f8c78b",
+                color: "#624a2c",
+                fontFamily: "espiritu",
+                fontWeight: "boldest",
+              }}
+            >
+              How are Pets sourced?
+            </AccordionSummary>
+
+            <AccordionDetails
+              sx={{
+                backgroundColor: "#fdf1e2",
+                borderRadius: 1,
+                textTransform: "initial",
+              }}
+            >
+              Anyone can contribute to listing a pet by filling out a form and
+              supplying their contact information. If we receive complaints
+              about a listing or the human behind it, we will remove it.
             </AccordionDetails>
           </Accordion>
 
