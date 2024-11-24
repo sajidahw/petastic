@@ -1,19 +1,13 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import NavBar from "../components/NavBar";
-import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "../App.css";
 import "../index.css";
 import puppy from "../assets/images/puppy.jpg";
 
 import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
-import {
-  useParams,
-  useNavigate,
-  Link as RouterLink,
-  Router,
-} from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 import BrownPrints from "../components/BrownPrints";
 import FavoritesIcon from "../components/FavoritesIcon";
 import {
@@ -28,10 +22,10 @@ import {
   IconButton,
   Stack,
   Typography,
-  CardHeader,
 } from "@mui/material";
+import { FaPaw } from "react-icons/fa";
 
-// This is the Pets gallery or listings page
+// This is the Pets gallery or listings page of Available Pets
 const Pets = () => {
   // no props since displaying ALL pets
   const [pets, setPets] = useState([]);
@@ -72,7 +66,7 @@ const Pets = () => {
     <div>
       <NavBar />
 
-      <div>
+      <div style={{ position: "absolute", left: "87%", top: "1.5%" }}>
         <RouterLink to="/">
           <img
             className="login-header"
@@ -259,6 +253,7 @@ const Pets = () => {
                         marginBottom: "1px",
                         marginTop: "20px",
                       }}
+                      startIcon={<FaPaw />}
                     >
                       View Details
                     </Button>
