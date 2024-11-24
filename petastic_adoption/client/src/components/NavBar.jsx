@@ -5,12 +5,11 @@ import { useState } from "react";
 import Box from "@mui/material/Box";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import Link from "@mui/material/Link";
 import { Link as RouterLink } from "react-router-dom";
 import { TiHomeOutline } from "react-icons/ti";
 
 const NavBar = () => {
-  const [value, setValue] = React.useState(0);
+  const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -23,7 +22,7 @@ const NavBar = () => {
           width: "40%",
           bgcolor: "#f6b96e",
           borderRadius: 2,
-          boxShadow: 0.5,
+          boxShadow: 0.8,
         }}
       >
         <Tabs value={value} onChange={handleChange} centered>
