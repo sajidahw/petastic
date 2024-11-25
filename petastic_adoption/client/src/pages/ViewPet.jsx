@@ -213,7 +213,7 @@ const ViewPet = () => {
             image={petData.image || puppy}
             // image={puppy}
             alt={petData.name}
-            sx={{ height: "auto", objectFit: "contain" }}
+            sx={{ height: "auto", objectFit: "cover" }}
           />
 
           <Stack
