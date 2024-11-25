@@ -83,7 +83,7 @@ const ViewPet = () => {
     setTimeout(() => {
       navigate("/pets");
       console.log("Navigated to /pets.");
-    }, 5000); // 5-second delay; matches Snackbar autoHideDuration
+    }, 4000); // 4-second delay; matches Snackbar autoHideDuration
   };
 
   // Clicking on disagree during Adoption Confirmation Dialog: closes the dialog and returns to /pets page
@@ -167,7 +167,6 @@ const ViewPet = () => {
               Oops..
             </Typography>
 
-            {/* <Box sx={{ mt: 1, p: 2, alignContent: "center" }}> */}
             <Stack spacing={1} direction="row" justifyContent="center" mt={3}>
               <Typography
                 component="h1"
@@ -185,7 +184,6 @@ const ViewPet = () => {
                 That pet doesn't exist...it may just have been adopted!!
               </Typography>
             </Stack>
-            {/* </Box> */}
           </Paper>
         </Container>
       </div>
@@ -216,7 +214,6 @@ const ViewPet = () => {
             // image={puppy}
             alt={petData.name}
             sx={{ height: "auto", objectFit: "contain" }}
-            // sx={{ height: 360 }} // "auto"; added contain
           />
 
           <Stack
@@ -658,7 +655,7 @@ const ViewPet = () => {
         {/* Inline Snackbar Implementation Due to Mui Alert Deprecation and CSS Conflict*/}
         <Snackbar
           open={snackOpen}
-          autoHideDuration={5000} // match handleAdoptMe's setTimeout
+          autoHideDuration={4000} // match handleAdoptMe's setTimeout
           onClose={handleSnackClose}
           anchorOrigin={{ vertical: "top", horizontal: "center" }}
         >
