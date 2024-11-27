@@ -54,29 +54,65 @@ npm run dev
 
 ## Demo Screenshots:
 
-### Home Page
+### Home Page:
+<p align="center">
+<img width="70%" alt="Home" src="https://github.com/user-attachments/assets/d6b026f0-af4c-46eb-a1a6-d75cc7382a84">
+</p>
+
+<br>
+
+### Login Page:
+<p align="center">
+<img width="70%" alt="LogIn" src="https://github.com/user-attachments/assets/0c605af3-c220-4c5f-ab1a-3e959b57c3a0">
+</p>
+
+<br>
 
 
-### Login Page
+### Register Page:
+<p align="center">
+<img width="70%" alt="Register" src="https://github.com/user-attachments/assets/1294de48-e466-4f9f-b7f8-48154da2bbd3">
+</p>
+
+<br>
 
 
-### Register Page
+### Forgot Password Page:
+<p align="center">
+<img width="70%" alt="ForgotPassword" src="https://github.com/user-attachments/assets/6de427c9-9cde-4901-82cf-55870e88144b">
+</p>
+
+<br>
 
 
-### Forgot Password Page
+### Adding a Pet Page:
+<p align="center">
+<img width="30%" alt="AddPet" src="https://github.com/user-attachments/assets/fda809db-52d5-4900-ae3b-04d28d4713f8">
+</p>
+
+<br>
 
 
-### Adding a Pet Page
+
+### Pet Details Page:
+<p align="center">
+<img width="45%" alt="ViewPet" src="https://github.com/user-attachments/assets/0a2fcc83-36ee-4ee7-9e87-97f610c72699">
+</p>
+
+<br>
 
 
+### Available Pets Gallery Page:
+<p align="center">
+<img width="70%" alt="Pets" src="https://github.com/user-attachments/assets/fd33864f-7ddb-486e-b66a-3fe5d6d2428d">
+</p>
 
-### Pet Details Page
+<br>
 
 
-### Available Pets Gallery Page
-
-
-### FAQ Page
-
+### FAQ Page:
+<p align="center">
+<img width="70%" alt="FAQ" src="https://github.com/user-attachments/assets/25f1912a-8861-4cbb-b114-f8ea8502139f">
+</p>
 
 
