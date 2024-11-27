@@ -47,3 +47,6 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Petastic Server is running on port ${PORT} 🐾`);
 });
+
+// exporting the Express API to Vercel to be a serverless function
+module.exports = app;
