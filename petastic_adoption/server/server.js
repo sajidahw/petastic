@@ -17,12 +17,16 @@ const corsOptions = {
   allowedOrigins: [
     "http://localhost:5173",
     "https://petastic-bv3nso98u-summersws-projects.vercel.app",
+    "https://petastic.vercel.app/",
+    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
+    "http://localhost:8181",
   ],
   allow_origins_without_credentials: ["*"],
   allow_origins_with_credentials: [
     "https://petastic.vercel.app/",
     "https://petastic-bv3nso98u-summersws-projects.vercel.app",
     "http://localhost:8181",
+    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
   ],
 };
 
