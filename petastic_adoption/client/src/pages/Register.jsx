@@ -24,6 +24,7 @@ import "../App.css";
 import "../index.css";
 import { Link as RouterLink } from "react-router-dom";
 import LogIn from "../pages/LogIn";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const [firstName, setFirstName] = useState("");
@@ -42,6 +43,7 @@ const Register = () => {
       terms: terms,
     };
     console.log("Registration data: ", registrationData);
+    Navigate("/login");
   };
 
   return (
