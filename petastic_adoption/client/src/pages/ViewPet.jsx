@@ -509,14 +509,16 @@ const ViewPet = () => {
 
                   <Grid2 size={4} mr={1}>
                     <Grid2 Item>
-                      <strong>Human Email:</strong> {petData.humanEmail}
+                      <strong>Human Email:</strong>
                     </Grid2>
+                    <Grid2 Item>{petData.humanEmail}</Grid2>
                   </Grid2>
 
-                  <Grid2 size={2.5}>
+                  <Grid2 size={3}>
                     <Grid2 Item>
-                      <strong>Human Phone:</strong> {petData.humanPhone}
+                      <strong>Human Phone:</strong>
                     </Grid2>
+                    <Grid2 Item>{petData.humanPhone}</Grid2>
                   </Grid2>
                 </Grid2>
               </Stack>
