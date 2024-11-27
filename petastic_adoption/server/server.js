@@ -9,6 +9,8 @@ const corsOptions = {
   origin: "http://localhost:5173", // vite
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE",
+  allow_origins_without_credentials: ["*"],
+  allow_origins_with_credentials: ["https://petastic.vercel.app/"],
 };
 
 app.use(cors(corsOptions));
