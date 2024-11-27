@@ -511,7 +511,12 @@ const ViewPet = () => {
                     <Grid2 Item>
                       <strong>Human Email:</strong>
                     </Grid2>
-                    <Grid2 Item>{petData.humanEmail}</Grid2>
+                    <Typography
+                      fontFamily={"Montserrat"}
+                      sx={{ textTransform: "none" }}
+                    >
+                      <Grid2 Item>{petData.humanEmail}</Grid2>
+                    </Typography>
                   </Grid2>
 
                   <Grid2 size={3}>
