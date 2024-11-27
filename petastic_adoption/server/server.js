@@ -6,7 +6,10 @@ const app = express();
 const cors = require("cors"); // frontend and backend are on different servers; accepts requests from different origins
 const PORT = process.env.PORT || 8181;
 const corsOptions = {
-  origin: "http://localhost:5173", // vite
+  origin: [
+    "http://localhost:5173",
+    "https://petastic-qedblzsby-summersws-projects.vercel.app",
+  ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE",
   headers: "Content-Type, Authorization",
