@@ -14,6 +14,7 @@ const corsOptions = {
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE",
   headers: "Content-Type, Authorization",
+  credentials: true,
   allowedOrigins: [
     "http://localhost:5173",
     "https://petastic-bv3nso98u-summersws-projects.vercel.app",
@@ -28,6 +29,7 @@ const corsOptions = {
     "http://localhost:8181",
     "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
   ],
+  "Access-Control-Allow-Origin": "https://petastic-qshcbxkjo-summersws-projects.vercel.app"
 };
 
 app.use(cors(corsOptions));
