@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 8181;
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://petastic-qedblzsby-summersws-projects.vercel.app",
+    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
+    "https://petastic.vercel.app",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE",
