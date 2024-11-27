@@ -97,7 +97,13 @@ const Pets = () => {
       </Box>
 
       {/* Container Grid: responsive/adjust layout based on screen size */}
-      <Grid2 container spacing={2} padding={2} justifyContent={"center"}>
+      <Grid2
+        container
+        spacing={2}
+        padding={2}
+        justifyContent={"center"}
+        display={"flex"}
+      >
         {pets.length > 0 ? (
           pets.map((pet) => (
             <Grid2 item xs={12} sm={6} md={4} key={pet.id}>
@@ -120,15 +126,16 @@ const Pets = () => {
                 >
                   <CardMedia
                     component="img"
-                    height="auto"
+                    // height="auto"
                     loading="lazy"
                     // image={puppy}
                     image={pet.image || puppy}
                     alt={pet.name}
                     sx={{
-                      // objectFit: "contain",
+                      objectFit: "cover",
                       borderRadius: "8px",
                       boxShadow: "0 0 10px 0",
+                      height: "400px",
                     }}
                   />
 

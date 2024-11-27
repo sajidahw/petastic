@@ -199,7 +199,7 @@ const ViewPet = () => {
       <div style={{ margin: "18%" }}>
         <Card
           sx={{
-            maxWidth: "90%", //345,450, 90%
+            maxWidth: "90%",
             alignContent: "center",
             borderRadius: 6,
             boxShadow: 10,
@@ -213,7 +213,7 @@ const ViewPet = () => {
             image={petData.image || puppy}
             // image={puppy}
             alt={petData.name}
-            sx={{ height: "auto", objectFit: "cover" }}
+            sx={{ height: "auto", objectFit: "cover", height: "80%" }}
           />
 
           <Stack
