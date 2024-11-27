@@ -32,6 +32,7 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [terms, setTerms] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,7 +44,7 @@ const Register = () => {
       terms: terms,
     };
     console.log("Registration data: ", registrationData);
-    Navigate("/login");
+    navigate("/login");
   };
 
   return (
