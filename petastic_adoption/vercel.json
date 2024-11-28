@@ -8,31 +8,31 @@
   "routes": [
     {
       "src": "./login",
-      "dest": "./login"
+      "dest": "./index.html"
     },
     {
       "src": "./register",
-      "dest": "./register"
+      "dest": "./index.html"
     },
     {
       "src": "./pet",
-      "dest": "./pet"
+      "dest": "./index.html"
     },
     {
       "src": "./pet/:id",
-      "dest": "./pet/:id"
+      "dest": "./index.html"
     },
     {
       "src": "./pets",
-      "dest": "./pets"
+      "dest": "./index.html"
     },
     {
       "src": "./faq",
-      "dest": "./faq"
+      "dest": "./index.html"
     },
     {
       "src": "./forgot",
-      "dest": "./forgot"
+      "dest": "./index.html"
     },
 
     {
