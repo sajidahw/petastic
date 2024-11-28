@@ -1,43 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "./(.*)",
-      "destination": "./"
-    }
-  ],
-  "routes": [
-    {
-      "src": "./login",
-      "dest": "./"
-    },
-    {
-      "src": "./register",
-      "dest": "./"
-    },
-    {
-      "src": "./pet",
-      "dest": "./"
-    },
-    {
-      "src": "./pet/:id",
-      "dest": "./"
-    },
-    {
-      "src": "./pets",
-      "dest": "./"
-    },
-    {
-      "src": "./faq",
-      "dest": "./"
-    },
-    {
-      "src": "./forgot",
-      "dest": "./"
-    },
-
-    {
-      "src": "./(.*)",
-      "dest": "./index.html"
+      "source": "/(.*)",
+      "destination": "/"
     }
   ]
 }
