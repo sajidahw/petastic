@@ -1,4 +1,10 @@
 {
+  "rewrites": [
+    {
+      "source": "/:path((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
@@ -40,12 +46,6 @@
     {
       "src": "/(.*)",
       "dest": "https://petastic.vercel.app/"
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/:path((?!api/).*)",
-      "destination": "/index.html"
     }
   ]
 }
