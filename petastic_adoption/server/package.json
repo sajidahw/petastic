@@ -18,6 +18,7 @@
     "react-router": "^7.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.7"
+    "nodemon": "^3.1.7",
+    "react-router": "^7.0.1"
   }
 }

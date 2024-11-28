@@ -1,4 +1,47 @@
 {
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    },
+    {
+      "src": "/login",
+      "dest": "/"
+    },
+    {
+      "src": "/register",
+      "dest": "/"
+    },
+    {
+      "src": "/pet",
+      "dest": "/"
+    },
+    {
+      "src": "/pet/:id",
+      "dest": "/"
+    },
+    {
+      "src": "/pets",
+      "dest": "/"
+    },
+    {
+      "src": "/faq",
+      "dest": "/"
+    },
+    {
+      "src": "/forgot",
+      "dest": "/"
+    },
+
+    {
+      "src": "/(.*)",
+      "dest": "http://localhost:8181/"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "https://petastic.vercel.app/"
+    }
+  ],
   "rewrites": [
     {
       "source": "/:path((?!api/).*)",
@@ -6,5 +49,3 @@
     }
   ]
 }
-
-
