@@ -2,35 +2,35 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/"
+      "dest": "/index.html"
     },
     {
       "src": "/login",
-      "dest": "/"
+      "dest": "https://petastic.vercel.app/login"
     },
     {
       "src": "/register",
-      "dest": "/"
+      "dest": "https://petastic.vercel.app/register"
     },
     {
       "src": "/pet",
-      "dest": "/"
+      "dest": "https://petastic.vercel.app/pet"
     },
     {
       "src": "/pet/:id",
-      "dest": "/"
+      "dest": "https://petastic.vercel.app/pet/:id"
     },
     {
       "src": "/pets",
-      "dest": "/"
+      "dest": "https://petastic.vercel.app/pets"
     },
     {
       "src": "/faq",
-      "dest": "/"
+      "dest": "https://petastic.vercel.app/faq"
     },
     {
       "src": "/forgot",
-      "dest": "/"
+      "dest": "https://petastic.vercel.app/forgot"
     },
 
     {
