@@ -1,4 +1,36 @@
 {
-  "source": "./(.*)",
-  "destination": "./"
+  "rewrites": [
+    {
+      "source": "./(.*)",
+      "destination": "./"
+    },
+    {
+      "src": "./login",
+      "dest": "./login"
+    },
+    {
+      "src": "./register",
+      "dest": "./register"
+    },
+    {
+      "src": "./pet",
+      "dest": "./pet"
+    },
+    {
+      "src": "./pet/:id",
+      "dest": "./pet/:id"
+    },
+    {
+      "src": "./pets",
+      "dest": "./pets"
+    },
+    {
+      "src": "./faq",
+      "dest": "./faq"
+    },
+    {
+      "src": "./forgot",
+      "dest": "./forgot"
+    }
+  ]
 }
