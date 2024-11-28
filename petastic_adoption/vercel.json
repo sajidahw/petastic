@@ -7,45 +7,37 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    },
-    {
       "src": "/login",
-      "dest": "https://petastic.vercel.app/login"
+      "dest": "/login.html"
     },
     {
       "src": "/register",
-      "dest": "https://petastic.vercel.app/register"
+      "dest": "/register.html"
     },
     {
       "src": "/pet",
-      "dest": "https://petastic.vercel.app/pet"
+      "dest": "/pet.html"
     },
     {
       "src": "/pet/:id",
-      "dest": "https://petastic.vercel.app/pet/:id"
+      "dest": "/pet/:id.html"
     },
     {
       "src": "/pets",
-      "dest": "https://petastic.vercel.app/pets"
+      "dest": "/pets.html"
     },
     {
       "src": "/faq",
-      "dest": "https://petastic.vercel.app/faq"
+      "dest": "/faq.html"
     },
     {
       "src": "/forgot",
-      "dest": "https://petastic.vercel.app/forgot"
+      "dest": "/forgot.html"
     },
 
     {
       "src": "/(.*)",
-      "dest": "http://localhost:8181/"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "https://petastic.vercel.app/"
+      "dest": "/index.html"
     }
   ]
 }
