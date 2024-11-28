@@ -38,7 +38,7 @@
       "dest": "http://localhost:8181/"
     },
     {
-      "src": "/api/(.*)",
+      "src": "/(.*)",
       "dest": "https://petastic.vercel.app/"
     }
   ],
