@@ -1,43 +1,43 @@
 {
   "rewrites": [
     {
-      "source": "/:path((?!/).*)",
-      "destination": "/index.html"
+      "source": "./:path((?!/).*)",
+      "destination": "./index.html"
     }
   ],
   "routes": [
     {
-      "src": "/login",
-      "dest": "/login.html"
+      "src": "./login",
+      "dest": "./login"
     },
     {
-      "src": "/register",
-      "dest": "/register.html"
+      "src": "./register",
+      "dest": "./register"
     },
     {
-      "src": "/pet",
-      "dest": "/pet.html"
+      "src": "./pet",
+      "dest": "./pet"
     },
     {
-      "src": "/pet/:id",
-      "dest": "/pet/:id.html"
+      "src": "./pet/:id",
+      "dest": "./pet/:id"
     },
     {
-      "src": "/pets",
-      "dest": "/pets.html"
+      "src": "./pets",
+      "dest": "./pets"
     },
     {
-      "src": "/faq",
-      "dest": "/faq.html"
+      "src": "./faq",
+      "dest": "./faq"
     },
     {
-      "src": "/forgot",
-      "dest": "/forgot.html"
+      "src": "./forgot",
+      "dest": "./forgot"
     },
 
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "src": "./(.*)",
+      "dest": "./index.html"
     }
   ]
 }
