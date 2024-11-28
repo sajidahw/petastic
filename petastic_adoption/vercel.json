@@ -4,24 +4,5 @@
       "source": "./(.*)",
       "destination": "./"
     }
-  ],
-  "headers": [
-    {
-      "source": "/fonts/(.*)",
-      "headers": [
-        {
-          "key": "Access-Control-Allow-Origin",
-          "value": "https://p.typekit.net"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET"
-        },
-        {
-          "key": "Access-Control-Allow-Headers",
-          "value": "Content-Type"
-        }
-      ]
-    }
   ]
 }

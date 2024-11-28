@@ -21,6 +21,7 @@ const corsOptions = {
     "https://petastic.vercel.app/",
     "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
     "http://localhost:8181",
+    "https://p.typekit.net",
   ],
   allow_origins_without_credentials: ["*"],
   allow_origins_with_credentials: [
@@ -29,7 +30,8 @@ const corsOptions = {
     "http://localhost:8181",
     "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
   ],
-  "Access-Control-Allow-Origin": "https://petastic-qshcbxkjo-summersws-projects.vercel.app"
+  "Access-Control-Allow-Origin":
+    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
 };
 
 app.use(cors(corsOptions));
