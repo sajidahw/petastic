@@ -12,7 +12,7 @@ const corsOptions = {
     "https://petastic.vercel.app",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
-  methods: "GET, POST, PUT, DELETE",
+  methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
   headers: "Content-Type, Authorization",
   credentials: true,
   allowedOrigins: [
