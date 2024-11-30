@@ -233,31 +233,35 @@ const FAQ = () => {
               expandIcon={<ExpandMoreIcon />}
               aria-controls="panel3-content"
               id="panel3-header"
-              sx={{ fontWeight: "boldest" }}
+              sx={{ fontSize: 18, fontWeight: 900, textTransform: "uppercase" }}
             >
               Liability and Agreement
             </AccordionSummary>
-            <AccordionDetails>
-              Petastic is not directly involved in the adoption process. We
-              provide a platform for pet owners to list their pets for adoption.
-            </AccordionDetails>
 
-            <AccordionDetails>
-              You understand that we do not guarantee the health nor temperament
-              of any pet. You agree to release and hold harmless Petastic and
-              its agents from any and all liability arising out of the adoption
-              of a pet from Petastic. You agree to indemnify and hold harmless
-              Petastic and its agents from any and all claims, damages, costs,
-              or expenses including attorney fees arising out of the adoption of
-              a pet from Petastic.
-            </AccordionDetails>
+            <Typography sx={{ textTransform: "uppercase" }}>
+              <AccordionDetails>
+                Petastic is not directly involved in the adoption process. We
+                provide a platform for pet owners to list their pets for
+                adoption.
+              </AccordionDetails>
 
-            <AccordionDetails>
-              You understand that we do not source pets directly nor do we
-              verify the accuracy of such protrayals. We have not vetted the
-              pet's owner, their background nor what is known besides what is
-              listed on a pet's profile.
-            </AccordionDetails>
+              <AccordionDetails>
+                You understand that we do not guarantee the health nor
+                temperament of any pet. You agree to release and hold harmless
+                Petastic and its agents from any and all liability arising out
+                of the adoption of a pet from Petastic. You agree to indemnify
+                and hold harmless Petastic and its agents from any and all
+                claims, damages, costs, or expenses including attorney fees
+                arising out of the adoption of a pet from Petastic.
+              </AccordionDetails>
+
+              <AccordionDetails>
+                You understand that we do not source pets directly nor do we
+                verify the accuracy of such protrayals. We have not vetted the
+                pet's owner, their background nor what is known besides what is
+                listed on a pet's profile.
+              </AccordionDetails>
+            </Typography>
 
             <AccordionActions>
               <Button component={RouterLink} to="/">
