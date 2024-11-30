@@ -110,7 +110,8 @@ npm run dev
 ### Available Pets Gallery Page:
 
 <p align="center">
-<img width="70%" alt="Pets" src="https://github.com/user-attachments/assets/fd33864f-7ddb-486e-b66a-3fe5d6d2428d">
+
+<img width="70%" alt="Pets" src="https://github.com/user-attachments/assets/310a4961-6c36-4fea-b3ad-e1765f57b62f">
 </p>
 
 <br>
