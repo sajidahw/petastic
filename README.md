@@ -34,7 +34,12 @@ npm install
 
 ### Run
 
-Create an .env file adding Open up a terminal for the backend to run the following commands:
+Create an .env file and add:
+```bash
+PORT=8181
+```
+
+Open up a terminal for the backend to run the following commands:
 
 ```bash
 
