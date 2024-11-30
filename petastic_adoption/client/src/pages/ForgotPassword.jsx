@@ -25,13 +25,13 @@ import InternalHeaderLogo from "../components/InternalHeaderLogo";
 
 // To receive a link for password reset
 const ForgotPassword = () => {
-  const [username, setUsername] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const credentials = {
-      username: username,
+      lastName: lastName,
       email: email,
     };
     console.log("Forgot Password data: ", credentials);
@@ -83,7 +83,7 @@ const ForgotPassword = () => {
                 padding: 2,
               }}
             >
-              Give us your username and email address. We'll send you a link to
+              Give us your last name and email address. We'll send you a link to
               reset your password.
             </Typography>
           </Stack>
@@ -95,16 +95,16 @@ const ForgotPassword = () => {
             sx={{ mt: 1 }}
           >
             <TextField
-              placeholder="Enter Username"
-              name="username"
-              id="username"
-              value={username}
+              placeholder="Enter Last Name"
+              name="lastName"
+              id="lastName"
+              value={lastName}
               type="text"
               fullWidth
               required
               autoFocus
               sx={{ bgcolor: "#fbf1d7", mb: 2 }}
-              onChange={(e) => setUsername(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             ></TextField>
 
             <TextField
