@@ -1,9 +1,19 @@
+// Description: Backend server for Petastic Adoption website
+
 // setting up server/backend
-require("dotenv").config();
-const express = require("express");
+// const dotenv = require("dotenv");
+import dotenv from "dotenv";
+dotenv.config();
+// const express = require("express");
+import express from "express";
 const app = express();
 // const axios = require("axios");
-const cors = require("cors"); // frontend and backend are on different servers; accepts requests from different origins
+import cors from "cors";
+// const cors = require("cors"); // frontend and backend are on different servers; accepts requests from different origins
+// const { connectDB } = require("./config/db.js");
+import { connectDB } from "./config/db.js";
+import petRoutes from "./routes/pet.route.js";
+
 const PORT = process.env.PORT || 8181;
 const corsOptions = {
   origin: [
@@ -34,21 +44,27 @@ const corsOptions = {
     "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
 };
 
+app.use(express.json()); // allows server to accept JSON data in req.body
 app.use(cors(corsOptions));
 
-// routes
+// routes with endpoints
 // index route for server to send info response to client
 app.get("/", (req, res) => {
   res.send(`'Welcome to Petastic, an Animal Adoption site. 🐕'`);
 });
 
 // URL Endpoints to access the rest of the website
-//
+// testing this endpoint in the browser: http://localhost:8181/pets
+app.use("/pets", petRoutes); // all routes for pets via pet.route.js
+
+// static routes are managed on client side's app.jsx
 
 // listen to the server
 app.listen(PORT, () => {
   console.log(`Petastic Server is running on port ${PORT} 🐾`);
+  connectDB();
 });
 
 // exporting the Express API to Vercel to be a serverless function
-module.exports = app;
+// module.exports = app;
+export default app;

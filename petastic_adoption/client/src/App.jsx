@@ -65,6 +65,8 @@ function App() {
           }
           label={showPage ? "Register" : "Login"}
         /> */}
+
+        {/* Client-Side routes without reloading entire page */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<LogIn />} />

@@ -286,8 +286,8 @@ const Pets = () => {
                     paddingBottom={2}
                     padding={3}
                   >
-                    Yelp, all our pets are in happy homes right now. Come back
-                    later!
+                    Loading...Yelp, all our pets are in happy homes right now.
+                    Come back later!
                   </Typography>
                 </Stack>
               </Container>
