@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 8181;
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
+    // "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
     "https://petastic.vercel.app",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
@@ -27,21 +27,21 @@ const corsOptions = {
   credentials: true,
   allowedOrigins: [
     "http://localhost:5173",
-    "https://petastic-bv3nso98u-summersws-projects.vercel.app",
+    // "https://petastic-bv3nso98u-summersws-projects.vercel.app",
     "https://petastic.vercel.app/",
-    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
+    // "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
     "http://localhost:8181",
     "https://p.typekit.net",
   ],
   allow_origins_without_credentials: ["*"],
   allow_origins_with_credentials: [
     "https://petastic.vercel.app/",
-    "https://petastic-bv3nso98u-summersws-projects.vercel.app",
+    // "https://petastic-bv3nso98u-summersws-projects.vercel.app",
     "http://localhost:8181",
-    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
+    // "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
   ],
-  "Access-Control-Allow-Origin":
-    "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
+  // "Access-Control-Allow-Origin":
+  //   "https://petastic-qshcbxkjo-summersws-projects.vercel.app",
 };
 
 app.use(express.json()); // allows server to accept JSON data in req.body
