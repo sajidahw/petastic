@@ -55,6 +55,13 @@ app.listen(PORT, () => {
   connectDB();
 });
 
+process.on("SIGINT", () => {
+  console.log("Received SIGINT. Shutting down gracefully.");
+  server.close(() => {
+    console.log("Server closed");
+    process.exit(0);
+  });
+});
 // exporting the Express API to Vercel to be a serverless function
 // module.exports = app;
 export default app;

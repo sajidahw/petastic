@@ -44,6 +44,11 @@ const ViewPet = () => {
   const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
 
+  // to prevent scrolling to the bottom of the page when viewing a pet
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+
   // ** Implementing Snackbar + Dialog which is an alert for when clicking on the Adopt Me button, stating that it will remove the pet from the list **
 
   const [snackOpen, setSnackOpen] = useState(false); // Snackbar Alert visibility
