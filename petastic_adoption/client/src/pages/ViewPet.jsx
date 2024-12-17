@@ -45,9 +45,9 @@ const ViewPet = () => {
   const navigate = useNavigate();
 
   // to prevent scrolling to the bottom of the page when viewing a pet
-  window.onbeforeunload = function () {
+  useEffect(() => {
     window.scrollTo(0, 0);
-  };
+  }, []);
 
   // ** Implementing Snackbar + Dialog which is an alert for when clicking on the Adopt Me button, stating that it will remove the pet from the list **
 
