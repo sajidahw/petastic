@@ -65,7 +65,7 @@ app.use("/pets", petRoutes); // all routes for pets via pet.route.js
 // static routes are managed on client side's app.jsx
 
 // listen to the server
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log(`Petastic Server is running on port ${PORT} 🐾`);
   connectDB();
 });
