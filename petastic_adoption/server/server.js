@@ -21,6 +21,11 @@ const corsOptions = {
   methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
   // headers: "Content-Type, Authorization",
   allowedHeaders: ["Content-Type", "Authorization"],
+  "Access-Control-Allow-Origin": "https://petastic.vercel.app",
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+  "Access-Control-Allow-Credentials": "true",
   credentials: true,
   allowedOrigins: [
     "http://localhost:5173",
