@@ -58,7 +58,9 @@ const Pets = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`/pets`);
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/pets`
+        );
         // console.log(response.data);
         setPets(response.data.pets);
       } catch (error) {

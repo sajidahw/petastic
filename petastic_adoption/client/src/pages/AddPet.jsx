@@ -187,7 +187,10 @@ const AddPet = () => {
     // axios version:
     try {
       // POST request to backend to create a new pet with an 'id'
-      const response = await axios.post(`/pet`, petData);
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/pet`,
+        petData
+      );
 
       // Response returns the created pet with a MongoDB 'id' field
       const id = response.data._id;
