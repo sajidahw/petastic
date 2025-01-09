@@ -31,7 +31,7 @@ function App() {
   };
 
   const fetchPets = async () => {
-    const response = await axios.get(`/pets`);
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/pets`);
     console.log(response.data);
   };
 
