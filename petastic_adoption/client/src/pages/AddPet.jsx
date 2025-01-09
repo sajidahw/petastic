@@ -32,7 +32,7 @@ import OkDogs from "../components/OkDogs";
 import ImageUpload from "../components/ImageUpload";
 import Human from "../components/Human";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
-import axios from "../axiosConfig.js";
+import axios from "axios";
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {

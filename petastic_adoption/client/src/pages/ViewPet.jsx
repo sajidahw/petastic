@@ -37,7 +37,7 @@ import HumanContact from "../components/HumanContact";
 import { FaPaw, FaRegHeart } from "react-icons/fa";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import { BiSolidError } from "react-icons/bi";
-import axios from "../axiosConfig.js";
+import axios from "axios";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
