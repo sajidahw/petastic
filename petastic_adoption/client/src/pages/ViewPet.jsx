@@ -37,6 +37,7 @@ import HumanContact from "../components/HumanContact";
 import { FaPaw, FaRegHeart } from "react-icons/fa";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import { BiSolidError } from "react-icons/bi";
+import axios from "../axiosConfig.js";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
@@ -72,23 +73,37 @@ const ViewPet = () => {
   };
 
   // Handle the Agree button inside the Adoption Confirmation dialog to remove individual pet from pets list + success alert
-  const handleAdoptMeAgree = () => {
-    // Remove the pet from browser's localStorage so doesn't appear on reload/list
-    localStorage.removeItem(`pet-${petData.id}`);
-    console.log(`REMOVAL: Adopting pet with ID: ${id}`);
+  const handleAdoptMeAgree = async () => {
+    // async function to handle axios integration
+    // Remove the pet from browser's localStorage so doesn't appear on reload/list; not needed with axios
+    // localStorage.removeItem(`pet-${petData.id}`);
+    // console.log(`REMOVAL: Adopting pet with ID: ${id}`);
 
-    // Open the Snackbar Alert
-    setSnackOpen(true);
-    console.log("Snackbar opened.");
+    // axios integration to remove the pet from the server instead of localStorage
+    try {
+      await axios.delete(`/pet/${id}`);
+      console.log(`REMOVAL: Adopting pet with ID: ${id}`);
+      setPetData(petData.filter((pet) => pet.id !== id));
+      console.log("Pet removed from the list.");
 
-    // Close the dialog Confirmation
-    setDialogOpen(false);
+      // Open the Snackbar Alert
+      setSnackOpen(true);
+      console.log("Snackbar opened.");
 
-    // Navigate to the /pets page after a short delay to allow Snackbar to show
-    setTimeout(() => {
-      navigate("/pets");
-      console.log("Navigated to /pets.");
-    }, 4000); // 4-second delay; matches Snackbar autoHideDuration
+      // Close the dialog Confirmation
+      setDialogOpen(false);
+
+      // Navigate to the /pets page after a short delay to allow Snackbar to show
+      setTimeout(() => {
+        navigate("/pets");
+        console.log("Navigated to /pets.");
+      }, 4000); // 4-second delay; matches Snackbar autoHideDuration
+
+      // continuation of axios integration
+    } catch (err) {
+      console.error("Adoption Removal Error deleting pet:", err);
+      alert("Failed to delete pet after adoption. Please try again.");
+    }
   };
 
   // Clicking on disagree during Adoption Confirmation Dialog: closes the dialog and returns to /pets page
@@ -102,26 +117,48 @@ const ViewPet = () => {
   };
   // ** End of Adoption Confirmation Dialog + Snackbar Alerts **
 
-  // Load pet data from local storage; data fetching via useEffect, then setPetData
+  // Load pet data from local storage; data fetching via useEffect, then setPetData; not needed with axios
+  // useEffect(() => {
+  //   console.log(`Fetching pet data for ID: ${id}`); // check if exists
+  //   // Retrieve pet data from local storage; *same pattern from AddPet.jsx
+  //   const storedPet = localStorage.getItem(`pet-${id}`);
+
+  //   if (storedPet) {
+  //     try {
+  //       // Parse the stored pet data to JSON obj since it's stored as a string
+  //       const parsedPetData = JSON.parse(storedPet);
+
+  //       console.log("Pet data found in local storage:", parsedPetData);
+  //       setPetData(parsedPetData); // updates from retrieved pet data
+  //     } catch (error) {
+  //       console.error("Error parsing stored pet data:", error);
+  //       // navigate("/pets");
+  //     }
+  //   } else {
+  //     console.log(`No pet data found in local storage for ID: ${id}`);
+  //   }
+  // }, [id]);
+
+  // Fetch pet data from the server using axios instead of local storage
   useEffect(() => {
-    console.log(`Fetching pet data for ID: ${id}`); // check if exists
-    // Retrieve pet data from local storage; *same pattern from AddPet.jsx
-    const storedPet = localStorage.getItem(`pet-${id}`);
-
-    if (storedPet) {
+    const fetchPetData = async () => {
       try {
-        // Parse the stored pet data to JSON obj since it's stored as a string
-        const parsedPetData = JSON.parse(storedPet);
-
-        console.log("Pet data found in local storage:", parsedPetData);
-        setPetData(parsedPetData); // updates from retrieved pet data
+        const response = await axios.get(`/pet/${id}`);
+        console.log("Pet data fetched from server:", response.data);
+        setPetData(response.data);
       } catch (error) {
-        console.error("Error parsing stored pet data:", error);
-        // navigate("/pets");
+        console.error("Error fetching pet data:", error);
+        setPetData(null); // set to null if error
       }
+    };
+
+    if (fetchPetData) {
+      fetchPetData();
     } else {
-      console.log(`No pet data found in local storage for ID: ${id}`);
+      console.log(`No pet data found in database for ID: ${id}`);
     }
+
+    // fetchPetData(); // used if no above conditional check
   }, [id]);
 
   // Show a loading message if pet data is not available

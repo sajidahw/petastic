@@ -25,29 +25,45 @@ import {
   Container,
 } from "@mui/material";
 import { FaPaw } from "react-icons/fa";
+import axios from "../axiosConfig.js";
 
 // This is the Pets gallery or listings page of Available Pets
 const Pets = () => {
   // no props since displaying ALL pets
   const [pets, setPets] = useState([]);
 
-  // Fetch all pets from the local storage
+  // // Fetch all pets from the local storage
+  // useEffect(() => {
+  //   const fetchPets = () => {
+  //     const petsList = [];
+
+  //     for (let i = 0; i < localStorage.length; i++) {
+  //       const key = localStorage.key(i);
+  //       // key pet-: fetching all pets regardless of specific ID
+  //       if (key.startsWith("pet-")) {
+  //         const pet = JSON.parse(localStorage.getItem(key));
+  //         if (pet) {
+  //           petsList.push(pet);
+  //         }
+  //       }
+  //     }
+
+  //     setPets(petsList);
+  //   };
+
+  //   fetchPets();
+  // }, []);
+
+  // Fetch all pets from server database (not local storage) using axios
   useEffect(() => {
-    const fetchPets = () => {
-      const petsList = [];
-
-      for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        // key pet-: fetching all pets regardless of specific ID
-        if (key.startsWith("pet-")) {
-          const pet = JSON.parse(localStorage.getItem(key));
-          if (pet) {
-            petsList.push(pet);
-          }
-        }
+    const fetchPets = async () => {
+      try {
+        const response = await axios.get(`/pets`);
+        // console.log(response.data);
+        setPets(response.data.pets);
+      } catch (error) {
+        console.log("Error in Fetching Pets: ", error.message);
       }
-
-      setPets(petsList);
     };
 
     fetchPets();

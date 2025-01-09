@@ -30,15 +30,15 @@ function App() {
     console.log(response.data);
   };
 
-  // const fetchPets = async () => {
-  //   const response = await axios.get("http://localhost:8181/pets");
-  //   console.log(response.data);
-  // };
+  const fetchPets = async () => {
+    const response = await axios.get(`/pets`);
+    console.log(response.data);
+  };
 
   // activating the fetches
   useEffect(() => {
     fetchLandingPage();
-    // fetchPets();
+    fetchPets();
   }, []); // empty array means it will only run once
 
   // const fetchPets = async () => {

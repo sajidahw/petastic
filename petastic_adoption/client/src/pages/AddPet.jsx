@@ -32,6 +32,7 @@ import OkDogs from "../components/OkDogs";
 import ImageUpload from "../components/ImageUpload";
 import Human from "../components/Human";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
+import axios from "../axiosConfig.js";
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {
@@ -147,10 +148,10 @@ const AddPet = () => {
   // This function will handle the form submission.
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const id = Date.now(); //petId into String type.toString()
+    // const id = Date.now(); //petId into String type.toString(), to be used as key in localStorage not needed for axios since driven by MongoDB
 
     const petData = {
-      id: id,
+      // id: id, // not needed for axios
       name: petName,
       type: petType,
       breed: petBreed,
@@ -173,14 +174,32 @@ const AddPet = () => {
       humanEmail: humanEmail,
       humanPhone: humanPhone,
     };
-    // key must be stored in AddPet.jsx and retrieved from ViewPet.jsx the same way.
+    // Local Storage: key must be stored in AddPet.jsx and retrieved from ViewPet.jsx the same way.
     // Debugging: Log the pet data being stored
-    console.log(`Storing pet data under key: pet-${id}`, petData);
+    // console.log(`Storing pet data under key: pet-${id}`, petData); // not for axios
 
-    // Save pet data to local storage in key:value.toString() pairs
-    localStorage.setItem(`pet-${id}`, JSON.stringify(petData));
+    // Local Storage: Save pet data to local storage in key:value.toString() pairs
+    // localStorage.setItem(`pet-${id}`, JSON.stringify(petData)); // not for axios
+
     // Navigate to the ViewPet page with the pet ID
-    navigate(`/pet/${id}`);
+    // navigate(`/pet/${id}`);
+
+    // axios version:
+    try {
+      // POST request to backend to create a new pet with an 'id'
+      const response = await axios.post(`/pet`, petData);
+
+      // Response returns the created pet with a MongoDB 'id' field
+      const id = response.data._id;
+
+      console.log(`Pet added successfully with id: ${id}`, response.data);
+      // }
+
+      // Navigate to the ViewPet page with the pet ID
+      navigate(`/pet/${id}`);
+    } catch (error) {
+      console.error("Error adding pet:", error);
+    }
   };
 
   // resetForm function resets the form fields to empty strings or defaults. For the radio buttons to be cleared, they have their own reset button.
