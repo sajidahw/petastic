@@ -81,7 +81,7 @@ const ViewPet = () => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`${import.meta.env.VITE_API_URL}/pet/${id}`);
+      await axios.delete(`${import.meta.env.VITE_APP_API_URL}/pet/${id}`);
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
       setPetData(petData.filter((pet) => pet.id !== id));
       console.log("Pet removed from the list.");
@@ -144,7 +144,7 @@ const ViewPet = () => {
     const fetchPetData = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.VITE_API_URL}/pet/${id}`
+          `${import.meta.env.VITE_APP_API_URL}/pet/${id}`
         );
         console.log("Pet data fetched from server:", response.data);
         setPetData(response.data);

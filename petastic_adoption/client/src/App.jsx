@@ -26,12 +26,12 @@ function App() {
 
   // fetching data from the server
   const fetchLandingPage = async () => {
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}/`); //http://localhost:8181
+    const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}`); //http://localhost:8181
     console.log(response.data);
   };
 
   // const fetchPets = async () => {
-  //   const response = await axios.get(`${import.meta.env.VITE_API_URL}/pets`);
+  //   const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}/pets`);
   //   console.log(response.data);
   // };
 
