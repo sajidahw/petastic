@@ -17,9 +17,10 @@ import petRoutes from "./routes/pet.route.js";
 const PORT = process.env.PORT || 8181;
 const corsOptions = {
   origin: ["http://localhost:5173", "https://petastic.vercel.app"], // vite, vercel
-  optionsSuccessStatus: 200 || 204,
+  // optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
-  headers: "Content-Type, Authorization",
+  // headers: "Content-Type, Authorization",
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
   allowedOrigins: [
     "http://localhost:5173",
