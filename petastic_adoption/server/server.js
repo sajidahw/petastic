@@ -24,6 +24,7 @@ const corsOptions = {
   allowedOrigins: [
     "http://localhost:5173",
     "http://localhost:5174",
+    "http://localhost:4173",
     "https://petastic.vercel.app/",
     "http://localhost:8181",
     "https://p.typekit.net",
