@@ -1,9 +1,7 @@
 import axios from "axios";
-import dotenv from "dotenv";
 
-dotenv.config();
 const axiosInstance = axios.create({
-  baseURL: process.env.VITE_APP_API_URL || "/", // Base URL routes
+  baseURL: import.meta.VITE_APP_API_URL || "/", // Base URL routes
   headers: {
     "Content-Type": "application/json",
   },
