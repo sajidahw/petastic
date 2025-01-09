@@ -26,7 +26,7 @@ function App() {
 
   // fetching data from the server
   const fetchLandingPage = async () => {
-    const response = await axios.get(`${import.meta.env.VITE_API_URL}`); //http://localhost:8181
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/`); //http://localhost:8181
     console.log(response.data);
   };
 
