@@ -44,6 +44,7 @@ const ViewPet = () => {
   const { id } = useParams(); // matching route definition as a String type
   const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
+  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
 
   // to prevent scrolling to the bottom of the page when viewing a pet
   useEffect(() => {
@@ -81,7 +82,7 @@ const ViewPet = () => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`${import.meta.env.VITE_APP_API_URL}/pet/${id}`);
+      await axios.delete(`${base_URL}/pet/${id}`);
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
       setPetData(petData.filter((pet) => pet.id !== id));
       console.log("Pet removed from the list.");
@@ -143,9 +144,7 @@ const ViewPet = () => {
   useEffect(() => {
     const fetchPetData = async () => {
       try {
-        const response = await axios.get(
-          `${import.meta.env.VITE_APP_API_URL}/pet/${id}`
-        );
+        const response = await axios.get(`${base_URL}/pet/${id}`);
         console.log("Pet data fetched from server:", response.data);
         setPetData(response.data);
       } catch (error) {

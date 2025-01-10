@@ -1,19 +1,14 @@
 // Description: Backend server for Petastic Adoption website
 
 // setting up server/backend
-// const dotenv = require("dotenv");
 import dotenv from "dotenv";
-dotenv.config();
-// const express = require("express");
 import express from "express";
-const app = express();
-// const axios = require("axios");
-import cors from "cors";
-// const cors = require("cors"); // frontend and backend are on different servers; accepts requests from different origins
-// const { connectDB } = require("./config/db.js");
+import cors from "cors"; // frontend and backend are on different servers; accepts requests from different origins
 import { connectDB } from "./config/db.js";
 import petRoutes from "./routes/pet.route.js";
 
+dotenv.config();
+const app = express();
 const PORT = process.env.PORT || 8181;
 const corsOptions = {
   origin: [
@@ -21,14 +16,15 @@ const corsOptions = {
     "https://petastic.vercel.app",
     "http://localhost:8181",
   ], // vite, vercel
-  // optionsSuccessStatus: 200 || 204,
+  optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
-  // headers: "Content-Type, Authorization",
+  headers: "Content-Type, Authorization",
   allowedHeaders: ["Content-Type", "Authorization"],
-  // "Access-Control-Allow-Origin": [
-  //   "https://petastic.vercel.app",
-  //   "https://petastic-2ggxj6o25-summersws-projects.vercel.app",
-  // ],
+  "Access-Control-Allow-Origin": [
+    "https://petastic.vercel.app",
+    "http://localhost:8181/",
+    "http://localhost:8181",
+  ],
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
@@ -39,6 +35,7 @@ const corsOptions = {
     "http://localhost:5174",
     "http://localhost:4173",
     "https://petastic.vercel.app/",
+    "http://localhost:8181/", // defined line 58,
     "http://localhost:8181",
     "https://p.typekit.net",
   ],
@@ -60,7 +57,7 @@ app.get("/", (req, res) => {
 
 // URL Endpoints to access the rest of the website
 // testing this endpoint in the browser: http://localhost:8181/pets
-app.use("/pets", petRoutes); // all routes for pets via pet.route.js
+app.use("/", petRoutes); // all routes for pets via pet.route.js instead of /pets
 
 // static routes are managed on client side's app.jsx
 
