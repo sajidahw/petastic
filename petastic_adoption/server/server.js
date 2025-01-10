@@ -15,6 +15,7 @@ const corsOptions = {
     "http://localhost:5173",
     "https://petastic.vercel.app",
     "http://localhost:8181/pets",
+    "http://localhost:8181/",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
@@ -23,7 +24,7 @@ const corsOptions = {
   "Access-Control-Allow-Origin": [
     "https://petastic.vercel.app",
     "http://localhost:8181/pets",
-    "http://localhost:8181",
+    "http://localhost:8181/",
   ],
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
@@ -36,7 +37,7 @@ const corsOptions = {
     "http://localhost:4173",
     "https://petastic.vercel.app/",
     "http://localhost:8181/pets", // defined line 58,
-    "http://localhost:8181",
+    "http://localhost:8181/",
     "https://p.typekit.net",
   ],
   allow_origins_without_credentials: ["*"],
