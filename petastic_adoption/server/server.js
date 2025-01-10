@@ -14,7 +14,7 @@ const corsOptions = {
   origin: [
     "http://localhost:5173",
     "https://petastic.vercel.app",
-    "http://localhost:8181/",
+    "http://localhost:8181/pets",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
@@ -22,7 +22,7 @@ const corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   "Access-Control-Allow-Origin": [
     "https://petastic.vercel.app",
-    "http://localhost:8181/",
+    "http://localhost:8181/pets",
     "http://localhost:8181",
   ],
   "Access-Control-Allow-Origin": "*",
@@ -35,14 +35,14 @@ const corsOptions = {
     "http://localhost:5174",
     "http://localhost:4173",
     "https://petastic.vercel.app/",
-    "http://localhost:8181/", // defined line 58,
+    "http://localhost:8181/pets", // defined line 58,
     "http://localhost:8181",
     "https://p.typekit.net",
   ],
   allow_origins_without_credentials: ["*"],
   allow_origins_with_credentials: [
     "https://petastic.vercel.app/",
-    "http://localhost:8181/",
+    "http://localhost:8181/pets",
   ],
 };
 
@@ -57,7 +57,7 @@ app.get("/", (req, res) => {
 
 // URL Endpoints to access the rest of the website
 // testing this endpoint in the browser: http://localhost:8181/pets
-app.use("/", petRoutes); // all routes for pets via pet.route.js instead of /pets
+app.use("/pets", petRoutes); // all routes for pets via pet.route.js instead of /pets
 
 // static routes are managed on client side's app.jsx
 

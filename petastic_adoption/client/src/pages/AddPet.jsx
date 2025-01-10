@@ -187,7 +187,7 @@ const AddPet = () => {
     // axios version:
     try {
       // POST request to backend to create a new pet with an 'id'
-      const response = await axios.post(`${base_URL}/pet`, petData);
+      const response = await axios.post(`${base_URL}/pets/pet`, petData);
 
       // Response returns the created pet with a MongoDB 'id' field
       const id = response.data._id;
@@ -196,7 +196,7 @@ const AddPet = () => {
       // }
 
       // Navigate to the ViewPet page with the pet ID
-      navigate(`/pet/${id}`);
+      navigate(`/pets/pet/${id}`);
     } catch (error) {
       console.error("Error adding pet:", error);
     }

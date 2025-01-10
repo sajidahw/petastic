@@ -23,10 +23,11 @@ import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   // const [showPage, setShowPage] = useState(false);
+  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
 
   // fetching data from the server
   const fetchLandingPage = async () => {
-    const response = await axios.get(`${import.meta.env.VITE_APP_API_URL}`); //http://localhost:8181
+    const response = await axios.get(`${base_URL}`); //http://localhost:8181
     console.log(response.data);
   };
 
