@@ -42,12 +42,6 @@ function App() {
     // fetchPets();
   }, []); // empty array means it will only run once
 
-  // const fetchPets = async () => {
-  //   const response = await fetch("http://localhost:8181/api/pets");
-  //   const data = await response.json();
-  //   console.log(data);
-  // };
-
   // displaying data below
   return (
     <div>
