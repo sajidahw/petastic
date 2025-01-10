@@ -14,7 +14,7 @@ const corsOptions = {
   origin: [
     "http://localhost:5173",
     "https://petastic.vercel.app",
-    "http://localhost:8181",
+    "http://localhost:8181/",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
   methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
@@ -42,7 +42,7 @@ const corsOptions = {
   allow_origins_without_credentials: ["*"],
   allow_origins_with_credentials: [
     "https://petastic.vercel.app/",
-    "http://localhost:8181",
+    "http://localhost:8181/",
   ],
 };
 

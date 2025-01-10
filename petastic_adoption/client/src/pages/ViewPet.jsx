@@ -44,7 +44,7 @@ const ViewPet = () => {
   const { id } = useParams(); // matching route definition as a String type
   const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
-  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
+  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181/";
 
   // to prevent scrolling to the bottom of the page when viewing a pet
   useEffect(() => {
