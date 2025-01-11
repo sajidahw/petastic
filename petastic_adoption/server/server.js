@@ -22,6 +22,7 @@ const corsOptions = {
   headers: "Content-Type, Authorization",
   allowedHeaders: ["Content-Type", "Authorization"],
   "Access-Control-Allow-Origin": [
+    "*",
     "https://petastic.vercel.app",
     "http://localhost:8181/pets",
     "http://localhost:8181/",
