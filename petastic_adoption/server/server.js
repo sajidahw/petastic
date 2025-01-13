@@ -6,6 +6,7 @@ import express from "express";
 import cors from "cors"; // frontend and backend are on different servers; accepts requests from different origins
 import { connectDB } from "./config/db.js";
 import petRoutes from "./routes/pet.route.js";
+import { getPets } from "./controllers/pet.controller.js";
 
 dotenv.config();
 const app = express();
@@ -60,7 +61,10 @@ app.get("/", (req, res) => {
 
 // URL Endpoints to access the rest of the website
 // testing this endpoint in the browser: http://localhost:8181/pets
-app.use("/pets", petRoutes); // all routes for pets via pet.route.js instead of /pets
+// app.use("/pets", petRoutes); // all routes for pets via pet.route.js instead of /pets
+app.use("/pets", getPets); // one route to see all pets
+
+app.use("/pet", petRoutes); // all routes for pets via pet.route.js instead of /pets
 
 // static routes are managed on client side's app.jsx
 

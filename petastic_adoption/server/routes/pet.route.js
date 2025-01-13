@@ -3,6 +3,7 @@ import {
   createPet,
   deletePet,
   getPets,
+  getPetById,
   updatePet,
 } from "../controllers/pet.controller.js";
 
