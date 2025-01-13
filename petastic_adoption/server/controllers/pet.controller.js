@@ -13,6 +13,26 @@ export const getPets = async (req, res) => {
   }
 }; // pets gallery page
 
+// GET: Fetch a pet by id, /pets/:id
+export const getPetById = async (req, res) => {
+  const { id } = req.params;
+
+  // 404 error if pet not found
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    return res
+      .status(404)
+      .json({ success: false, message: "No pet with that id." });
+  }
+
+  try {
+    const pet = await Pet.findById(id);
+    res.status(200).json({ success: true, data: pet });
+  } catch (error) {
+    console.log("Error in Fetching Pet: ", error.message);
+    res.status(500).json({ success: false, message: "Internal Server Error" });
+  }
+}; // fetching a pet by id
+
 // POST: CREATE a new pet, /pets
 export const createPet = async (req, res) => {
   const pet = req.body; // user will send this data
@@ -41,6 +61,7 @@ export const createPet = async (req, res) => {
   const newPet = new Pet(pet); // schema Pet housing user data for pet
   try {
     await newPet.save(); // saving to db w _id
+    console.log("New Pet ID from MongoDB: ", newPet._id);
     res.status(201).json({ success: true, data: newPet });
   } catch (error) {
     console.log("Error in Saving Pet: ", error);
