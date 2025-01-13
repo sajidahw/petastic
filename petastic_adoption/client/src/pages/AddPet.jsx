@@ -187,7 +187,8 @@ const AddPet = () => {
     // axios version:
     try {
       // POST request to backend to create a new pet with an 'id'
-      const response = await axios.post(`${base_URL}/pet`, petData);
+      // const response = await axios.post(`${base_URL}/pet`, petData);
+      const response = await axios.post(`${base_URL}/pets`, petData);
 
       // Response returns the created pet with a MongoDB 'id' field
       const id = response.data._id;

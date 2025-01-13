@@ -14,13 +14,14 @@ const router = express.Router();
 // GET: Fetch all pets, /pets
 router.get("/", getPets); // pets gallery page
 
-// POST: CREATE a new pet, /pets
-router.post("/", createPet); // creating a pet
+// POST: CREATE a new pet, /pets; should /pet/:id
+// router.post("/", createPet); // creating a pet
+router.post("/:id", createPet);
 
-// PUT: UPDATE a pet by id, /pets/:id
+// PUT: UPDATE a pet by id, /pets/:id, should /pet/:id
 router.put("/:id", updatePet); // updating a pet
 
-// DELETE: DELETE a pet by id by destructuring id from req.params, /pets/:id
+// DELETE: DELETE a pet by id by destructuring id from req.params, /pets/:id; should /pet/:id
 router.delete("/:id", deletePet); // deleting a pet
 
 export default router;

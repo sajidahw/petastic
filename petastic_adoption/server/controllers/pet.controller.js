@@ -40,7 +40,7 @@ export const createPet = async (req, res) => {
   // create a new pet from user sent data
   const newPet = new Pet(pet); // schema Pet housing user data for pet
   try {
-    await newPet.save(); // saving to db
+    await newPet.save(); // saving to db w _id
     res.status(201).json({ success: true, data: newPet });
   } catch (error) {
     console.log("Error in Saving Pet: ", error);
