@@ -38,7 +38,7 @@ import { FaPaw, FaRegHeart } from "react-icons/fa";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import { BiSolidError } from "react-icons/bi";
 // import axios from "axios";
-import axios from "../api/axiosConfig.js";
+import axiosC from "../api/axiosConfig.js";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {

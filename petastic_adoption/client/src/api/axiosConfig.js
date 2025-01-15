@@ -1,7 +1,7 @@
 import axios from "axios";
 // for db adoption, backend endpoints use /api/pets
 
-const axios = axios.create({
+const axiosC = axios.create({
   baseURL: import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api/pets",
   headers: {
     "Content-Type": "application/json",
@@ -9,4 +9,4 @@ const axios = axios.create({
   withCredentials: true, // Include cookies and other credentials
 });
 
-export default axios;
+export default axiosC;
