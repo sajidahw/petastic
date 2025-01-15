@@ -33,7 +33,7 @@ import ImageUpload from "../components/ImageUpload";
 import Human from "../components/Human";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 // import axios from "axios";
-import axios from "../api/axiosConfig";
+import axios from "../api/axiosConfig.js";
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {
