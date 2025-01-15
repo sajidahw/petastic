@@ -26,7 +26,7 @@ import {
 } from "@mui/material";
 import { FaPaw } from "react-icons/fa";
 // import axios from "axios";
-import axiosC from "../api/axiosConfig.js";
+import axios from "../api/axiosConfig.js";
 
 // This is the Pets gallery or listings page of Available Pets
 const Pets = () => {
