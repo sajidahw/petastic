@@ -50,6 +50,7 @@ const corsOptions = {
   allow_origins_with_credentials: [
     "https://petastic.vercel.app",
     "http://localhost:8181/api/pets",
+    "http://localhost:8181/pets",
   ],
 };
 
