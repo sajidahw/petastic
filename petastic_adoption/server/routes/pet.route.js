@@ -15,12 +15,12 @@ const router = express.Router();
 // GET: Fetch all pets, /pets
 router.get("/", getPets); // pets gallery page
 
-// GET: Fetch a pet by id, /pets/:id; should /pet/:id
+// GET: Fetch a pet by id, /pets/:id; should /pet/:id; working as "/:id"
 router.get("/:id", getPetById); // fetching a pet by id
 
 // POST: CREATE a new pet, /pets; should /pet/:id
-// router.post("/", createPet); // creating a pet
-router.post("/:id", createPet);
+router.post("/", createPet); // creating a pet
+// router.post("/:id", createPet);
 
 // PUT: UPDATE a pet by id, /pets/:id, should /pet/:id
 router.put("/:id", updatePet); // updating a pet

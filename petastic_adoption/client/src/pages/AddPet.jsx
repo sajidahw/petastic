@@ -32,7 +32,8 @@ import OkDogs from "../components/OkDogs";
 import ImageUpload from "../components/ImageUpload";
 import Human from "../components/Human";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
-import axios from "axios";
+// import axios from "axios";
+import axios from "../api/axiosConfig";
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {
@@ -188,7 +189,7 @@ const AddPet = () => {
     try {
       // POST request to backend to create a new pet with an 'id'
       // const response = await axios.post(`${base_URL}/pet`, petData);
-      const response = await axios.post(`${base_URL}/pets`, petData);
+      const response = await axios.post(`${base_URL}/api/pets`, petData);
 
       // Response returns the created pet with a MongoDB 'id' field
       const id = response.data._id;
@@ -295,7 +296,7 @@ const AddPet = () => {
                 }}
                 label="Enter Pet Type"
                 name="petType"
-                value={petType}
+                value={petType.toLowerCase()}
                 id="petType"
                 type="text"
                 variant="outlined"
@@ -314,14 +315,14 @@ const AddPet = () => {
               <TextField
                 placeholder="Enter Pet Breed"
                 name="petBreed"
-                value={petBreed}
+                value={petBreed.toLowerCase()}
                 id="petBreed"
                 type="text"
                 label="Enter Pet Breed"
                 fullWidth
                 required
                 sx={{ bgcolor: "#fbf1d7", mb: 2 }}
-                onChange={(e) => setPetBreed(e.target.value)}
+                onChange={(e) => setPetBreed(e.target.value.toLowerCase())}
               ></TextField>
 
               <TextField
@@ -340,7 +341,7 @@ const AddPet = () => {
               <TextField
                 placeholder="Enter Pet Color"
                 name="petColor"
-                value={petColor}
+                value={petColor.toLowerCase()}
                 id="petColor"
                 type="text"
                 label="Enter Pet Color"
@@ -351,12 +352,15 @@ const AddPet = () => {
               ></TextField>
 
               <div>
-                <Gender petGender={petGender} setPetGender={setPetGender} />
+                <Gender
+                  petGender={petGender.toLowerCase()}
+                  setPetGender={setPetGender}
+                />
               </div>
 
               <div className="space">
                 {/* Pass the state and setter functions as props */}
-                <Size petSize={petSize} setPetSize={setPetSize} />
+                <Size petSize={petSize.toLowerCase()} setPetSize={setPetSize} />
               </div>
 
               <div className="space">
@@ -376,7 +380,7 @@ const AddPet = () => {
                 }}
                 label="Enter Location"
                 name="petLocation"
-                value={petLocation}
+                value={petLocation.toLowerCase()}
                 id="petLocation"
                 type="text"
                 variant="outlined"

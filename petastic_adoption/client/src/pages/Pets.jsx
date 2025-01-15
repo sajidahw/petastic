@@ -55,12 +55,12 @@ const Pets = () => {
   //   fetchPets();
   // }, []);
 
-  // Fetch all pets from server database (not local storage) using axios
+  // Fetch all pets from server database (not local storage) using axios, hence ._id for jsx return
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`${base_URL}/pets`);
-        // console.log(response.data);
+        const response = await axios.get(`${base_URL}/api/pets`);
+        console.log(response.data);
         setPets(response.data.pets);
       } catch (error) {
         console.log("Error in Fetching Pets: ", error.message);
@@ -114,6 +114,7 @@ const Pets = () => {
       </Box>
 
       {/* Container Grid: responsive/adjust layout based on screen size */}
+      {/* **AXIOS** updating pet.id to pet._id for MongoDB retrieval */}
       <Grid2
         container
         spacing={2}
@@ -123,7 +124,7 @@ const Pets = () => {
       >
         {pets.length > 0 ? (
           pets.map((pet) => (
-            <Grid2 item xs={12} sm={6} md={4} key={pet.id}>
+            <Grid2 item xs={12} sm={6} md={4} key={pet._id}>
               {/* maxWidth: 345 */}
               <Card
                 sx={{
@@ -139,7 +140,7 @@ const Pets = () => {
                 {/* makes the entire card clickable */}
                 <CardActionArea
                   component={RouterLink} // Nav Link
-                  to={`/pet/${pet.id}`}
+                  to={`/pet/${pet._id}`}
                 >
                   <CardMedia
                     component="img"

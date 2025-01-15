@@ -37,14 +37,15 @@ import HumanContact from "../components/HumanContact";
 import { FaPaw, FaRegHeart } from "react-icons/fa";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import { BiSolidError } from "react-icons/bi";
-import axios from "axios";
+// import axios from "axios";
+import axios from "../api/axiosConfig";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
   const { id } = useParams(); // matching route definition as a String type
   const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
-  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
+  // const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
 
   // to prevent scrolling to the bottom of the page when viewing a pet
   useEffect(() => {
@@ -82,7 +83,7 @@ const ViewPet = () => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`${base_URL}/pet/${id}`);
+      await axios.delete(`${base_URL}/pet/${id}`, deletePet);
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
       setPetData(petData.filter((pet) => pet.id !== id));
       console.log("Pet removed from the list.");
@@ -140,11 +141,15 @@ const ViewPet = () => {
   //   }
   // }, [id]);
 
-  // Fetch pet data from the server using axios instead of local storage
+  // Fetch pet data from the server + db using axios instead of local storage
   useEffect(() => {
     const fetchPetData = async () => {
       try {
-        const response = await axios.get(`${base_URL}/pet/${id}`);
+        // const response = await axios.get(`${base_URL}/pet/${id}`);
+        const response = await axios.get(
+          `${base_URL}/api/pets/${id}`,
+          getPetById
+        );
         console.log("Pet data fetched from server:", response.data);
         setPetData(response.data);
       } catch (error) {

@@ -25,7 +25,7 @@ const Gender = ({ petGender, setPetGender }) => {
         row
         defaultValue="male"
         name="gender"
-        value={petGender}
+        value={petGender.toLowerCase()}
         onChange={(e) => {
           setPetGender(e.target.value);
         }}
@@ -34,7 +34,7 @@ const Gender = ({ petGender, setPetGender }) => {
           value="male"
           control={<Radio />}
           label="Male"
-          onChange={(e) => setPetGender(e.target.value)}
+          onChange={(e) => setPetGender(e.target.value.toLowerCase())}
           sx={{ color: "#635b46" }}
         />
 
@@ -42,7 +42,7 @@ const Gender = ({ petGender, setPetGender }) => {
           value="female"
           control={<Radio />}
           label="Female"
-          onChange={(e) => setPetGender(e.target.value)}
+          onChange={(e) => setPetGender(e.target.value.toLowerCase())}
           sx={{ color: "#635b46" }}
         />
 

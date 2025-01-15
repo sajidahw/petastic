@@ -10,7 +10,7 @@ import {
 
 import "./index.css";
 import "./App.css";
-import axios from "axios";
+// import axios from "axios";
 
 import Home from "./pages/Home";
 import LogIn from "./pages/LogIn";
@@ -20,14 +20,16 @@ import ViewPet from "./pages/ViewPet";
 import Pets from "./pages/Pets";
 import FAQ from "./pages/FAQ";
 import ForgotPassword from "./pages/ForgotPassword";
+import axiosC from "./api/axiosConfig";
 
 function App() {
   // const [showPage, setShowPage] = useState(false);
-  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
+  // const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api/pets";
 
   // fetching data from the server
   const fetchLandingPage = async () => {
-    const response = await axios.get(`${base_URL}`); //http://localhost:8181
+    const response = await axios.get("/"); //http://localhost:8181
+    // const response = await axios.get("`${base_URL}`");
     console.log(response.data);
   };
 

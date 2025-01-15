@@ -15,10 +15,13 @@ export const getPets = async (req, res) => {
 
 // GET: Fetch a pet by id, /pets/:id
 export const getPetById = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params; // not req.params.id
+  console.log("ID received in GET /:id:", id);
+  
 
   // 404 error if pet not found
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!mongoose.isValidObjectId(id)) {
+    // !mongoose.Types.ObjectId.isValid(id)
     return res
       .status(404)
       .json({ success: false, message: "No pet with that id." });
