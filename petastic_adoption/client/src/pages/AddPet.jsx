@@ -34,7 +34,7 @@ import Human from "../components/Human";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 // import axios from "axios";
 import axios from "../api/axiosConfig.js";
-import { createPet } from "../../../server/controllers/pet.controller.js";
+// import { createPet } from "../../../server/controllers/pet.controller.js";
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {
@@ -190,7 +190,7 @@ const AddPet = () => {
     try {
       // POST request to backend to create a new pet with an 'id'
       // const response = await axios.post(`${base_URL}/pet`, petData);
-      const response = await axios.post(`/pets`, createPet(petData)); //petData or createPet??
+      const response = await axios.post(`/pets`); //petData or createPet(petData)??
       setPetData([...petData, response.data]); // remove spread if saving one?
 
       // removed `${base_URL}/pets` bc using axiosConfig

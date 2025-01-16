@@ -27,7 +27,7 @@ import {
 import { FaPaw } from "react-icons/fa";
 // import axios from "axios";
 import axios from "../api/axiosConfig.js";
-import { getPets } from "../../../server/controllers/pet.controller.js";
+// import { getPets } from "../../../server/controllers/pet.controller.js";
 
 // This is the Pets gallery or listings page of Available Pets
 const Pets = () => {
