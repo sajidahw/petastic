@@ -18,6 +18,7 @@ const corsOptions = {
     "http://localhost:8181/pets",
     "http://localhost:8181/api/pets",
     "http://localhost:8181",
+    "http://localhost:8181/api",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
   methods: "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
