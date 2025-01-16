@@ -29,6 +29,7 @@ const corsOptions = {
     "http://localhost:8181/pets",
     "http://localhost:8181/api/pets",
     "http://localhost:8181/",
+    "http://localhost:8181/api",
   ],
   // "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods":
@@ -45,12 +46,14 @@ const corsOptions = {
     "http://localhost:8181",
     "https://petastic.vercel.app/api/pets",
     "https://p.typekit.net",
+    "https://localhost:8181/api",
   ],
   allow_origins_without_credentials: ["*"],
   allow_origins_with_credentials: [
     "https://petastic.vercel.app",
     "http://localhost:8181/api/pets",
     "http://localhost:8181/pets",
+    "http://localhost:8181/api",
   ],
 };
 
