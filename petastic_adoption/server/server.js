@@ -8,6 +8,7 @@ import { connectDB } from "./config/db.js";
 import petRoutes from "./routes/pet.route.js";
 import { getPets } from "./controllers/pet.controller.js";
 
+
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8181;
@@ -59,14 +60,16 @@ app.use(cors(corsOptions));
 
 // routes with endpoints
 // index route for server to send info response to client
+// app.get("/", (req, res) => {
+//   res.send(`'Welcome to Petastic, an Animal Adoption site. 🐕'`);
+// });
 app.get("/", (req, res) => {
-  res.send(`'Welcome to Petastic, an Animal Adoption site. 🐕'`);
+  res.json({message:`'Welcome to Petastic, an Animal Adoption site. 🐕'`});
 });
 
 // URL Endpoints to access the rest of the website
 // testing this endpoint in the browser: http://localhost:8181/pets
 // app.use("/pets", petRoutes); // all routes for pets via pet.route.js instead of /pets
-
 
 // app.get("/api/pets", getPets); // one route to see all pets
 
