@@ -39,6 +39,10 @@ import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import { BiSolidError } from "react-icons/bi";
 // import axios from "axios";
 import axios from "../api/axiosConfig.js";
+import {
+  getPetById,
+  deletePet,
+} from "../../server/controllers/pet.controller.js";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
@@ -83,7 +87,7 @@ const ViewPet = () => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`/pet/${id}`, deletePet);
+      await axios.delete(`/pet/${id}`, deletePet(id));
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
       setPetData(petData.filter((pet) => pet.id !== id));
       console.log("Pet removed from the list.");
@@ -147,17 +151,14 @@ const ViewPet = () => {
     const fetchPetData = async () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
-        const response = await axios.get(
-          `/pets/${id}`,
-          getPetById
-        );
+        const response = await axios.get(`/pets/${id}`, getPetById(id));
         console.log("Pet data fetched from server:", response.data);
-        setPetData(response.data);
+        setPetData(response.data); // do i even need this if just viewing?**CHECK
       } catch (error) {
         console.error("Error fetching pet data:", error);
         setPetData(null); // set to null if error
       }
-    };// removed `${base_URL}/pet/${id}`
+    }; // removed `${base_URL}/pet/${id}`
 
     if (fetchPetData) {
       fetchPetData();

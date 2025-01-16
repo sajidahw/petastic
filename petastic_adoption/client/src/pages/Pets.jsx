@@ -27,6 +27,7 @@ import {
 import { FaPaw } from "react-icons/fa";
 // import axios from "axios";
 import axios from "../api/axiosConfig.js";
+import { getPets } from "../../../server/controllers/pet.controller.js";
 
 // This is the Pets gallery or listings page of Available Pets
 const Pets = () => {
@@ -60,7 +61,7 @@ const Pets = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`/pets`);
+        const response = await axios.get(`/pets`, getPets()); //is getPets necess?
         console.log(response.data);
         setPets(response.data.pets);
       } catch (error) {
