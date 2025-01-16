@@ -12,6 +12,8 @@ import {
 // each route with related methods and endpoints + functions listed in pet.controller.js
 const router = express.Router();
 
+// now: /api/pets
+
 // GET: Fetch all pets, /pets
 router.get("/", getPets); // pets gallery page
 

@@ -66,7 +66,9 @@ app.get("/", (req, res) => {
 // URL Endpoints to access the rest of the website
 // testing this endpoint in the browser: http://localhost:8181/pets
 // app.use("/pets", petRoutes); // all routes for pets via pet.route.js instead of /pets
-app.get("/pets", getPets); // one route to see all pets
+
+
+// app.get("/api/pets", getPets); // one route to see all pets
 
 // app.use("/pet", petRoutes); // all routes for pets via pet.route.js instead of /pets// **POSSIBLE TO USE /pet instead of /pets and keep /pets just for gallery??
 
