@@ -83,10 +83,11 @@ const ViewPet = () => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`${base_URL}/pet/${id}`, deletePet);
+      await axios.delete(`/pet/${id}`, deletePet);
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
       setPetData(petData.filter((pet) => pet.id !== id));
       console.log("Pet removed from the list.");
+      // removed `${base_URL}/pet/${id}`
 
       // Open the Snackbar Alert
       setSnackOpen(true);
@@ -147,7 +148,7 @@ const ViewPet = () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
         const response = await axios.get(
-          `${base_URL}/pets/${id}`,
+          `/pets/${id}`,
           getPetById
         );
         console.log("Pet data fetched from server:", response.data);
@@ -156,7 +157,7 @@ const ViewPet = () => {
         console.error("Error fetching pet data:", error);
         setPetData(null); // set to null if error
       }
-    };
+    };// removed `${base_URL}/pet/${id}`
 
     if (fetchPetData) {
       fetchPetData();
