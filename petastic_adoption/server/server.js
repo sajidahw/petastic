@@ -8,7 +8,6 @@ import { connectDB } from "./config/db.js";
 import petRoutes from "./routes/pet.route.js";
 import { getPets } from "./controllers/pet.controller.js";
 
-
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8181;
@@ -21,7 +20,7 @@ const corsOptions = {
     "http://localhost:8181",
   ], // vite, vercel
   optionsSuccessStatus: 200 || 204,
-  methods: "GET, POST, PUT, DELETE, HEAD, PATCH, OPTIONS",
+  methods: "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
   headers: "Content-Type, Authorization",
   allowedHeaders: ["Content-Type", "Authorization"],
   "Access-Control-Allow-Origin": [
@@ -33,7 +32,7 @@ const corsOptions = {
   ],
   // "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods":
-    "GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH",
+    "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
   "Access-Control-Allow-Headers": "Content-Type, Authorization",
   "Access-Control-Allow-Credentials": "true",
   credentials: true,
@@ -64,7 +63,7 @@ app.use(cors(corsOptions));
 //   res.send(`'Welcome to Petastic, an Animal Adoption site. 🐕'`);
 // });
 app.get("/", (req, res) => {
-  res.json({message:`'Welcome to Petastic, an Animal Adoption site. 🐕'`});
+  res.json({ message: `'Welcome to Petastic, an Animal Adoption site. 🐕'` });
 });
 
 // URL Endpoints to access the rest of the website
