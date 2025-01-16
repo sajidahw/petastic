@@ -147,7 +147,7 @@ const ViewPet = () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
         const response = await axios.get(
-          `${base_URL}/api/pets/${id}`,
+          `${base_URL}/pets/${id}`,
           getPetById
         );
         console.log("Pet data fetched from server:", response.data);

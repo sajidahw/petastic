@@ -68,7 +68,7 @@ const AddPet = () => {
   const [petData, setPetData] = useState([]); // not used as a prop bc it's not passed to another component
 
   const navigate = useNavigate();
-  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181"; // instead of process.env.REACT_APP_API_URL; express server port 8181
+  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api"; // instead of process.env.REACT_APP_API_URL; express server port 8181
 
   // This array will be used to populate the pet type dropdown menu.
   const types = [
@@ -189,7 +189,7 @@ const AddPet = () => {
     try {
       // POST request to backend to create a new pet with an 'id'
       // const response = await axios.post(`${base_URL}/pet`, petData);
-      const response = await axios.post(`${base_URL}/api/pets`, petData);
+      const response = await axios.post(`${base_URL}/pets`, petData);
 
       // Response returns the created pet with a MongoDB 'id' field
       const id = response.data._id;

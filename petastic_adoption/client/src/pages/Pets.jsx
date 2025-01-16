@@ -32,7 +32,7 @@ import axios from "../api/axiosConfig.js";
 const Pets = () => {
   // no props since displaying ALL pets
   const [pets, setPets] = useState([]);
-  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
+  const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api";
 
   // // Fetch all pets from the local storage
   // useEffect(() => {
@@ -60,7 +60,7 @@ const Pets = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`${base_URL}/api/pets`);
+        const response = await axios.get(`${base_URL}/pets`);
         console.log(response.data);
         setPets(response.data.pets);
       } catch (error) {

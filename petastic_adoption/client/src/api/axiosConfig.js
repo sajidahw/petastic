@@ -2,7 +2,7 @@ import axios from "axios";
 // for db adoption, backend endpoints use /api/pets
 
 const axiosC = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api/pets",
+  baseURL: import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api",
   headers: {
     "Content-Type": "application/json",
   },
