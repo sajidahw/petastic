@@ -8,4 +8,20 @@ export default defineConfig({
   //   outDir: "",
   // },
   plugins: [react()],
+  server: {
+    proxy: {
+      "/": {
+        target: "http://localhost:8181", // Your backend server URL
+        changeOrigin: true, // Required for CORS to work
+        secure: true, // If your backend uses HTTPS with a self-signed certificate, set to false
+        // rewrite: (path) => path.replace(/^\/api/, ""), // Optional: remove the /api prefix when forwarding the request
+      },
+      "/api": {
+        target: "http://localhost:8181", // Your backend server URL
+        changeOrigin: true, // Required for CORS to work
+        secure: true, // If your backend uses HTTPS with a self-signed certificate, set to false
+        rewrite: (path) => path.replace(/^\/api/, ""), // Optional: remove the /api prefix when forwarding the request
+      },
+    },
+  },
 });
