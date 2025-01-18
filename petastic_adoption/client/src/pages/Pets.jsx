@@ -63,7 +63,7 @@ const Pets = () => {
       try {
         const response = await axios.get(`/pets`); //is getPets necess?
         console.log(response.data);
-        setPets(response.data.pets);
+        setPets(response.data.data); // response.data.pets
       } catch (error) {
         console.log("Error in Fetching Pets: ", error.message);
       }
