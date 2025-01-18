@@ -357,7 +357,10 @@ const ViewPet = () => {
 
                 <Grid2 size={4}>
                   <strong>Medical History:</strong> {""}
-                  {petData.medicalHistory.join(", ")}
+                  {Array.isArray(petData.medicalHistory)
+                    ? petData.medicalHistory.join(", ")
+                    : petData.medicalHistory}
+                  {/* {petData.medicalHistory.join(", ") } */}
                 </Grid2>
 
                 <Grid2 size={4}>
