@@ -151,7 +151,7 @@ const ViewPet = () => {
     const fetchPetData = async () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
-        const response = await axios.get(`/pets/${id}`);// removed getPetById(id)
+        const response = await axios.get(`/pet/${id}`);// removed getPetById(id)
         console.log("Pet data fetched from server:", response.data);
         setPetData(response.data); // do i even need this if just viewing?**CHECK
       } catch (error) {

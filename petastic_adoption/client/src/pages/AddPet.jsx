@@ -190,7 +190,7 @@ const AddPet = () => {
     try {
       // POST request to backend to create a new pet with an 'id'
       // const response = await axios.post(`${base_URL}/pet`, petData);
-      const response = await axios.post(`/pets`); //petData or createPet(petData)??
+      const response = await axios.post(`/pet`, petData); //petData or createPet(petData)??
       setPetData([...petData, response.data]); // remove spread if saving one?
 
       // removed `${base_URL}/pets` bc using axiosConfig

@@ -78,7 +78,7 @@ app.get("/", (req, res) => {
 
 // app.use("/pet", petRoutes); // all routes for pets via pet.route.js instead of /pets// **POSSIBLE TO USE /pet instead of /pets and keep /pets just for gallery??
 
-app.use("/api/pets", petRoutes); // all routes for pets via pet.route.js instead of /pets
+app.use("/api", petRoutes); // all routes for pets via pet.route.js instead of /pets OR /api/pets??
 
 // static routes are managed on client side's app.jsx
 

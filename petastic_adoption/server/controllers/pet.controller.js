@@ -15,9 +15,8 @@ export const getPets = async (req, res) => {
 
 // GET: Fetch a pet by id, /pets/:id
 export const getPetById = async (req, res) => {
-  const { id } = req.params; // not req.params.id
+  const { id } = req.params; // not req.params.id; passed by user in URL /:id
   console.log("ID received in GET /:id:", id);
-  
 
   // 404 error if pet not found
   if (!mongoose.isValidObjectId(id)) {
@@ -74,7 +73,7 @@ export const createPet = async (req, res) => {
 
 // PUT: UPDATE a pet by id, /pets/:id
 export const updatePet = async (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params; // passed id from url via :id
   const pet = req.body;
 
   // 404 error if pet not found
