@@ -45,7 +45,7 @@ import axios from "../api/axiosConfig.js";
 // } from "../../server/controllers/pet.controller.js";
 
 // ViewPet component to display recently added pet details
-const ViewPet = ({petData}) => {
+const ViewPet = () => {
   const { id } = useParams(); // matching route definition as a String type
   const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
@@ -151,7 +151,7 @@ const ViewPet = ({petData}) => {
     const fetchPetData = async () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
-        const response = await axios.get(`/pet/${id}`);// removed getPetById(id)
+        const response = await axios.get(`/pet/${id}`); // removed getPetById(id)
         console.log("Pet data fetched from server:", response.data);
         setPetData(response.data); // do i even need this if just viewing?**CHECK
       } catch (error) {
