@@ -188,7 +188,7 @@ const Pets = () => {
                         fontSize: "1.4em",
                       }}
                     >
-                      {pet.name}
+                      {pet.petName}
                     </Typography>
                   </Stack>
 
