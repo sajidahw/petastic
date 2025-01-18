@@ -20,7 +20,7 @@ import ViewPet from "./pages/ViewPet";
 import Pets from "./pages/Pets";
 import FAQ from "./pages/FAQ";
 import ForgotPassword from "./pages/ForgotPassword";
-import axiosC from "./api/axiosConfig.js";
+import axios from "./api/axiosConfig.js";
 
 function App() {
   // const [showPage, setShowPage] = useState(false);
