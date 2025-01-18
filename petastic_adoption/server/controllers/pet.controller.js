@@ -28,6 +28,11 @@ export const getPetById = async (req, res) => {
 
   try {
     const pet = await Pet.findById(id);
+    if (!pet) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Pet not found." });
+    }
     res.status(200).json({ success: true, data: pet });
   } catch (error) {
     console.log("Error in Fetching Pet: ", error.message);
