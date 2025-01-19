@@ -296,7 +296,7 @@ const ViewPet = () => {
                 fontSize: "2em",
               }}
             >
-              {petData.name}
+              {petData.petName}
             </Typography>
           </Stack>
 
