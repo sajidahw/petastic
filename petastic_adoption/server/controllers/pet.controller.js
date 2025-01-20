@@ -42,20 +42,66 @@ export const getPetById = async (req, res) => {
 
 // POST: CREATE a new pet, /pets
 export const createPet = async (req, res) => {
-  const pet = req.body; // user will send this data
+  // const pet = req.body; // user will send this data
+  const {
+    petData: {
+      petName,
+      petType,
+      petBreed,
+      petAge,
+      petColor,
+      petGender,
+      petTemperament,
+      petLocation,
+      petMedicalHistory,
+      petDescription,
+      petAvailability,
+      petVaccination,
+      petSpayNeuter,
+      petOkWithKids,
+      petOkWithCats,
+      petOkWithDogs,
+      petImage,
+      humanName,
+      humanEmail,
+      humanPhone,
+    },
+  } = req.body; // petData from user
+  // const {
+  //   petName,
+  //   petType,
+  //   petBreed,
+  //   petAge,
+  //   petColor,
+  //   petGender,
+  //   petTemperament,
+  //   petLocation,
+  //   petMedicalHistory,
+  //   petDescription,
+  //   petAvailability,
+  //   petVaccination,
+  //   petSpayNeuter,
+  //   petOkWithKids,
+  //   petOkWithCats,
+  //   petOkWithDogs,
+  //   petImage,
+  //   humanName,
+  //   humanEmail,
+  //   humanPhone,
+  // } = req.body; // petData from user
 
   // check if all fields are provided
   if (
-    !pet.petName ||
-    !pet.petType ||
-    !pet.petBreed ||
-    !pet.petAge ||
-    !pet.petColor ||
-    !pet.petGender ||
-    !pet.petLocation ||
-    !pet.humanName ||
-    !pet.humanEmail ||
-    !pet.humanPhone
+    !petName ||
+    !petType ||
+    !petBreed ||
+    !petAge ||
+    !petColor ||
+    !petGender ||
+    !petLocation ||
+    !humanName ||
+    !humanEmail ||
+    !humanPhone
   ) {
     return res.status(400).json({
       success: false,
@@ -65,7 +111,28 @@ export const createPet = async (req, res) => {
   }
 
   // create a new pet from user sent data
-  const newPet = new Pet(pet); // schema Pet housing user data for pet
+  const newPet = new Pet({
+    petName,
+    petType,
+    petBreed,
+    petAge,
+    petColor,
+    petGender,
+    petTemperament,
+    petLocation,
+    petMedicalHistory,
+    petDescription,
+    petAvailability,
+    petVaccination,
+    petSpayNeuter,
+    petOkWithKids,
+    petOkWithCats,
+    petOkWithDogs,
+    petImage,
+    humanName,
+    humanEmail,
+    humanPhone,
+  }); // schema Pet housing user data for pet
   try {
     await newPet.save(); // saving to db w _id
     console.log("New Pet ID from MongoDB: ", newPet._id);
