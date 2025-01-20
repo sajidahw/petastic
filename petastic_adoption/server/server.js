@@ -58,8 +58,8 @@ const corsOptions = {
   ],
 };
 
-app.use(express.json({limit: '5mb'})); // allows server to accept JSON data in req.body
-app.use(express.urlencoded({ extended: true, limit: '5mb' })); // allows server to accept data in URL
+app.use(express.json({limit: '1000M'})); // allows server to accept JSON data in req.body
+app.use(express.urlencoded({ extended: true, limit: '1000M' })); // allows server to accept data in URL
 app.use(cors(corsOptions));
 
 // routes with endpoints
