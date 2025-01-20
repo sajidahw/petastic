@@ -44,51 +44,27 @@ export const getPetById = async (req, res) => {
 export const createPet = async (req, res) => {
   // const pet = req.body; // user will send this data
   const {
-    petData: {
-      petName,
-      petType,
-      petBreed,
-      petAge,
-      petColor,
-      petGender,
-      petTemperament,
-      petLocation,
-      petMedicalHistory,
-      petDescription,
-      petAvailability,
-      petVaccination,
-      petSpayNeuter,
-      petOkWithKids,
-      petOkWithCats,
-      petOkWithDogs,
-      petImage,
-      humanName,
-      humanEmail,
-      humanPhone,
-    },
+    petName,
+    petType,
+    petBreed,
+    petAge,
+    petColor,
+    petGender,
+    petTemperament,
+    petLocation,
+    petMedicalHistory,
+    petDescription,
+    petAvailability,
+    petVaccination,
+    petSpayNeuter,
+    petOkWithKids,
+    petOkWithCats,
+    petOkWithDogs,
+    petImage,
+    humanName,
+    humanEmail,
+    humanPhone,
   } = req.body; // petData from user
-  // const {
-  //   petName,
-  //   petType,
-  //   petBreed,
-  //   petAge,
-  //   petColor,
-  //   petGender,
-  //   petTemperament,
-  //   petLocation,
-  //   petMedicalHistory,
-  //   petDescription,
-  //   petAvailability,
-  //   petVaccination,
-  //   petSpayNeuter,
-  //   petOkWithKids,
-  //   petOkWithCats,
-  //   petOkWithDogs,
-  //   petImage,
-  //   humanName,
-  //   humanEmail,
-  //   humanPhone,
-  // } = req.body; // petData from user
 
   // check if all fields are provided
   if (
@@ -106,7 +82,7 @@ export const createPet = async (req, res) => {
     return res.status(400).json({
       success: false,
       message:
-        "Pet name, type, breed, age, color, gender, location and Human name, email and phone number are required.",
+        "Missing required fields: Pet name, type, breed, age, color, gender, location and Human name, email and phone number are required.",
     });
   }
 
