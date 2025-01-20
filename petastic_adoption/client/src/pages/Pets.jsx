@@ -61,7 +61,7 @@ const Pets = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`/pets`); //is getPets necess?
+        const response = await axios.get(`/pets`); //is getPets necess?/pets
         console.log(response.data);
         setPets(response.data.data); // response.data.pets
       } catch (error) {
