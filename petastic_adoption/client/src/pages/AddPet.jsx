@@ -326,7 +326,7 @@ const AddPet = () => {
                 fullWidth
                 required
                 sx={{ bgcolor: "#fbf1d7", mb: 2 }}
-                onChange={(e) => setPetBreed(e.target.value.toLowerCase())}
+                onChange={(e) => setPetBreed(e.target.value)}
               ></TextField>
 
               <TextField
