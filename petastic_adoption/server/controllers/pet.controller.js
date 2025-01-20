@@ -110,9 +110,9 @@ export const createPet = async (req, res) => {
     humanPhone,
   }); // schema Pet housing user data for pet
   try {
-    await newPet.save(); // saving to db w _id
-    console.log("New Pet ID from MongoDB: ", newPet._id);
-    res.status(201).json({ success: true, data: newPet });
+    const savedPet = await newPet.save(); // saving to db w _id
+    console.log("New Pet ID from MongoDB: ", savedPet._id);
+    res.status(201).json({ success: true, data: savedPet });
   } catch (error) {
     console.log("Error in Saving Pet: ", error);
     res.status(500).json({ success: false, message: "Internal Server Error" });
