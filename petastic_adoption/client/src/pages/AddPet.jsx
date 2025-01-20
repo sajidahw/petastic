@@ -319,14 +319,14 @@ const AddPet = () => {
               <TextField
                 placeholder="Enter Pet Breed"
                 name="petBreed"
-                value={petBreed.toLowerCase()}
+                value={petBreed}
                 id="petBreed"
                 type="text"
                 label="Enter Pet Breed"
                 fullWidth
                 required
                 sx={{ bgcolor: "#fbf1d7", mb: 2 }}
-                onChange={(e) => setPetBreed(e.target.value)}
+                onChange={(e) => setPetBreed(e.target.value.toLowerCase())}
               ></TextField>
 
               <TextField
