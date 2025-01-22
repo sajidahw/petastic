@@ -45,7 +45,7 @@ import axios from "../api/axiosConfig.js";
 // } from "../../server/controllers/pet.controller.js";
 
 // ViewPet component to display recently added pet details
-const ViewPet = () => {
+const ViewPet = ({pet}) => {
   const { id } = useParams(); // matching route definition as a String type
   const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
