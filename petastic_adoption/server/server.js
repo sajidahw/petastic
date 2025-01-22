@@ -15,6 +15,7 @@ const corsOptions = {
   origin: [
     "http://localhost:5173",
     "https://petastic.vercel.app/api",
+    "https://petastic.vercel.app",
     "http://localhost:8181/pets",
     "http://localhost:8181/api/pets",
     "http://localhost:8181",
@@ -27,6 +28,7 @@ const corsOptions = {
   "Access-Control-Allow-Origin": [
     "*",
     "https://petastic.vercel.app/api",
+    "https://petastic.vercel.app",
     "http://localhost:8181/pets",
     "http://localhost:8181/api/pets",
     "http://localhost:8181/",
@@ -43,6 +45,7 @@ const corsOptions = {
     "http://localhost:5174",
     "http://localhost:4173",
     "https://petastic.vercel.app",
+    "http://localhost:8181/api",
     "http://localhost:8181/pets", // defined line 58,
     "http://localhost:8181",
     "https://petastic.vercel.app/api/pets",
@@ -52,6 +55,7 @@ const corsOptions = {
   allow_origins_without_credentials: ["*"],
   allow_origins_with_credentials: [
     "https://petastic.vercel.app",
+    "https://petastic.vercel.app/api",
     "http://localhost:8181/api/pets",
     "http://localhost:8181/pets",
     "http://localhost:8181/api",
