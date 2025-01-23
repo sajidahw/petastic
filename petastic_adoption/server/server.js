@@ -65,10 +65,15 @@ const PORT = process.env.PORT || 8181;
 app.use(express.json({ limit: "10mb" })); // allows server to accept JSON data in req.body
 app.use(express.urlencoded({ extended: true, limit: "10mb" })); // allows server to accept data in URL
 // app.use(cors(corsOptions));
-app.use(cors({ "Access-Control-Allow-Methods":
-    "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization",
-  "Access-Control-Allow-Credentials": "true",})); // allows all origins to access the server
+app.use(
+  cors({
+    "Access-Control-Allow-Methods":
+      "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
+    "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    "Access-Control-Allow-Credentials": "true",
+    origin: "*",
+  })
+); // allows all origins to access the server
 
 // routes with endpoints
 // index route for server to send info response to client
