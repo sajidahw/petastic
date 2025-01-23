@@ -134,7 +134,7 @@ const AddPet = () => {
     { value: "wyoming", label: "Wyoming" },
   ];
 
-  const petData = {
+  petData = {
     // id: id, // not needed for axios
     name: petName,
     type: petType,
