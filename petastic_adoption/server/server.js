@@ -67,8 +67,7 @@ app.use(express.urlencoded({ extended: true, limit: "10mb" })); // allows server
 // app.use(cors(corsOptions));
 app.use(
   cors({
-    "Access-Control-Allow-Methods":
-      "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
+    "Access-Control-Allow-Methods": "OPTIONS, GET, POST, PUT, DELETE, HEAD",
     "Access-Control-Allow-Headers": "Content-Type, Authorization",
     "Access-Control-Allow-Origin": [
       "*",
