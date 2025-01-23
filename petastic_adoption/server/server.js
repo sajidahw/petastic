@@ -11,61 +11,68 @@ import { getPets } from "./controllers/pet.controller.js";
 dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 8181;
-const corsOptions = {
-  origin: [
-    "http://localhost:5173",
-    "https://petastic.vercel.app/api",
-    "https://petastic.vercel.app",
-    "http://localhost:8181/pets",
-    "http://localhost:8181/api/pets",
-    "http://localhost:8181",
-    "http://localhost:8181/api",
-  ], // vite, vercel
-  optionsSuccessStatus: 200 || 204,
-  methods: "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
-  headers: "Content-Type, Authorization",
-  allowedHeaders: ["Content-Type", "Authorization"],
-  "Access-Control-Allow-Origin": [
-    "*",
-    "https://petastic.vercel.app/api",
-    "https://petastic.vercel.app",
-    "http://localhost:8181/pets",
-    "http://localhost:8181/api/pets",
-    "http://localhost:8181/",
-    "http://localhost:8181/api",
-  ],
-  // "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods":
-    "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
-  "Access-Control-Allow-Headers": "Content-Type, Authorization",
-  "Access-Control-Allow-Credentials": "true",
-  credentials: true,
-  allowedOrigins: [
-    "http://localhost:5173",
-    "http://localhost:5174",
-    "http://localhost:4173",
-    "https://petastic.vercel.app",
-    "http://localhost:8181/api",
-    "http://localhost:8181/pets", // defined line 58,
-    "http://localhost:8181",
-    "https://petastic.vercel.app/api/pets",
-    "https://p.typekit.net",
-    "https://localhost:8181/api",
-  ],
-  allow_origins_without_credentials: ["*"],
-  allow_origins_with_credentials: [
-    "https://petastic.vercel.app",
-    "https://petastic.vercel.app/api",
-    "http://localhost:8181/api/pets",
-    "http://localhost:8181/pets",
-    "http://localhost:8181/api",
-  ],
-};
+// const corsOptions = {
+//   origin: [
+//     "http://localhost:5173",
+//     "https://petastic.vercel.app/api",
+//     "https://petastic.vercel.app",
+//     "http://localhost:8181/pets",
+//     "http://localhost:8181/api/pets",
+//     "http://localhost:8181",
+//     "http://localhost:8181/api",
+//   ], // vite, vercel
+//   optionsSuccessStatus: 200 || 204,
+//   methods: "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
+//   headers: "Content-Type, Authorization",
+//   allowedHeaders: ["Content-Type", "Authorization"],
+//   "Access-Control-Allow-Origin": [
+//     "*",
+//     "https://petastic.vercel.app/api",
+//     "https://petastic.vercel.app",
+//     "http://localhost:8181/pets",
+//     "http://localhost:8181/api/pets",
+//     "http://localhost:8181/",
+//     "http://localhost:8181/api",
+//   ],
+//   // "Access-Control-Allow-Origin": "*",
+//   "Access-Control-Allow-Methods":
+//     "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
+//   "Access-Control-Allow-Headers": "Content-Type, Authorization",
+//   "Access-Control-Allow-Credentials": "true",
+//   credentials: true,
+//   allowedOrigins: [
+//     "http://localhost:5173",
+//     "http://localhost:5174",
+//     "http://localhost:4173",
+//     "https://petastic.vercel.app",
+//     "http://localhost:8181/api",
+//     "http://localhost:8181/pets", // defined line 58,
+//     "http://localhost:8181",
+//     "https://petastic.vercel.app/api/pets",
+//     "https://p.typekit.net",
+//     "https://localhost:8181/api",
+//   ],
+//   allow_origins_without_credentials: ["*"],
+//   allow_origins_with_credentials: [
+//     "https://petastic.vercel.app",
+//     "https://petastic.vercel.app/api",
+//     "http://localhost:8181/api/pets",
+//     "http://localhost:8181/pets",
+//     "http://localhost:8181/api",
+//   ],
+// };
 
 app.use(express.json({ limit: "10mb" })); // allows server to accept JSON data in req.body
 app.use(express.urlencoded({ extended: true, limit: "10mb" })); // allows server to accept data in URL
-app.use(cors(corsOptions));
-// app.use(cors()); // allows all origins to access the server
+// app.use(cors(corsOptions));
+app.use(
+  cors({
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
+    origin: "*",
+    credentials: true,
+  })
+); // allows all origins to access the server
 
 // routes with endpoints
 // index route for server to send info response to client
