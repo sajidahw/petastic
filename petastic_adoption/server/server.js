@@ -71,7 +71,11 @@ app.use(
       "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
     "Access-Control-Allow-Headers": "Content-Type, Authorization",
     "Access-Control-Allow-Credentials": "true",
-    origin: "*",
+    "Access-Control-Allow-Origin": [
+      "https://petastic-2vb4ud4d8-summersws-projects.vercel.app",
+      "https://petastic.vercel.app",
+      "http://localhost:8181",
+    ],
   })
 ); // allows all origins to access the server
 
