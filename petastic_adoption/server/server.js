@@ -73,6 +73,7 @@ app.use(
     "Access-Control-Allow-Origin": [
       "*",
       "https://petastic-2vb4ud4d8-summersws-projects.vercel.app",
+      "https://petastic.vercel.app/api",
       "https://petastic.vercel.app",
       "http://localhost:8181",
     ],

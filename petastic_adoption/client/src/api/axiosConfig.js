@@ -2,7 +2,8 @@ import axios from "axios";
 // for db adoption, backend endpoints use /api/pets
 
 const axiosC = axios.create({
-  baseURL: import.meta.env.VITE_APP_API_URL || "https://petastic.vercel.app",
+  baseURL:
+    import.meta.env.VITE_APP_API_URL || "https://petastic.vercel.app/api",
   headers: {
     "Content-Type": "application/json",
   },

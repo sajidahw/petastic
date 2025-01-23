@@ -61,7 +61,7 @@ const Pets = () => {
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`/api/pets`); //is getPets necess?/pets
+        const response = await axios.get(`/pets`); //is getPets necess?/pets
         console.log(response.data);
         setPets(response.data.data); // response.data.pets
       } catch (error) {
@@ -142,7 +142,7 @@ const Pets = () => {
                 {/* makes the entire card clickable */}
                 <CardActionArea
                   component={RouterLink} // Nav Link
-                  to={`/api/pet/${pet._id}`}
+                  to={`/pet/${pet._id}`}
                 >
                   <CardMedia
                     component="img"
@@ -251,7 +251,7 @@ const Pets = () => {
 
                     <Button
                       component={RouterLink} // Nav Link
-                      to={`/api/pet/${pet.id}`}
+                      to={`/pet/${pet.id}`}
                       variant="contained"
                       color="primary"
                       size="small"
