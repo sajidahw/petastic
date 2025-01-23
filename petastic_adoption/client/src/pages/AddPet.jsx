@@ -134,6 +134,31 @@ const AddPet = () => {
     { value: "wyoming", label: "Wyoming" },
   ];
 
+  const petData = {
+    // id: id, // not needed for axios
+    name: petName,
+    type: petType,
+    breed: petBreed,
+    age: petAge,
+    color: petColor,
+    gender: petGender,
+    size: petSize,
+    temperament: petTemperament,
+    location: petLocation,
+    medicalHistory: petMedicalHistory,
+    description: petDescription,
+    availability: petAvailability,
+    vaccination: petVaccination,
+    spayNeuter: petSpayNeuter,
+    okKids: petOkWithKids,
+    okCats: petOkWithCats,
+    okDogs: petOkWithDogs,
+    image: petImage,
+    humanName: humanName,
+    humanEmail: humanEmail,
+    humanPhone: humanPhone,
+  };
+
   // This useEffect hook will ensure only positive numbers up to 20 are entered for the pet's age. data fetching via useEffect
 
   useEffect(() => {
@@ -152,30 +177,30 @@ const AddPet = () => {
     e.preventDefault();
     // const id = Date.now(); //petId into String type.toString(), to be used as key in localStorage not needed for axios since driven by MongoDB
 
-    const petData = {
-      // id: id, // not needed for axios
-      name: petName,
-      type: petType,
-      breed: petBreed,
-      age: petAge,
-      color: petColor,
-      gender: petGender,
-      size: petSize,
-      temperament: petTemperament,
-      location: petLocation,
-      medicalHistory: petMedicalHistory,
-      description: petDescription,
-      availability: petAvailability,
-      vaccination: petVaccination,
-      spayNeuter: petSpayNeuter,
-      okKids: petOkWithKids,
-      okCats: petOkWithCats,
-      okDogs: petOkWithDogs,
-      image: petImage,
-      humanName: humanName,
-      humanEmail: humanEmail,
-      humanPhone: humanPhone,
-    };
+    // const petData = {
+    //   // id: id, // not needed for axios
+    //   name: petName,
+    //   type: petType,
+    //   breed: petBreed,
+    //   age: petAge,
+    //   color: petColor,
+    //   gender: petGender,
+    //   size: petSize,
+    //   temperament: petTemperament,
+    //   location: petLocation,
+    //   medicalHistory: petMedicalHistory,
+    //   description: petDescription,
+    //   availability: petAvailability,
+    //   vaccination: petVaccination,
+    //   spayNeuter: petSpayNeuter,
+    //   okKids: petOkWithKids,
+    //   okCats: petOkWithCats,
+    //   okDogs: petOkWithDogs,
+    //   image: petImage,
+    //   humanName: humanName,
+    //   humanEmail: humanEmail,
+    //   humanPhone: humanPhone,
+    // };
     // Local Storage: key must be stored in AddPet.jsx and retrieved from ViewPet.jsx the same way.
     // Debugging: Log the pet data being stored
     // console.log(`Storing pet data under key: pet-${id}`, petData); // not for axios
