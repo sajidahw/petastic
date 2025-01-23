@@ -87,7 +87,7 @@ const ViewPet = ({pet}) => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`/pet/${id}`); // removed deletePet(id)
+      await axios.delete(`/api/pet/${id}`); // removed deletePet(id)
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
       setPetData(petData.filter((pet) => pet.id !== id));
       console.log("Pet removed from the list.");
@@ -102,7 +102,7 @@ const ViewPet = ({pet}) => {
 
       // Navigate to the /pets page after a short delay to allow Snackbar to show
       setTimeout(() => {
-        navigate("/pets");
+        navigate("/api/pets");
         console.log("Navigated to /pets.");
       }, 4000); // 4-second delay; matches Snackbar autoHideDuration
 
@@ -119,7 +119,7 @@ const ViewPet = ({pet}) => {
     console.log("Adoption canceled.");
 
     // Return without removing the pet
-    navigate("/pets");
+    navigate("/api/pets");
     console.log("Navigated to /pets.");
   };
   // ** End of Adoption Confirmation Dialog + Snackbar Alerts **
@@ -151,7 +151,7 @@ const ViewPet = ({pet}) => {
     const fetchPetData = async () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
-        const response = await axios.get(`/pet/${id}`); // removed getPetById(id)
+        const response = await axios.get(`/api/pet/${id}`); // removed getPetById(id)
         console.log("Pet data fetched from server:", response.data);
         setPetData(response.data); // do i even need this if just viewing?**CHECK
       } catch (error) {

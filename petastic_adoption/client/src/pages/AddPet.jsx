@@ -190,7 +190,7 @@ const AddPet = () => {
     try {
       // POST request to backend to create a new pet with an 'id'
       // const response = await axios.post(`${base_URL}/pet`, petData);
-      const response = await axios.post(`/pet`, petData); //petData or createPet(petData)??
+      const response = await axios.post(`/api/pet`, petData); //petData or createPet(petData)??
       setPetData([...petData, response.data]); // remove spread if saving one?
 
       // removed `${base_URL}/pets` bc using axiosConfig
@@ -203,7 +203,7 @@ const AddPet = () => {
 
       // Navigate to the ViewPet page with the pet ID
       //  navigate(`/pet/${id}`);
-      navigate(`/pet/${id}`);
+      navigate(`/api/pet/${id}`);
     } catch (error) {
       console.error("Error adding pet:", error);
     }
