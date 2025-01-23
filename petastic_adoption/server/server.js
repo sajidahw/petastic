@@ -70,8 +70,8 @@ app.use(
     "Access-Control-Allow-Methods":
       "OPTIONS, GET, POST, PUT, DELETE, HEAD, PATCH",
     "Access-Control-Allow-Headers": "Content-Type, Authorization",
-    "Access-Control-Allow-Credentials": "true",
     "Access-Control-Allow-Origin": [
+      "*",
       "https://petastic-2vb4ud4d8-summersws-projects.vercel.app",
       "https://petastic.vercel.app",
       "http://localhost:8181",
