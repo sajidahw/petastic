@@ -150,7 +150,7 @@ const Pets = () => {
                     loading="lazy"
                     // image={puppy}
                     //  updating by prefacing pet to each field to match schema
-                    image={pet.petImage || puppy}
+                    image={pet.petImage || <img src="/puppy.jpg" alt="puppy" />}
                     alt={pet.petName}
                     sx={{
                       objectFit: "cover",
@@ -177,7 +177,12 @@ const Pets = () => {
                         boxShadow: 3,
                       }}
                     >
-                      <img src={pet.petImage || puppy} alt={pet.petName}></img>
+                      <img
+                        src={
+                          pet.petImage || <img src="/puppy.jpg" alt="puppy" />
+                        }
+                        alt={pet.petName}
+                      ></img>
                     </Avatar>
 
                     <Typography
