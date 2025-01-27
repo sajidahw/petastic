@@ -161,13 +161,13 @@ const ViewPet = () => {
       }
     }; // removed `${base_URL}/pet/${id}`
 
-    if (fetchPetData) {
-      fetchPetData();
-    } else {
-      console.log(`No pet data found in database for ID: ${id}`);
-    }
+    // if (fetchPetData) {
+    //   fetchPetData();
+    // } else {
+    //   console.log(`No pet data found in database for ID: ${id}`);
+    // }
 
-    // fetchPetData(); // used if no above conditional check
+    fetchPetData(); // used if no above conditional check
   }, [id]);
 
   // Show a loading message if pet data is not available

@@ -100,7 +100,6 @@ const petSchema = new mongoose.Schema(
     petLocation: {
       type: String,
       required: true,
-      default: "Neutral",
       enum: locationOptions,
     },
     petMedicalHistory: {

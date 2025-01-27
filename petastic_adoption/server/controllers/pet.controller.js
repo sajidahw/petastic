@@ -50,6 +50,7 @@ export const createPet = async (req, res) => {
     petAge,
     petColor,
     petGender,
+    petSize,
     petTemperament,
     petLocation,
     petMedicalHistory,
@@ -94,6 +95,7 @@ export const createPet = async (req, res) => {
     petAge,
     petColor,
     petGender,
+    petSize,
     petTemperament,
     petLocation,
     petMedicalHistory,
@@ -109,6 +111,7 @@ export const createPet = async (req, res) => {
     humanEmail,
     humanPhone,
   }); // schema Pet housing user data for pet
+
   try {
     const savedPet = await newPet.save(); // saving to db w _id
     console.log("New Pet ID from MongoDB: ", savedPet._id);

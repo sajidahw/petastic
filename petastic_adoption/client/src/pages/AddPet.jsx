@@ -134,30 +134,30 @@ const AddPet = () => {
     { value: "wyoming", label: "Wyoming" },
   ];
 
-  petData = {
-    // id: id, // not needed for axios
-    name: petName,
-    type: petType,
-    breed: petBreed,
-    age: petAge,
-    color: petColor,
-    gender: petGender,
-    size: petSize,
-    temperament: petTemperament,
-    location: petLocation,
-    medicalHistory: petMedicalHistory,
-    description: petDescription,
-    availability: petAvailability,
-    vaccination: petVaccination,
-    spayNeuter: petSpayNeuter,
-    okKids: petOkWithKids,
-    okCats: petOkWithCats,
-    okDogs: petOkWithDogs,
-    image: petImage,
-    humanName: humanName,
-    humanEmail: humanEmail,
-    humanPhone: humanPhone,
-  };
+  // petData = {
+  //   // id: id, // not needed for axios
+  //   name: petName,
+  //   type: petType,
+  //   breed: petBreed,
+  //   age: petAge,
+  //   color: petColor,
+  //   gender: petGender,
+  //   size: petSize,
+  //   temperament: petTemperament,
+  //   location: petLocation,
+  //   medicalHistory: petMedicalHistory,
+  //   description: petDescription,
+  //   availability: petAvailability,
+  //   vaccination: petVaccination,
+  //   spayNeuter: petSpayNeuter,
+  //   okKids: petOkWithKids,
+  //   okCats: petOkWithCats,
+  //   okDogs: petOkWithDogs,
+  //   image: petImage,
+  //   humanName: humanName,
+  //   humanEmail: humanEmail,
+  //   humanPhone: humanPhone,
+  // };
 
   // This useEffect hook will ensure only positive numbers up to 20 are entered for the pet's age. data fetching via useEffect
 
@@ -212,11 +212,36 @@ const AddPet = () => {
     // navigate(`/pet/${id}`);
 
     // axios version:
+    // List fields instead of redefining petData
+    const petData = {
+      petName,
+      petType,
+      petBreed,
+      petAge,
+      petColor,
+      petGender,
+      petSize,
+      petTemperament,
+      petLocation,
+      petMedicalHistory,
+      petDescription,
+      petAvailability,
+      petVaccination,
+      petSpayNeuter,
+      petOkWithKids,
+      petOkWithCats,
+      petOkWithDogs,
+      petImage,
+      humanName,
+      humanEmail,
+      humanPhone,
+    };
+
     try {
       // POST request to backend to create a new pet with an 'id'
       // const response = await axios.post(`${base_URL}/pet`, petData);
       const response = await axios.post(`/pet`, petData); //petData or createPet(petData)??
-      setPetData([...petData, response.data]); // remove spread if saving one?
+      // setPetData([...petData, response.data]); // remove spread if saving one?
 
       // removed `${base_URL}/pets` bc using axiosConfig
 
