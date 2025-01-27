@@ -66,7 +66,7 @@ const AddPet = () => {
   const [humanEmail, setHumanEmail] = useState("");
   const [humanPhone, setHumanPhone] = useState("");
 
-  const [petData, setPetData] = useState([]); // not used as a prop bc it's not passed to another component
+  // const [petData, setPetData] = useState([]); // not used as a prop bc it's not passed to another component
 
   const navigate = useNavigate();
   // const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api"; // instead of process.env.REACT_APP_API_URL; express server port 8181
