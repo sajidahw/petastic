@@ -63,7 +63,7 @@ const Pets = () => {
       try {
         const response = await axios.get(`/pets`); //is getPets necess?/pets
         console.log(response.data);
-        setPets(response.data); // response.data.pets or .data
+        setPets(response.data.data); // response.data.pets or .data; response.data.data to get to the pets array
       } catch (error) {
         console.log("Error in Fetching Pets: ", error.message);
       }
@@ -149,8 +149,9 @@ const Pets = () => {
                     // height="auto"
                     loading="lazy"
                     // image={puppy}
-                    image={pet.image || puppy}
-                    alt={pet.name}
+                    //  updating by prefacing pet to each field to match schema
+                    image={pet.petImage || puppy}
+                    alt={pet.petName}
                     sx={{
                       objectFit: "cover",
                       borderRadius: "8px",
@@ -176,7 +177,7 @@ const Pets = () => {
                         boxShadow: 3,
                       }}
                     >
-                      <img src={pet.image || puppy}></img>
+                      <img src={pet.petImage || puppy} alt={pet.petName}></img>
                     </Avatar>
 
                     <Typography
@@ -209,42 +210,42 @@ const Pets = () => {
                           <Grid2 Item>
                             <strong>Type:</strong>
                           </Grid2>
-                          {pet.type}
+                          {pet.petType}
                         </Grid2>
 
                         <Grid2 size={6}>
                           <Grid2 Item>
                             <strong>Breed:</strong>
                           </Grid2>
-                          {pet.breed}
+                          {pet.petBreed}
                         </Grid2>
 
                         <Grid2 size={6}>
                           <Grid2 Item>
                             <strong>Age:</strong>
                           </Grid2>
-                          {pet.age}
+                          {pet.petAge}
                         </Grid2>
 
                         <Grid2 size={6}>
                           <Grid2 Item>
                             <strong>Color:</strong>
                           </Grid2>
-                          {pet.color}
+                          {pet.petColor}
                         </Grid2>
 
                         <Grid2 size={6}>
                           <Grid2 Item>
                             <strong>Gender:</strong>
                           </Grid2>
-                          {pet.gender}
+                          {pet.petGender}
                         </Grid2>
 
                         <Grid2 size={6}>
                           <Grid2 Item>
                             <strong>Size:</strong>
                           </Grid2>
-                          {pet.size}
+                          {pet.petSize}
                         </Grid2>
                       </Grid2>
                     </Typography>
