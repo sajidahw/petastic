@@ -45,9 +45,9 @@ import axios from "../api/axiosConfig.js";
 // } from "../../server/controllers/pet.controller.js";
 
 // ViewPet component to display recently added pet details
-const ViewPet = () => {
+const ViewPet = ({pet}) => {
   const { id } = useParams(); // matching route definition as a String type; using server's id so not _id
-  const [petData, setPetData] = useState(null);
+  const [petData, setPetData] = useState(pet);
   // const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
   // const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
