@@ -24,7 +24,7 @@ import {
   Typography,
 } from "@mui/material";
 import { RiCheckboxIndeterminateFill } from "react-icons/ri";
-import puppy from "../assets/images/puppy.jpg";
+// import puppy from "../assets/images/puppy.jpg";
 import "../App.css";
 import "../index.css";
 import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
@@ -261,7 +261,7 @@ const ViewPet = () => {
         >
           <CardMedia
             component="img"
-            image={petData.image || puppy}
+            image={petData.image || <img src="/puppy.jpg" alt="puppy" />}
             // image={puppy}
             alt={petData.name}
             sx={{ objectFit: "cover", height: "80%" }}
