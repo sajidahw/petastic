@@ -126,7 +126,8 @@ const Pets = () => {
       >
         {pets.length > 0 ? (
           pets.map((pet) => (
-            <Grid2 item xs={12} sm={6} md={4} key={pet._id}>
+            <Grid2 item xs={12} sm={6} md={4} key={pet.id}>
+              {/* pet.id */}
               {/* maxWidth: 345 */}
               <Card
                 sx={{
@@ -142,7 +143,7 @@ const Pets = () => {
                 {/* makes the entire card clickable */}
                 <CardActionArea
                   component={RouterLink} // Nav Link
-                  to={`/pet/${pet.id}`}
+                  to={`/pet/${pet.id}`}//pet._id
                 >
                   <CardMedia
                     component="img"
