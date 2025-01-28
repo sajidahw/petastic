@@ -263,10 +263,11 @@ const ViewPet = () => {
           <CardMedia
             component="img"
             image={
+              petData.petImage || "/client/public/puppy.jpg"
               //use base64 string if available, else use default image
-              petData.petImage?.startsWith("data:image")
-                ? petData.petImage
-                : petData.petImage || "/client/public/puppy.jpg"
+              // petData.petImage?.startsWith("data:image")
+              //   ? petData.petImage
+              //   : petData.petImage || "/client/public/puppy.jpg"
             }
             // image={puppy}
             alt={petData.petName}
