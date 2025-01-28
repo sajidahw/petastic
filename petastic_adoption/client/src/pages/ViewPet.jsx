@@ -286,6 +286,7 @@ const ViewPet = () => {
               }}
             >
               <img src={petData.petImage || "/puppy.jpg"}></img>
+
             </Avatar>
 
             <Typography
