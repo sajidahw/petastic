@@ -143,7 +143,7 @@ const petSchema = new mongoose.Schema(
     petImage: {
       // data: Buffer,
       contentType: String,
-      default: "./client/public/puppy.jpg",
+      default: "./client/public/images/puppy.jpg",
 
       type: String,
     },

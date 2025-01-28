@@ -263,7 +263,7 @@ const ViewPet = () => {
           <CardMedia
             component="img"
             image={
-              petData.petImage || "/client/public/puppy.jpg"
+              petData.petImage || "/client/public/images/puppy.jpg"
               //use base64 string if available, else use default image
               // petData.petImage?.startsWith("data:image")
               //   ? petData.petImage
@@ -292,7 +292,9 @@ const ViewPet = () => {
                 boxShadow: 3,
               }}
             >
-              <img src={petData.petImage || "/client/public/puppy.jpg"}></img>
+              <img
+                src={petData.petImage || "/client/public/images/puppy.jpg"}
+              ></img>
             </Avatar>
 
             <Typography
