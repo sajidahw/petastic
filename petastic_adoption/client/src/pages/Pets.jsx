@@ -154,7 +154,7 @@ const Pets = () => {
                       //use base64 string if available, else use default image
                       petData.petImage?.startsWith("data:image")
                         ? petData.petImage
-                        : petData.petImage || "/client/publicpuppy.jpg"
+                        : petData.petImage || "/client/public/puppy.jpg"
                     }
                     alt={pet.petName}
                     sx={{
