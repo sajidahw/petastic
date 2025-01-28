@@ -151,7 +151,7 @@ const Pets = () => {
                     // image={puppy}
                     //  updating by prefacing pet to each field to match schema
                     image={
-                      pet.petImage || "/client/public/images/puppy.jpg"
+                      pet.petImage || "/client/public/puppy.jpg"
                       //use base64 string if available, else use default image
                       // petData.petImage?.startsWith("data:image")
                       //   ? petData.petImage
@@ -184,7 +184,7 @@ const Pets = () => {
                       }}
                     >
                       <img
-                        src={pet.petImage || "/client/public/images/puppy.jpg"}
+                        src={pet.petImage || "/client/public/puppy.jpg"}
                         alt={pet.petName}
                       ></img>
                     </Avatar>
