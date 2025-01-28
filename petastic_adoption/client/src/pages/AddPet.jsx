@@ -246,7 +246,7 @@ const AddPet = () => {
       // removed `${base_URL}/pets` bc using axiosConfig
 
       // Response returns the created pet with a MongoDB 'id' field
-      const id = response.data._id;
+      const id = response.data.data._id;
 
       console.log(`Pet added successfully with id: ${id}`, response.data);
       // }
