@@ -261,7 +261,7 @@ const ViewPet = () => {
         >
           <CardMedia
             component="img"
-            image={petData.petImage || <img src="/puppy.jpg" alt="puppy" />}
+            image={petData.petImage || "/puppy.jpg"}
             // image={puppy}
             alt={petData.petName}
             sx={{ objectFit: "cover", height: "80%" }}
@@ -285,9 +285,7 @@ const ViewPet = () => {
                 boxShadow: 3,
               }}
             >
-              <img
-                src={petData.petImage || <img src="/puppy.jpg" alt="puppy" />}
-              ></img>
+              <img src={petData.petImage || "/puppy.jpg"}></img>
             </Avatar>
 
             <Typography
