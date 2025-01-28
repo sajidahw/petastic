@@ -150,7 +150,12 @@ const Pets = () => {
                     loading="lazy"
                     // image={puppy}
                     //  updating by prefacing pet to each field to match schema
-                    image={pet.petImage || <img src="/puppy.jpg" alt="puppy" />}
+                    image={
+                      //use base64 string if available, else use default image
+                      petData.petImage?.startsWith("data:image")
+                        ? petData.petImage
+                        : petData.petImage || "/puppy.jpg"
+                    }
                     alt={pet.petName}
                     sx={{
                       objectFit: "cover",
@@ -178,9 +183,7 @@ const Pets = () => {
                       }}
                     >
                       <img
-                        src={
-                          pet.petImage || <img src="/puppy.jpg" alt="puppy" />
-                        }
+                        src={pet.petImage || "/puppy.jpg"}
                         alt={pet.petName}
                       ></img>
                     </Avatar>
