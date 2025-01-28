@@ -263,7 +263,7 @@ const ViewPet = () => {
             component="img"
             image={
               //use base64 string if available, else use default image
-              petData.petImage?.startsWith("data:image") ? petData.petImage : petData.petImage || "/puppy.jpg"
+              petData.petImage?.startsWith("data:image") ? petData.petImage : petData.petImage || "/client/public/puppy.jpg"
             }
             // image={puppy}
             alt={petData.petName}
@@ -288,7 +288,7 @@ const ViewPet = () => {
                 boxShadow: 3,
               }}
             >
-              <img src={petData.petImage || "/puppy.jpg"}></img>
+              <img src={petData.petImage || "/client/public/puppy.jpg"}></img>
 
             </Avatar>
 

@@ -154,7 +154,7 @@ const Pets = () => {
                       //use base64 string if available, else use default image
                       petData.petImage?.startsWith("data:image")
                         ? petData.petImage
-                        : petData.petImage || "/puppy.jpg"
+                        : petData.petImage || "/client/publicpuppy.jpg"
                     }
                     alt={pet.petName}
                     sx={{
@@ -183,7 +183,7 @@ const Pets = () => {
                       }}
                     >
                       <img
-                        src={pet.petImage || "/puppy.jpg"}
+                        src={pet.petImage || "/client/publicpuppy.jpg"}
                         alt={pet.petName}
                       ></img>
                     </Avatar>

@@ -141,9 +141,9 @@ const petSchema = new mongoose.Schema(
       enum: ["yes", "no"],
     },
     petImage: {
-      data: Buffer,
+      // data: Buffer,
       contentType: String,
-      default: "./public/puppy.jpg",
+      default: "./client/public/puppy.jpg",
 
       type: String,
     },
