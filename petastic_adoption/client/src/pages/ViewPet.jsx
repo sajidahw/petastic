@@ -285,7 +285,9 @@ const ViewPet = () => {
                 boxShadow: 3,
               }}
             >
-              <img src={petData.image || puppy}></img>
+              <img
+                src={petData.image || <img src="/puppy.jpg" alt="puppy" />}
+              ></img>
             </Avatar>
 
             <Typography

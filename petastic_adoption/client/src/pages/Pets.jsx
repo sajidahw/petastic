@@ -4,7 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../App.css";
 import "../index.css";
-import puppy from "/puppy.jpg";
+// import puppy from "/puppy.jpg";
 import Small_Circular_Logo_Petastic180title from "../assets/Small_Circular_Logo_Petastic180title.png";
 import { Link as RouterLink } from "react-router-dom";
 import BrownPrints from "../components/BrownPrints";
