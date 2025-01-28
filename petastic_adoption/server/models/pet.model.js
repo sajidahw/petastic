@@ -90,7 +90,7 @@ const petSchema = new mongoose.Schema(
     },
     petSize: {
       type: String,
-      enum: ["small", "medium", "large", "extra large"],
+      enum: ["small", "medium", "large", "extra-large"],
     },
     petTemperament: {
       type: String,
