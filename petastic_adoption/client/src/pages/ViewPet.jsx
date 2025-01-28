@@ -46,7 +46,7 @@ import axios from "../api/axiosConfig.js";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
-  const { _id } = useParams(); // matching route definition as a String type
+  const { id } = useParams(); // matching route definition as a String type; using server's id so not _id
   const [petData, setPetData] = useState(null);
   // const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const ViewPet = () => {
   // to prevent scrolling to the bottom of the page when viewing a pet
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [_id]);
+  }, [id]);
 
   // ** Implementing Snackbar + Dialog which is an alert for when clicking on the Adopt Me button, stating that it will remove the pet from the list **
 
@@ -88,9 +88,9 @@ const ViewPet = () => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`/pet/${_id}`); // removed deletePet(id)
-      console.log(`REMOVAL: Adopting pet with ID: ${_id}`);
-      setPetData(petData.filter((pet) => pet._id !== _id));
+      await axios.delete(`/pet/${id}`); // removed deletePet(id)
+      console.log(`REMOVAL: Adopting pet with ID: ${id}`);
+      setPetData(petData.filter((pet) => pet._id !== id));
       console.log("Pet removed from the list.");
       // removed `${base_URL}/pet/${id}`
 
@@ -152,9 +152,9 @@ const ViewPet = () => {
     const fetchPetData = async () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
-        const response = await axios.get(`/pet/${_id}`); // removed getPetById(id)
+        const response = await axios.get(`/pet/${id}`); // removed getPetById(id)
         console.log("Pet data fetched from server:", response.data);
-        setPetData(response.data); // do i even need this if just viewing?**CHECK
+        setPetData(response.data.data); // so not undefined + storing actual pet data
       } catch (error) {
         console.error("Error fetching pet data:", error);
         setPetData(null); // set to null if error
@@ -168,7 +168,7 @@ const ViewPet = () => {
     // }
 
     fetchPetData(); // used if no above conditional check
-  }, [_id]);
+  }, [id]);
 
   // Show a loading message if pet data is not available
   if (!petData) {
@@ -261,9 +261,9 @@ const ViewPet = () => {
         >
           <CardMedia
             component="img"
-            image={petData.image || <img src="/puppy.jpg" alt="puppy" />}
+            image={petData.petImage || <img src="/puppy.jpg" alt="puppy" />}
             // image={puppy}
-            alt={petData.name}
+            alt={petData.petName}
             sx={{ objectFit: "cover", height: "80%" }}
           />
 
@@ -286,7 +286,7 @@ const ViewPet = () => {
               }}
             >
               <img
-                src={petData.image || <img src="/puppy.jpg" alt="puppy" />}
+                src={petData.petImage || <img src="/puppy.jpg" alt="puppy" />}
               ></img>
             </Avatar>
 
@@ -331,47 +331,47 @@ const ViewPet = () => {
               >
                 <Grid2 size={4}>
                   <Grid2 Item>
-                    <strong>Type:</strong> {petData.type}
+                    <strong>Type:</strong> {petData.petType}
                   </Grid2>
-                  <strong>Breed:</strong> {petData.breed}
+                  <strong>Breed:</strong> {petData.petBreed}
                 </Grid2>
 
                 <Grid2 size={4}>
                   <Grid2 Item>
-                    <strong>Age:</strong> {petData.age}
+                    <strong>Age:</strong> {petData.petAge}
                   </Grid2>
-                  <strong>Color:</strong> {petData.color}
+                  <strong>Color:</strong> {petData.petColor}
                 </Grid2>
 
                 <Grid2 size={4}>
                   <Grid2 Item>
-                    <strong>Gender:</strong> {petData.gender}
+                    <strong>Gender:</strong> {petData.petGender}
                   </Grid2>
-                  <strong>Size:</strong> {petData.size}
+                  <strong>Size:</strong> {petData.petSize}
                 </Grid2>
 
                 <Grid2 size={4}>
-                  <strong>Location:</strong> {petData.location}
+                  <strong>Location:</strong> {petData.petLocation}
                 </Grid2>
 
                 <Grid2 size={4}>
-                  <strong>Temperament:</strong> {petData.temperament}
+                  <strong>Temperament:</strong> {petData.petTemperament}
                 </Grid2>
 
                 <Grid2 size={4}>
                   <strong>Medical History:</strong> {""}
-                  {Array.isArray(petData.medicalHistory)
-                    ? petData.medicalHistory.join(", ")
-                    : petData.medicalHistory}
+                  {Array.isArray(petData.petMedicalHistory)
+                    ? petData.petMedicalHistory.join(", ")
+                    : petData.petMedicalHistory}
                   {/* {petData.medicalHistory.join(", ") } */}
                 </Grid2>
 
                 <Grid2 size={4}>
                   <Grid2 Item>
-                    <strong>Vaccination:</strong> {petData.vaccination}
+                    <strong>Vaccination:</strong> {petData.petVaccination}
                   </Grid2>
                   <strong>Spay/Neuter:</strong>{" "}
-                  {petData.spayNeuter === "yes" ? (
+                  {petData.petSpayNeuter === "yes" ? (
                     <Checkbox
                       checked={true}
                       color="#ad9f7a"
@@ -397,7 +397,7 @@ const ViewPet = () => {
 
                 <Grid2 size={4}>
                   <strong>Availability:</strong>
-                  {petData.availability == "now" ? (
+                  {petData.petAvailability == "now" ? (
                     <span
                       style={{
                         color: "green",
@@ -433,7 +433,7 @@ const ViewPet = () => {
                 <Grid2 size={4} marginBottom={0}>
                   <Grid2 Item>
                     <strong>OK with Kids:</strong>
-                    {petData.okKids === "yes" ? (
+                    {petData.petOkKids === "yes" ? (
                       <Checkbox
                         checked={true}
                         color="#ad9f7a"
@@ -460,7 +460,7 @@ const ViewPet = () => {
 
                   <Grid2 Item>
                     <strong>OK with Cats:</strong>
-                    {petData.okCats === "yes" ? (
+                    {petData.petOkCats === "yes" ? (
                       <Checkbox
                         checked={true}
                         color="#ad9f7a"
@@ -487,7 +487,7 @@ const ViewPet = () => {
 
                   <Grid2 Item>
                     <strong>OK with Dogs:</strong>
-                    {petData.okDogs === "yes" ? (
+                    {petData.petOkDogs === "yes" ? (
                       <Checkbox
                         checked={true}
                         color="#ad9f7a"
@@ -515,7 +515,7 @@ const ViewPet = () => {
 
                 <Grid2 size={12} textTransform="none">
                   <strong>Description:</strong>{" "}
-                  {petData.description ||
+                  {petData.petDescription ||
                     "Adopting me is the best way to get to know me."}
                 </Grid2>
               </Grid2>
@@ -668,7 +668,7 @@ const ViewPet = () => {
               pt={2}
             >
               <Typography gutterBottom>
-                Are you sure you want to adopt {petData.name}?
+                Are you sure you want to adopt {petData.petName}?
               </Typography>
             </DialogContentText>
 
@@ -735,7 +735,7 @@ const ViewPet = () => {
               whiteSpace: "pre-wrap",
             }}
           >
-            Congratulations on adopting {petData.name}!!
+            Congratulations on adopting {petData.petName}!!
             <Typography sx={{ mt: 1 }} gutterBottom>
               We'll follow up with you.{" "}
             </Typography>
