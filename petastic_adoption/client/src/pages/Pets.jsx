@@ -142,7 +142,7 @@ const Pets = () => {
                 {/* makes the entire card clickable */}
                 <CardActionArea
                   component={RouterLink} // Nav Link
-                  to={`/pet/${pet._id}`}
+                  to={`/pet/${pet.id}`}
                 >
                   <CardMedia
                     component="img"
