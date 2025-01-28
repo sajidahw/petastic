@@ -159,7 +159,7 @@ export const deletePet = async (req, res) => {
     await Pet.findByIdAndDelete(id);
     res
       .status(200)
-      .json({ success: true, message: "Pet Deleted Successfully." });
+      .json({ success: true, message: "Pet adopted Successfully." });
   } catch (error) {
     console.log("Error in Deleting Pet: ", error.message);
     res.status(500).json({ success: false, message: "Server error." });
