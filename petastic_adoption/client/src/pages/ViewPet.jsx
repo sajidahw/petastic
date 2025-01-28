@@ -46,7 +46,7 @@ import axios from "../api/axiosConfig.js";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
-  const { id } = useParams(); // matching route definition as a String type
+  const { _id } = useParams(); // matching route definition as a String type
   const [petData, setPetData] = useState(null);
   // const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const ViewPet = () => {
   // to prevent scrolling to the bottom of the page when viewing a pet
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+  }, [_id]);
 
   // ** Implementing Snackbar + Dialog which is an alert for when clicking on the Adopt Me button, stating that it will remove the pet from the list **
 
@@ -88,9 +88,9 @@ const ViewPet = () => {
 
     // axios integration to remove the pet from the server instead of localStorage
     try {
-      await axios.delete(`/pet/${id}`); // removed deletePet(id)
-      console.log(`REMOVAL: Adopting pet with ID: ${id}`);
-      setPetData(petData.filter((pet) => pet.id !== id));
+      await axios.delete(`/pet/${_id}`); // removed deletePet(id)
+      console.log(`REMOVAL: Adopting pet with ID: ${_id}`);
+      setPetData(petData.filter((pet) => pet._id !== _id));
       console.log("Pet removed from the list.");
       // removed `${base_URL}/pet/${id}`
 
@@ -152,7 +152,7 @@ const ViewPet = () => {
     const fetchPetData = async () => {
       try {
         // const response = await axios.get(`${base_URL}/pet/${id}`);
-        const response = await axios.get(`/pet/${id}`); // removed getPetById(id)
+        const response = await axios.get(`/pet/${_id}`); // removed getPetById(id)
         console.log("Pet data fetched from server:", response.data);
         setPetData(response.data); // do i even need this if just viewing?**CHECK
       } catch (error) {
@@ -168,7 +168,7 @@ const ViewPet = () => {
     // }
 
     fetchPetData(); // used if no above conditional check
-  }, [id]);
+  }, [_id]);
 
   // Show a loading message if pet data is not available
   if (!petData) {
