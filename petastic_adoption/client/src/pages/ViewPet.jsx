@@ -90,7 +90,7 @@ const ViewPet = () => {
     try {
       await axios.delete(`/pet/${id}`); // removed deletePet(id)
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
-      setPetData(petData.filter((pet) => pet._id !== id));
+      setPetData(petData.filter((pet) => pet.id !== id));
       console.log("Pet removed from the list.");
       // removed `${base_URL}/pet/${id}`
 
