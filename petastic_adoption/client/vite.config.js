@@ -9,19 +9,23 @@ export default defineConfig({
   // },
   plugins: [react()],
   server: {
-    proxy: {
-      "/": {
-        target: "https://petastic.vercel.app", // Your backend server URL, http://localhost:8181
-        changeOrigin: true, // Required for CORS to work
-        secure: true, // If your backend uses HTTPS with a self-signed certificate, set to false
-        // rewrite: (path) => path.replace(/^\/api/, ""), // Optional: remove the /api prefix when forwarding the request
-      },
-      "/api": {
-        target: "https://petastic.vercel.app", // Your backend server URL, http://localhost:8181
-        changeOrigin: true, // Required for CORS to work
-        secure: true, // If your backend uses HTTPS with a self-signed certificate, set to false
-        rewrite: (path) => path.replace(/^\/api/, ""), // Optional: remove the /api prefix when forwarding the request
-      },
+    port: 8181,
+  },
+  proxy: {
+    "/": {
+      target: "https://petastic.vercel.app", // Your backend server URL, http://localhost:8181
+      changeOrigin: true, // Required for CORS to work
+      secure: true, // If your backend uses HTTPS with a self-signed certificate, set to false
+      // rewrite: (path) => path.replace(/^\/api/, ""), // Optional: remove the /api prefix when forwarding the request
     },
+    "/api": {
+      target: "https://petastic.vercel.app", // Your backend server URL, http://localhost:8181
+      changeOrigin: true, // Required for CORS to work
+      secure: true, // If your backend uses HTTPS with a self-signed certificate, set to false
+      rewrite: (path) => path.replace(/^\/api/, ""), // Optional: remove the /api prefix when forwarding the request
+    },
+  },
+  build: {
+    outDir: "dist",
   },
 });
