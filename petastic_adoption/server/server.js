@@ -86,7 +86,8 @@ app.use(cors(corsOptions));
 //   res.send(`'Welcome to Petastic, an Animal Adoption site. 🐕'`);
 // });
 app.get("/", (req, res) => {
-  res.json({ message: `'Welcome to Petastic, an Animal Adoption site. 🐕'` });
+  // res.json({ message: `'Welcome to Petastic, an Animal Adoption site. 🐕'` });
+  res.send(`'Welcome to Petastic, an Animal Adoption site. 🐕'`);
 });
 
 // URL Endpoints to access the rest of the website
