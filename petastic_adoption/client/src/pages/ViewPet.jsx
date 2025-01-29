@@ -39,18 +39,12 @@ import InternalHeaderLogo from "../components/InternalHeaderLogo";
 import { BiSolidError } from "react-icons/bi";
 // import axios from "axios";
 import axios from "../api/axiosConfig.js";
-// import {
-//   getPetById,
-//   deletePet,
-// } from "../../server/controllers/pet.controller.js";
 
 // ViewPet component to display recently added pet details
 const ViewPet = () => {
   const { id } = useParams(); // matching route definition as a String type; using server's id so not _id
   const [petData, setPetData] = useState(null); // single pet object data; NOT list
-  // const [petData, setPetData] = useState(null); //single pet object data; NOT list
   const navigate = useNavigate();
-  // const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181";
 
   // to prevent scrolling to the bottom of the page when viewing a pet
   useEffect(() => {
@@ -90,10 +84,7 @@ const ViewPet = () => {
     try {
       await axios.delete(`/pet/${id}`); // removed deletePet(id)
       console.log(`REMOVAL: Adopting pet with ID: ${id}`);
-      // setPetData(petData.filter((pet) => pet.id !== id));
-      // setPetData(null); // set to null after removal
       console.log("Pet removed from the list.");
-      // removed `${base_URL}/pet/${id}`
 
       // Open the Snackbar Alert
       setSnackOpen(true);

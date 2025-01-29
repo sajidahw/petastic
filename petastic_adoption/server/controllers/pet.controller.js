@@ -13,7 +13,7 @@ export const getPets = async (req, res) => {
   }
 }; // pets gallery page
 
-// GET: Fetch a pet by id, /pets/:id
+// GET: Fetch a pet by id, /pet/:id
 export const getPetById = async (req, res) => {
   const { id } = req.params; // not req.params.id; passed by user in URL /:id
   console.log("ID received in GET /:id:", id);
@@ -40,7 +40,7 @@ export const getPetById = async (req, res) => {
   }
 }; // fetching a pet by id
 
-// POST: CREATE a new pet, /pets
+// POST: CREATE a new pet, /pet
 export const createPet = async (req, res) => {
   // const pet = req.body; // user will send this data
   const {
@@ -122,7 +122,7 @@ export const createPet = async (req, res) => {
   }
 }; // creating a pet
 
-// PUT: UPDATE a pet by id, /pets/:id
+// PUT: UPDATE a pet by id, /pet/:id
 export const updatePet = async (req, res) => {
   const { id } = req.params; // passed id from url via :id
   const pet = req.body;
@@ -143,7 +143,7 @@ export const updatePet = async (req, res) => {
   }
 }; // updating a pet
 
-// DELETE: DELETE a pet by id by destructuring id from req.params, /pets/:id
+// DELETE: DELETE a pet by id by destructuring id from req.params, /pet/:id
 export const deletePet = async (req, res) => {
   const { id } = req.params;
   console.log("Deleting Pet with ID: ", id);

@@ -27,14 +27,13 @@ import {
 import { FaPaw } from "react-icons/fa";
 // import axios from "axios";
 import axios from "../api/axiosConfig.js";
-// import { getPets } from "../../../server/controllers/pet.controller.js";
 
 // This is the Pets gallery or listings page of Available Pets
 const Pets = () => {
   // no props since displaying ALL pets
   const [pets, setPets] = useState([]);
-  // const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api";//now in axiosConfig.js
 
+//## Local Storage: Fetch all pets from the local storage##
   // // Fetch all pets from the local storage
   // useEffect(() => {
   //   const fetchPets = () => {
@@ -56,18 +55,19 @@ const Pets = () => {
 
   //   fetchPets();
   // }, []);
+  // ## End Local Storage ##
 
   // Fetch all pets from server database (not local storage) using axios, hence ._id for jsx return
   useEffect(() => {
     const fetchPets = async () => {
       try {
-        const response = await axios.get(`/pets`); //is getPets necess?/pets
+        const response = await axios.get(`/pets`);
         console.log(response.data);
-        setPets(response.data.data); // response.data.pets or .data; response.data.data to get to the pets array
+        setPets(response.data.data); // response.data.data to get to the pets array
       } catch (error) {
         console.log("Error in Fetching Pets: ", error.message);
       }
-    }; // no longer need base_URL: `${base_URL}/pets`
+    };
 
     fetchPets();
   }, []);
@@ -127,7 +127,6 @@ const Pets = () => {
         {pets.length > 0 ? (
           pets.map((pet) => (
             <Grid2 item xs={12} sm={6} md={4} key={pet._id}>
-              {/* pet.id */}
               {/* maxWidth: 345 */}
               <Card
                 sx={{
@@ -143,7 +142,7 @@ const Pets = () => {
                 {/* makes the entire card clickable */}
                 <CardActionArea
                   component={RouterLink} // Nav Link
-                  to={`/pet/${pet._id}`}//pet._id
+                  to={`/pet/${pet._id}`}
                 >
                   <CardMedia
                     component="img"
@@ -153,10 +152,6 @@ const Pets = () => {
                     //  updating by prefacing pet to each field to match schema
                     image={
                       pet.petImage || "/client/public/puppy.jpg"
-                      //use base64 string if available, else use default image
-                      // petData.petImage?.startsWith("data:image")
-                      //   ? petData.petImage
-                      //   : petData.petImage || "/client/public/puppy.jpg"
                     }
                     alt={pet.petName}
                     sx={{

@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 8181;
 const corsOptions = {
   origin: [
     "http://localhost:5173",
-    // "https://petastic.vercel.app/api",
+    "https://petastic.vercel.app/api",
     "https://petastic.vercel.app",
     // "http://localhost:8181/pets",
     // "http://localhost:8181/api/pets",

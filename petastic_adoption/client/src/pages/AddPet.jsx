@@ -34,7 +34,7 @@ import Human from "../components/Human";
 import InternalHeaderLogo from "../components/InternalHeaderLogo";
 // import axios from "axios";
 import axios from "../api/axiosConfig.js";
-// import { createPet } from "../../../server/controllers/pet.controller.js";
+
 
 // This page will allow the user to add a pet by filling out a form.
 const AddPet = () => {
@@ -66,10 +66,8 @@ const AddPet = () => {
   const [humanEmail, setHumanEmail] = useState("");
   const [humanPhone, setHumanPhone] = useState("");
 
-  // const [petData, setPetData] = useState([]); // not used as a prop bc it's not passed to another component
-
   const navigate = useNavigate();
-  // const base_URL = import.meta.env.VITE_APP_API_URL || "http://localhost:8181/api"; // instead of process.env.REACT_APP_API_URL; express server port 8181
+
 
   // This array will be used to populate the pet type dropdown menu.
   const types = [
@@ -134,31 +132,6 @@ const AddPet = () => {
     { value: "wyoming", label: "Wyoming" },
   ];
 
-  // petData = {
-  //   // id: id, // not needed for axios
-  //   name: petName,
-  //   type: petType,
-  //   breed: petBreed,
-  //   age: petAge,
-  //   color: petColor,
-  //   gender: petGender,
-  //   size: petSize,
-  //   temperament: petTemperament,
-  //   location: petLocation,
-  //   medicalHistory: petMedicalHistory,
-  //   description: petDescription,
-  //   availability: petAvailability,
-  //   vaccination: petVaccination,
-  //   spayNeuter: petSpayNeuter,
-  //   okKids: petOkWithKids,
-  //   okCats: petOkWithCats,
-  //   okDogs: petOkWithDogs,
-  //   image: petImage,
-  //   humanName: humanName,
-  //   humanEmail: humanEmail,
-  //   humanPhone: humanPhone,
-  // };
-
   // This useEffect hook will ensure only positive numbers up to 20 are entered for the pet's age. data fetching via useEffect
 
   useEffect(() => {
@@ -175,6 +148,7 @@ const AddPet = () => {
   // This function will handle the form submission.
   const handleSubmit = async (e) => {
     e.preventDefault();
+    // ### Local Storage Configuration ###
     // const id = Date.now(); //petId into String type.toString(), to be used as key in localStorage not needed for axios since driven by MongoDB
 
     // const petData = {
@@ -210,9 +184,10 @@ const AddPet = () => {
 
     // Navigate to the ViewPet page with the pet ID
     // navigate(`/pet/${id}`);
+    // ## End Local Storage Configuration ##
 
     // axios version:
-    // List fields instead of redefining petData
+    // List fields to be included instead of redefining petData
     const petData = {
       petName,
       petType,
@@ -239,9 +214,8 @@ const AddPet = () => {
 
     try {
       // POST request to backend to create a new pet with an 'id'
-      // const response = await axios.post(`${base_URL}/pet`, petData);
-      const response = await axios.post(`/pet`, petData); //petData or createPet(petData)??
-      // setPetData([...petData, response.data]); // remove spread if saving one?
+      // `${base_URL}/pet`
+      const response = await axios.post(`/pet`, petData); 
 
       // removed `${base_URL}/pets` bc using axiosConfig
 
@@ -252,7 +226,6 @@ const AddPet = () => {
       // }
 
       // Navigate to the ViewPet page with the pet ID
-      //  navigate(`/pet/${id}`);
       navigate(`/pet/${id}`);
     } catch (error) {
       console.error("Error adding pet:", error);
