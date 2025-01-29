@@ -28,7 +28,7 @@ function App() {
 
   // fetching data from the server
   const fetchLandingPage = async () => {
-    const response = await axios.get("http://localhost:8181"); //http://localhost:8181
+    const response = await axios.get("https://petastic.vercel.app"); //http://localhost:8181
     // const response = await axios.get("`${base_URL}`");
     console.log(response.data);
   };
