@@ -25,7 +25,4 @@ export default defineConfig({
       rewrite: (path) => path.replace(/^\/api/, ""), // Optional: remove the /api prefix when forwarding the request
     },
   },
-  build: {
-    outDir: "dist",
-  },
 });

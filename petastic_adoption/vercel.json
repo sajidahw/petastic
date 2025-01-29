@@ -1,9 +1,4 @@
 {
-  "version": 2,
-  "builds": [
-      {"src": "server/server.js", "use": "@now/node-server"},
-      {"src": "client/package.json", "use": "@vercel/static-build"}
-  ],
   "rewrites": [
     {
       "source": "./(.*)",

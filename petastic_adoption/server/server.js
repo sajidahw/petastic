@@ -17,7 +17,7 @@ const corsOptions = {
     "https://petastic.vercel.app/api",
     "https://petastic.vercel.app",
     "http://localhost:8181",
-    // "http://localhost:8181/api",
+    "http://localhost:8181/api",
   ], // vite, vercel
   // optionsSuccessStatus: 200 || 204,
   methods: "OPTIONS, GET, POST, PUT, DELETE",
