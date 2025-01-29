@@ -7,6 +7,7 @@
 ## Description
 
 A CS 467 Capstone Project: Providing a website to connect humans to available pets for adoption.
+Project has been updated to be a MERN stack application.
 
 <br>
 
