@@ -6,7 +6,6 @@ import express from "express";
 import cors from "cors"; // frontend and backend are on different servers; accepts requests from different origins
 import { connectDB } from "./config/db.js";
 import petRoutes from "./routes/pet.route.js";
-import { getPets } from "./controllers/pet.controller.js";
 
 dotenv.config();
 const app = express();
