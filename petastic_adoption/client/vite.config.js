@@ -8,9 +8,6 @@ export default defineConfig({
   //   outDir: "",
   // },
   plugins: [react()],
-  server: {
-    port: 8181,
-  },
   proxy: {
     "/": {
       target: "https://petastic.vercel.app", // Your backend server URL, http://localhost:8181
